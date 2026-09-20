@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brands · Mashreq</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant+SC:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="styles.css?v=11">  <style>
+</style>
+</head>
+<body>
+
+
+  
+  <!-- ============== TOP UTILITY BAR ============== -->
+  <style>
+    /* ── Navbar redesign (mockup style) ── */
+    .nav2-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+    }
+    .nav2-utility {
+      background: rgba(6, 20, 34, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #cfe6f5;
+      font-size: 0.82rem;
+    }
+    .nav2-utility-inner {
+      max-width: 1780px;
+      margin: 0 auto;
+      padding: 8px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .nav2-u-left,
+    .nav2-u-right {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav2-u-left li,
+    .nav2-u-right li {
+      display: flex;
+      align-items: center;
+    }
+    .nav2-u-left li:not(:first-child)::before,
+    .nav2-u-right li:not(:first-child)::before {
+      content: '';
+      width: 1px;
+      height: 12px;
+      background: rgba(207, 230, 245, 0.3);
+      margin: 0 16px;
+    }
+    .nav2-u-left a,
+    .nav2-u-right a,
+    .nav2-u-right span {
+      color: #cfe6f5;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .nav2-u-left a:hover,
+    .nav2-u-right a:hover { color: #38bdf8; }
+    .nav2-u-right i { color: #38bdf8; margin-right: 7px; }
+    .nav2-u-soc {
+      display: flex;
+      gap: 14px;
+      margin-left: 18px;
+    }
+    .nav2-u-soc a {
+      color: #9fc3da;
+      font-size: 0.95rem;
+    }
+    .nav2-u-soc a:hover { color: #38bdf8; }
+
+    /* Floating glass navbar */
+    .nav2-main {
+      margin: 10px auto 0;
+      max-width: 1780px;
+      background: linear-gradient(120deg, rgba(240, 246, 251, 0.97) 0%, rgba(219, 233, 244, 0.93) 55%, rgba(205, 224, 239, 0.9) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 12px;
+      box-shadow: 0 10px 34px rgba(2, 12, 24, 0.35);
+    }
+    .nav2-main-inner {
+      max-width: 1780px;
+      margin: 0 auto;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .nav2-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav2-brand img {
+      height: 110px;
+      width: auto;
+    }
+    .nav2-brand-name {
+      display: block;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #0d1b2a;
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+    }
+    .nav2-brand-sub {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4a5c6d;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+    .nav2-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav2-link {
+      position: relative;
+      display: block;
+      padding: 12px 13px;
+      color: #14293c;
+      font-size: 1.08rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav2-link:hover { color: #0ea5e9; }
+    .nav2-link.active { color: #0ea5e9; }
+    .nav2-link.active::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 4px;
+      height: 2px;
+      border-radius: 2px;
+      background: #0ea5e9;
+    }
+    .nav2-dd {
+      position: relative;
+    }
+    .nav2-dd > .nav2-link::after {
+      content: '▾';
+      font-size: 0.65rem;
+      margin-left: 5px;
+    }
+    .nav2-dd-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 230px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 16px 44px rgba(2, 12, 24, 0.25);
+      padding: 8px 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.18s, transform 0.18s;
+      z-index: 1100;
+    }
+    .nav2-dd:hover .nav2-dd-menu,
+    .nav2-dd:focus-within .nav2-dd-menu {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+    .nav2-dd-menu a {
+      display: block;
+      padding: 10px 18px;
+      color: #14293c;
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .nav2-dd-menu a:hover { background: #eaf4fb; color: #0ea5e9; }
+
+    .nav2-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .nav2-icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(20, 41, 60, 0.18);
+      background: rgba(255, 255, 255, 0.55);
+      color: #14293c;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .nav2-icon-btn:hover {
+      background: #0ea5e9;
+      border-color: #0ea5e9;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .nav2-icon-btn.dl { position: relative; }
+    .nav2-icon-btn.dl::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #0e8ce4;
+      border: 2px solid #eef4f9;
+    }
+    .nav2-sep {
+      width: 1px;
+      height: 26px;
+      background: rgba(20, 41, 60, 0.18);
+    }
+    .nav2-lang {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: none;
+      border: none;
+      color: #14293c;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .nav2-lang:hover { color: #0ea5e9; }
+    .nav2-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #0e8ce4;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 26px;
+      border-radius: 9px;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(14, 140, 228, 0.4);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav2-quote:hover {
+      background: #0b74c2;
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    /* Push page content below fixed nav */
+    body { padding-top: 0 !important; }
+    #navbar.navbar-custom { display: none !important; }
+
+    @media (max-width: 1140px) {
+      .nav2-links { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav2-utility-inner { padding: 6px 16px; font-size: 0.72rem; }
+      .nav2-u-left { display: none; }
+      .nav2-main { margin: 8px 12px 0; }
+      .nav2-right .nav2-quote { padding: 11px 16px; font-size: 0.85rem; }
+      .nav2-icon-btn { width: 38px; height: 38px; font-size: 0.85rem; }
+      .nav2-sep { display: none; }
+    }
+  </style>
+  <div class="nav2-wrap">
+    <div class="nav2-utility">
+      <div class="nav2-utility-inner">
+        <ul class="nav2-u-left">
+          <li><a href="./mep-home.html#products">MEP Supply</a></li>
+          <li><a href="./mep-home.html#about" data-i18n="sect_link1">Trading &amp; Contracting</a></li>
+          <li><a href="./mep-home.html">Mashriq Group</a></li>
+        </ul>
+        <ul class="nav2-u-right">
+          <li><span><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</span></li>
+          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i> +966 5030 46469</a></li>
+          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i> sales@mashreq.sa</a></li>
+          <li>
+            <span class="nav2-u-soc">
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="nav2-main">
+      <div class="nav2-main-inner">
+        <a href="./mep-home.html" class="nav2-brand">
+          <img src="./images/logo.png" alt="Mashreq Logo">
+          <span>
+            <span class="nav2-brand-name" data-i18n="brand_name">MASHRIQ</span>
+            <span class="nav2-brand-sub">Almuqaddimah Company<br>For Contracting</span>
+          </span>
+        </a>
+
+        <ul class="nav2-links">
+          <li><a class="nav2-link" href="./mep-home.html" data-i18n="nav_home">Home</a></li>
+          <li><a class="nav2-link" href="./aboutus.html" data-i18n="nav_about">About</a></li>
+          <li class="nav2-dd">
+            <a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a>
+          </li>
+          <li class="nav2-dd">
+            <a class="nav2-link" href="#">Our Sectors</a>
+            <div class="nav2-dd-menu">
+              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
+              <a href="./sectors.html" data-i18n="sect_link2">Mashreq Rentals</a>
+              <a href="./sectors.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+              <a href="./sectors.html" data-i18n="sect_link4">Mashreq Facility Management</a>
+            </div>
+          </li>
+          <li><a class="nav2-link active" href="./brands.html" data-i18n="nav_brands">Brands</a></li>
+          <li><a class="nav2-link" href="./contact.html" data-i18n="nav_contact">Contact</a></li>
+          <li><a class="nav2-link" href="./mep-home.html">Mashriq Group</a></li>
+        </ul>
+
+        <div class="nav2-right">
+          <button class="nav2-icon-btn" title="Search" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <a class="nav2-icon-btn dl" href="files/a4%20brochure%20final.pdf" download title="Downloads / Catalogue" aria-label="Download Brochure"><i class="fa-solid fa-download"></i></a>
+          <button class="nav2-icon-btn" title="Account" aria-label="Profile"><i class="fa-regular fa-user"></i></button>
+          <span class="nav2-sep"></span>
+          <button class="nav2-lang" id="langToggle" title="Toggle Language">
+            <i class="fa-solid fa-globe"></i> عربي
+          </button>
+          <a class="nav2-quote" href="./get-quote.html" data-i18n="nav_quote">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<nav class="mob-nav" id="mobNav">
+  <div class="mob-nav-bar">
+
+    <!-- Brand -->
+    <a href="./mep-home.html" class="mob-brand">
+      <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
+      <div class="mob-brand-info">
+        <span class="mob-brand-name">MASHRIQ</span>
+        <span class="mob-brand-tagline">Almuqaddimah Company For Contracting</span>
+        <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
+      </div>
+    </a>
+
+    <!-- Hamburger -->
+    <button class="mob-burger" id="mobBurger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Full overlay menu -->
+  <div class="mob-overlay" id="mobOverlay">
+    <div class="mob-overlay-inner">
+
+      <!-- Top row in overlay -->
+      <div class="mob-overlay-top">
+        <a href="./mep-home.html" class="mob-brand">
+          <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
+          <div class="mob-brand-info">
+            <span class="mob-brand-name">MASHRIQ</span>
+            <span class="mob-brand-tagline">Almuqaddimah Company For Contracting</span>
+            <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
+          </div>
+        </a>
+        <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Links -->
+      <ul class="mob-menu-links">
+        <li><a href="./mep-home.html" class="mob-menu-link active"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a></li>
+        <li><a href="./aboutus.html" class="mob-menu-link"><i class="fa-solid fa-building"></i><span data-i18n="nav_about">About Us</span></a></li>
+        <li>
+          <button class="mob-menu-link mob-acc-btn" id="mobAccBtn" aria-expanded="false" aria-controls="mobAccBody">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span data-i18n="nav_sectors">Our Sectors</span>
+            <i class="fa-solid fa-chevron-down mob-chev"></i>
+          </button>
+          <div class="mob-acc-body" id="mobAccBody">
+            <a href="./mep-home.html" class="mob-sub-link" data-i18n="sect_link1">Trading &amp; Contracting</a>
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
+          </div>
+        </li>
+        <li><a href="./products.html" class="mob-menu-link"><i class="fa-solid fa-box-open"></i><span data-i18n="nav_products">Our Products</span></a></li>
+        <li><a href="./brands.html" class="mob-menu-link"><i class="fa-solid fa-file-lines"></i><span data-i18n="nav_brands">Brands</span></a></li>
+        <li><a href="./contact.html" class="mob-menu-link"><i class="fa-solid fa-envelope"></i><span data-i18n="nav_contact">Contact Us</span></a></li>
+      </ul>
+
+      <!-- Contact block -->
+      <div class="mob-contact">
+        <a href="tel:+966503046469"><i class="fa-solid fa-phone"></i>+966 50 304 6469</a>
+        <a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a>
+        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i>Riyadh, Saudi Arabia</span>
+      </div>
+
+      <!-- Socials -->
+      <div class="mob-socials">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <!-- Bottom actions -->
+      <div class="mob-overlay-footer">
+        <a href="./get-quote.html" class="mob-cta-btn"><span data-i18n="nav_quote">Get a Quote</span> <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="mob-lang-btn" id="langToggleMob" data-i18n="nav_lang">عربي</button>
+      </div>
+
+      <div class="mob-tagline-bottom" data-i18n="tagline_people">People · Projects · Progress</div>
+
+    </div>
+  </div>
+</nav>
+
+
+<style>
+  body { background: var(--dark, #04121f); }
+  #brands { padding-top: 215px; }
+  @media (max-width: 991px) { #brands { padding-top: 195px; } }
+  /* Extra clearance under the fixed navbar (py-5 uses !important, so must we) */
+  @media (min-width: 992px) { #brands { padding-top: 245px !important; } }
+  @media (max-width: 991px) { #brands { padding-top: 205px !important; } }
+</style>
+
+<!-- ============== BRANDS ============== -->
+<style>
+  /* ── Brands redesign ── */
+  #brands {
+    background:
+      radial-gradient(ellipse at 8% 20%, rgba(14, 165, 233, 0.12), transparent 45%),
+      radial-gradient(ellipse at 92% 80%, rgba(14, 165, 233, 0.1), transparent 45%),
+      var(--dark);
+  }
+  .br-wrap {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .br-head { text-align: center; margin-bottom: 40px; }
+  .br-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #a9c6d8;
+    margin-bottom: 14px;
+  }
+  .br-title {
+    font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 6px;
+  }
+  .br-title b { color: #38bdf8; font-weight: 800; }
+  .br-title::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 3px;
+    margin: 16px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #0ea5e9, #7dd3f8);
+  }
+  .br-sub {
+    margin: 18px auto 0;
+    max-width: 760px;
+    color: #a9c6d8;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  /* Filter chips */
+  .br-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0 40px;
+  }
+  .br-chip {
+    border: 1px solid rgba(125, 211, 248, 0.35);
+    background: rgba(6, 24, 40, 0.5);
+    color: #cfe6f5;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 11px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .br-chip:hover { transform: translateY(-2px); border-color: #38bdf8; color: #fff; }
+  .br-chip.active {
+    background: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(14, 165, 233, 0.4);
+  }
+
+  /* Grid */
+  .br-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+  .br-card {
+    position: relative;
+    aspect-ratio: 16 / 10.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background: linear-gradient(160deg, rgba(13, 42, 68, 0.55), rgba(6, 24, 40, 0.75));
+    border: 1px solid rgba(125, 211, 248, 0.16);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .br-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.55);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 24px rgba(14, 165, 233, 0.15);
+  }
+  .br-card img {
+    max-width: 94%;
+    max-height: 88%;
+    object-fit: contain;
+    filter: brightness(1.08);
+    transition: transform 0.25s ease;
+  }
+  .br-card:hover img { transform: scale(1.07); }
+  .br-card.hidden { display: none; }
+
+  .br-more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 20px;
+    background: linear-gradient(160deg, rgba(13, 42, 68, 0.4), rgba(6, 24, 40, 0.6));
+    border: 1px dashed rgba(125, 211, 248, 0.3);
+    border-radius: 14px;
+    color: #cfe6f5;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .br-more:hover { border-color: #38bdf8; transform: translateY(-5px); }
+  .br-more .br-next {
+    flex: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(56, 189, 248, 0.5);
+    color: #38bdf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+  }
+  .br-more:hover .br-next { background: #0ea5e9; color: #fff; border-color: #0ea5e9; }
+
+  /* Trust row */
+  .br-trust {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin: 56px auto 0;
+  }
+  .br-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    border-left: 1px solid rgba(125, 211, 248, 0.2);
+    padding-left: 24px;
+  }
+  .br-trust-item:first-child { border-left: none; padding-left: 0; }
+  .br-trust-item i {
+    font-size: 1.7rem;
+    color: #38bdf8;
+  }
+  .br-trust-item h5 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 3px;
+  }
+  .br-trust-item p {
+    color: #8fb3c9;
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  @media (max-width: 1199px) { .br-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 767px) { .br-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; } .br-trust { grid-template-columns: 1fr; gap: 20px; } .br-trust-item { justify-content: flex-start; border-left: none; padding-left: 0; } }
+  @media (max-width: 480px) { .br-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+<section id="brands" class="py-5">
+  <div class="br-wrap">
+  <a href="./mep-home.html" class="back-home"><i class="fa-solid fa-arrow-left"></i>Back to Home</a>
+    <div class="br-head fade-up">
+      <div class="br-eyebrow">Trusted Global Partners</div>
+      <h2 class="br-title">Brands We <b>Work With</b></h2>
+      <p class="br-sub">We source from established manufacturers across mechanical, plumbing, electrical and safety systems to deliver reliable solutions for every project.</p>
+    </div>
+
+    <div class="br-filters fade-up" id="brFilters">
+      <button class="br-chip active" data-cat="all">All Brands</button>
+      <button class="br-chip" data-cat="mechanical">Mechanical</button>
+      <button class="br-chip" data-cat="plumbing">Plumbing</button>
+      <button class="br-chip" data-cat="electrical">Electrical</button>
+      <button class="br-chip" data-cat="safety">Safety</button>
+    </div>
+
+    <div class="br-grid fade-up" id="brGrid">
+      <div class="br-card" data-cat="plumbing"><img src="./images/01.png" alt="Interpipe"></div>
+      <div class="br-card" data-cat="mechanical"><img src="./images/02.png" alt="Jasco"></div>
+      <div class="br-card" data-cat="mechanical"><img src="./images/03.png" alt="Jazeera Steel"></div>
+      <div class="br-card" data-cat="mechanical"><img src="./images/05.png" alt="Kofco"></div>
+      <div class="br-card" data-cat="plumbing"><img src="./images/07.png" alt="Watts"></div>
+      <div class="br-card" data-cat="plumbing"><img src="./images/06.png" alt="Cla-Val"></div>
+      <div class="br-card" data-cat="mechanical"><img src="./images/08.png" alt="Mueller Industries"></div>
+      <div class="br-card" data-cat="electrical"><img src="./images/schinder.png" alt="Schneider"></div>
+      <div class="br-card" data-cat="plumbing"><img src="./images/nibco.svg" alt="Nibco"></div>
+      <div class="br-card" data-cat="plumbing"><a href="https://www.grohe.com/en-GB" target="_blank"><img src="./images/grohe-logo-new.png" alt="Grohe"></a></div>
+      <div class="br-card" data-cat="electrical"><a href="https://www.bosch.in/" target="_blank"><img src="./images/Bosch-logo.png" alt="Bosch"></a></div>
+      <div class="br-card" data-cat="electrical"><img src="./images/Makita-logo.png" alt="Makita"></div>
+      <div class="br-card" data-cat="electrical"><img src="./images/ABB_logo.png" alt="ABB"></div>
+      <div class="br-card" data-cat="electrical"><img src="./images/Siemens_AG_logo.svg.png" alt="Siemens"></div>
+      <div class="br-card" data-cat="electrical"><img src="./images/Legrand-logo.jpg" alt="Legrand"></div>
+      <div class="br-card" data-cat="electrical"><img src="./images/hager.jpg" alt="Hager"></div>
+      <div class="br-more" id="brMore">
+        <span>and more leading brands...</span>
+        <span class="br-next"><i class="fa-solid fa-chevron-right"></i></span>
+      </div>
+    </div>
+
+    <div class="br-trust fade-up">
+      <div class="br-trust-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+          <h5>Genuine Products</h5>
+          <p>Authorized Supply Channels</p>
+        </div>
+      </div>
+      <div class="br-trust-item">
+        <i class="fa-solid fa-globe"></i>
+        <div>
+          <h5>Global Manufacturers</h5>
+          <p>International Quality Standards</p>
+        </div>
+      </div>
+      <div class="br-trust-item">
+        <i class="fa-solid fa-handshake"></i>
+        <div>
+          <h5>Long-term Partnerships</h5>
+          <p>Built on Trust</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  /* ── Brands filter logic ── */
+  (function () {
+    const chips = document.querySelectorAll('#brFilters .br-chip');
+    const cards = document.querySelectorAll('#brGrid .br-card');
+    const more = document.getElementById('brMore');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        const cat = chip.dataset.cat;
+        cards.forEach(card => {
+          card.classList.toggle('hidden', cat !== 'all' && card.dataset.cat !== cat);
+        });
+        more.classList.toggle('hidden', cat !== 'all');
+      });
+    });
+  })();
+</script>
+
+<!-- ============== FOOTER ============== -->
+<style>
+  /* ── Footer redesign ── */
+  .ft2 {
+    position: relative;
+    background:
+      radial-gradient(ellipse at 0% 100%, rgba(14, 100, 160, 0.25), transparent 55%),
+      radial-gradient(ellipse at 100% 0%, rgba(14, 100, 160, 0.12), transparent 50%),
+      linear-gradient(180deg, #051726 0%, #041220 100%);
+    color: #cfe3f0;
+    overflow: hidden;
+  }
+  .ft2-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 70px 48px 50px;
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr 0.95fr 1.1fr 1.05fr;
+    gap: 44px;
+  }
+
+  /* Brand column */
+  .ft2-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .ft2-brand-row img {
+    height: 92px;
+    width: auto;
+  }
+  .ft2-brand-name {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.15;
+  }
+  .ft2-brand-sub {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #9fc3da;
+    line-height: 1.5;
+  }
+  .ft2-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #b7d0e0;
+    margin: 0 0 26px;
+    max-width: 330px;
+  }
+  .ft2-badges {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+  .ft2-badge {
+    text-align: center;
+    max-width: 74px;
+  }
+  .ft2-badge span {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 248, 0.35);
+    background: rgba(14, 100, 160, 0.12);
+    color: #7dd3f8;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .ft2-badge:hover span {
+    background: #0ea5e9;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+  .ft2-badge small {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #b7d0e0;
+    line-height: 1.5;
+  }
+  .ft2-script {
+    font-family: 'Segoe Script', 'Brush Script MT', cursive;
+    font-size: 1.5rem;
+    color: #9fc3da;
+    display: inline-block;
+    padding-bottom: 14px;
+    position: relative;
+  }
+  .ft2-script::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    bottom: 0;
+    width: 56px;
+    height: 2px;
+    background: #38bdf8;
+  }
+
+  /* Link columns */
+  .ft2 h5 {
+    color: #fff;
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    position: relative;
+  }
+  .ft2 h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 38px;
+    height: 3px;
+    border-radius: 2px;
+    background: #38bdf8;
+  }
+  .ft2 ul.ft2-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .ft2 ul.ft2-links li { margin-bottom: 13px; }
+  .ft2 ul.ft2-links a {
+    color: #b7d0e0;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.15s, padding-left 0.15s;
+  }
+  .ft2 ul.ft2-links a:hover { color: #38bdf8; padding-left: 4px; }
+
+  /* Contact column */
+  .ft2-citem {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #b7d0e0;
+  }
+  .ft2-citem i {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 248, 0.35);
+    background: rgba(14, 100, 160, 0.12);
+    color: #7dd3f8;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ft2-citem a { color: #b7d0e0; }
+  .ft2-citem a:hover { color: #38bdf8; }
+
+  /* Newsletter + social */
+  .ft2-news-desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #b7d0e0;
+    margin: 0 0 20px;
+  }
+  .ft2-news-row {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(125, 211, 248, 0.3);
+    background: rgba(6, 24, 40, 0.6);
+    margin-bottom: 10px;
+  }
+  .ft2-news-row input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: inherit;
+    padding: 14px 16px;
+    outline: none;
+  }
+  .ft2-news-row input::placeholder { color: #6f95ad; }
+  .ft2-news-row button {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0ea5e9;
+    color: #fff;
+    border: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+    padding: 0 22px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .ft2-news-row button:hover { background: #0284c7; }
+  .ft2-news-note {
+    font-size: 0.78rem;
+    color: #7d9db5;
+    margin: 0 0 34px;
+  }
+  .ft2-follow {
+    display: flex;
+    gap: 12px;
+  }
+  .ft2-follow a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 248, 0.35);
+    background: rgba(14, 100, 160, 0.12);
+    color: #cfe6f5;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .ft2-follow a:hover {
+    background: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+  .ft2-map {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 34px;
+  }
+  .ft2-map svg { flex-shrink: 0; }
+  .ft2-map small {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #9fc3da;
+    line-height: 1.9;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .ft2-map small::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 34px;
+    height: 2px;
+    background: #38bdf8;
+  }
+
+  /* Trust row */
+  .ft2-trust {
+    position: relative;
+    z-index: 1;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 26px 48px;
+    border-top: 1px solid rgba(125, 211, 248, 0.15);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .ft2-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 28px;
+    border-left: 1px solid rgba(125, 211, 248, 0.15);
+  }
+  .ft2-trust-item:first-child { border-left: none; padding-left: 0; }
+  .ft2-trust-item i { font-size: 1.8rem; color: #38bdf8; flex-shrink: 0; }
+  .ft2-trust-item h6 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 4px; }
+  .ft2-trust-item p { color: #8fb3c9; font-size: 0.85rem; margin: 0; }
+
+  /* Bottom bar */
+  .ft2-bottom {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(125, 211, 248, 0.15);
+    background: rgba(3, 14, 26, 0.6);
+  }
+  .ft2-bottom-inner {
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .ft2-bottom p { margin: 0; font-size: 0.85rem; color: #8fb3c9; }
+  .ft2-legal {
+    display: flex;
+    align-items: center;
+  }
+  .ft2-legal a {
+    color: #b7d0e0;
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 0 18px;
+    border-left: 1px solid rgba(125, 211, 248, 0.2);
+  }
+  .ft2-legal a:first-child { border-left: none; }
+  .ft2-legal a:hover { color: #38bdf8; }
+  .ft2-loc {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  .ft2-loc span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #b7d0e0;
+  }
+  .ft2-loc span i { color: #38bdf8; }
+  .ft2-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    color: #b7d0e0;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .ft2-top span.circ {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 248, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7dd3f8;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .ft2-top:hover span.circ {
+    background: #0ea5e9;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 1200px) {
+    .ft2-inner { grid-template-columns: 1fr 1fr; gap: 40px; padding: 56px 32px 44px; }
+    .ft2-trust { grid-template-columns: repeat(2, 1fr); gap: 20px 0; padding: 22px 32px; }
+    .ft2-trust-item:nth-child(3) { border-left: none; padding-left: 0; }
+  }
+  @media (max-width: 640px) {
+    .ft2-inner { grid-template-columns: 1fr; padding: 46px 22px 38px; }
+    .ft2-trust { grid-template-columns: 1fr; padding: 18px 22px; }
+    .ft2-trust-item { border-left: none; padding-left: 0; padding-top: 12px; padding-bottom: 12px; }
+    .ft2-bottom-inner { flex-direction: column; text-align: center; padding: 16px 22px; }
+  }
+  /* ---- Back to Home pill (top of hero) ---- */
+  .back-home {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px; margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.4px;
+    text-decoration: none;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    transition: background .18s ease, transform .18s ease, color .18s ease;
+  }
+  .back-home i { font-size: 11px; transition: transform .18s ease; }
+  .back-home:hover { background: #fff; color: #14294c; transform: translateX(-2px); }
+  .back-home:hover i { transform: translateX(-2px); }
+</style>
+<footer class="ft2">
+  <div class="ft2-inner">
+
+    <!-- Brand column -->
+    <div>
+      <div class="ft2-brand-row">
+        <img src="./images/logo.png" alt="Mashriq Logo">
+        <div>
+          <span class="ft2-brand-name" data-i18n="brand_name">MASHRIQ</span>
+          <span class="ft2-brand-sub" data-i18n="brand_sub">Almuqaddimah Company<br>For Contracting</span>
+        </div>
+      </div>
+      <p class="ft2-desc" data-i18n="footer_company_desc">Your trusted partner for MEP and safety materials across Saudi Arabia. Quality products, reliable service, timely delivery.</p>
+      <div class="ft2-badges">
+        <div class="ft2-badge">
+          <span><i class="fa-solid fa-shield-halved"></i></span>
+          <small>Quality<br>Products</small>
+        </div>
+        <div class="ft2-badge">
+          <span><i class="fa-solid fa-users"></i></span>
+          <small>Trusted<br>Partners</small>
+        </div>
+        <div class="ft2-badge">
+          <span><i class="fa-solid fa-truck"></i></span>
+          <small>On-Time<br>Delivery</small>
+        </div>
+        <div class="ft2-badge">
+          <span><i class="fa-solid fa-leaf"></i></span>
+          <small>A Safer<br>Tomorrow</small>
+        </div>
+      </div>
+      <span class="ft2-script">Building Better Together</span>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h5 data-i18n="footer_quick_links">Quick Links</h5>
+      <ul class="ft2-links">
+        <li><a href="./mep-home.html" data-i18n="footer_link_home">Home</a></li>
+        <li><a href="./mep-home.html#about" data-i18n="footer_link_about">About Us</a></li>
+        <li><a href="./mep-home.html#products" data-i18n="footer_link_products">Products</a></li>
+        <li><a href="#">Our Sectors</a></li>
+        <li><a href="./brands.html" data-i18n="footer_link_brands">Brands</a></li>
+        <li><a href="./contact.html" data-i18n="footer_link_contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Our Products -->
+    <div>
+      <h5 data-i18n="footer_our_products">Our Products</h5>
+      <ul class="ft2-links">
+        <li><a href="./mep-home.html#products" data-i18n="footer_prod_pipes">Pipes &amp; Fittings</a></li>
+        <li><a href="./mep-home.html#products" data-i18n="footer_prod_valves">Valves &amp; Gauges</a></li>
+        <li><a href="./mep-home.html#products" data-i18n="footer_prod_fire">Fire Safety</a></li>
+        <li><a href="./mep-home.html#products" data-i18n="footer_prod_cpvc">CPVC &amp; UPVC</a></li>
+        <li><a href="./mep-home.html#products" data-i18n="footer_prod_elec">Electrical</a></li>
+        <li><a href="./mep-home.html#products" data-i18n="footer_prod_safe">Safety Equipment</a></li>
+        <li><a href="./mep-home.html#products" data-i18n="footer_prod_sanitary">Sanitaryware</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div>
+      <h5 data-i18n="footer_contact_us">Contact Us</h5>
+      <div class="ft2-citem">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Building No 6599, Street: Abi Bakr Al Siddiq, Al Narjis Dist, RIYADH, Kingdom of Saudi Arabia, Postal Code: 13346</span>
+      </div>
+      <div class="ft2-citem">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+966503046469">+966 5030 46469</a>
+      </div>
+      <div class="ft2-citem">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:sales@mashreq.sa">sales@mashreq.sa</a>
+      </div>
+      <div class="ft2-citem">
+        <i class="fa-regular fa-clock"></i>
+        <span>Sun – Thu: 8:00 AM – 6:00 PM<br>(Closed on Friday)</span>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h5 data-i18n="footer_newsletter_title">Subscribe to Our Newsletter</h5>
+      <p class="ft2-news-desc">Stay updated with our latest products, brands and industry insights.</p>
+      <div class="ft2-news-row">
+        <input type="email" data-i18n="footer_newsletter_placeholder" placeholder="Your email address">
+        <button type="button" data-i18n="footer_newsletter_btn">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <p class="ft2-news-note" data-i18n="footer_newsletter_note">No spam. Unsubscribe anytime.</p>
+
+      <h5>Follow Us</h5>
+      <div class="ft2-follow">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="ft2-map">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <defs>
+            <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1" fill="#2c6e9e"/>
+            </pattern>
+          </defs>
+          <path d="M10.0 41.1 L11.4 35.9 L16.7 34.6 L23.8 32.8 L31.0 24.1 L35.7 26.3 L40.5 28.5 L45.2 28.0 L50.0 30.6 L54.8 33.7 L58.1 36.3 L66.7 36.7 L71.0 39.3 L75.7 41.5 L78.6 42.8 L81.4 45.9 L84.3 47.6 L86.2 50.2 L87.1 54.6 L88.1 55.9 L89.5 56.7 L91.0 57.6 L91.9 58.5 L92.9 63.3 L95.7 65.0 L100.0 65.0 L104.3 65.4 L107.6 64.6 L110.0 67.6 L108.1 72.0 L108.1 76.3 L107.1 78.5 L106.7 80.7 L97.6 80.7 L92.9 80.7 L83.3 81.1 L78.6 82.4 L73.8 85.0 L71.4 87.2 L69.0 87.6 L67.6 88.5 L64.3 88.1 L60.5 87.6 L57.1 87.6 L51.9 87.6 L51.0 89.4 L49.0 92.0 L47.6 94.1 L47.6 95.9 L45.2 93.7 L44.3 91.5 L41.4 87.2 L39.5 82.8 L37.6 79.8 L35.7 77.6 L33.3 74.1 L31.9 70.7 L31.0 68.5 L30.0 66.7 L28.1 63.3 L26.2 61.1 L24.3 58.5 L22.9 56.3 L21.4 54.1 L20.5 52.0 L18.6 49.8 L16.7 48.0 L14.8 45.9 L12.9 43.7 Z" fill="url(#dots)" stroke="#3a97d4" stroke-width="0.8" stroke-linejoin="round"/>
+          <circle cx="67.6" cy="55.9" r="9" fill="rgba(56,189,248,0.18)"/>
+          <path d="M67.6 45.9c-4.7 0-8.5 3.8-8.5 8.5 0 6.4 8.5 14 8.5 14s8.5-7.6 8.5-14c0-4.7-3.8-8.5-8.5-8.5z" fill="#38bdf8"/>
+          <circle cx="67.6" cy="54.699999999999996" r="3" fill="#041220"/>
+        </svg>
+        <small>Supporting<br>Projects Across<br>Saudi Arabia</small>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Trust row -->
+  <div class="ft2-trust">
+    <div class="ft2-trust-item">
+      <i class="fa-solid fa-globe"></i>
+      <div>
+        <h6>Trusted Global Brands</h6>
+        <p>Quality products from leading manufacturers</p>
+      </div>
+    </div>
+    <div class="ft2-trust-item">
+      <i class="fa-solid fa-gear"></i>
+      <div>
+        <h6>Reliable Supply Chain</h6>
+        <p>On-time delivery, every time</p>
+      </div>
+    </div>
+    <div class="ft2-trust-item">
+      <i class="fa-solid fa-users"></i>
+      <div>
+        <h6>People Focused</h6>
+        <p>Building safer communities</p>
+      </div>
+    </div>
+    <div class="ft2-trust-item">
+      <i class="fa-solid fa-leaf"></i>
+      <div>
+        <h6>Sustainable Solutions</h6>
+        <p>For a stronger tomorrow</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="ft2-bottom">
+    <div class="ft2-bottom-inner">
+      <p data-i18n="footer_copy">© 2026 MASHRIQ Almuqaddimah Company For Contracting. All rights reserved.</p>
+      <div class="ft2-legal">
+        <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer_terms">Terms of Use</a>
+        <a href="#" data-i18n="footer_sitemap">Sitemap</a>
+      </div>
+      <div class="ft2-loc">
+        <span><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</span>
+        <button class="ft2-top" id="ftBackTop">
+          <span class="circ"><i class="fa-solid fa-arrow-up"></i></span>
+          Back to Top
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── Footer: back to top ── */
+  document.getElementById('ftBackTop').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- ============== Bootstrap JS ============== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ============== Translation Logic ============== -->
+<script src="translations.js?v=6"></script>
+<!-- ============== Site Scripts ============== -->
+<script>
+
+
+
+ 
+// Mobile nav
+const mobBurger  = document.getElementById('mobBurger');
+const mobClose   = document.getElementById('mobClose');
+const mobOverlay = document.getElementById('mobOverlay');
+const mobAccBtn  = document.getElementById('mobAccBtn');
+const mobAccBody = document.getElementById('mobAccBody');
+const langToggleMob = document.getElementById('langToggleMob');
+ 
+function openMobMenu() {
+  mobOverlay.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobMenu() {
+  mobOverlay.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+ 
+if (mobBurger)  mobBurger.addEventListener('click', openMobMenu);
+if (mobClose)   mobClose.addEventListener('click', closeMobMenu);
+ 
+// Close on link click
+if (mobOverlay) {
+  mobOverlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobMenu);
+  });
+}
+ 
+// Accordion
+if (mobAccBtn && mobAccBody) {
+  mobAccBtn.addEventListener('click', () => {
+    mobAccBody.classList.toggle('open');
+  });
+}
+ 
+// Lang toggle
+if (langToggleMob) {
+  langToggleMob.addEventListener('click', () => {
+    if (typeof toggleLanguage === 'function') toggleLanguage();
+    const isRtl = document.documentElement.dir === 'rtl';
+    langToggleMob.textContent = isRtl ? 'English' : 'عربي';
+  });
+}
+
+
+// Mobile sectors accordion
+document.addEventListener('DOMContentLoaded', () => {
+  const parent = document.querySelector('.nav-dropdown-parent');
+  if (!parent) return;
+  parent.querySelector('.nav-link-sectors').addEventListener('click', e => {
+    if (window.innerWidth < 992) {
+      e.preventDefault();
+      parent.classList.toggle('open');
+    }
+  });
+
+  // Sync both langToggle buttons
+  document.querySelectorAll('#langToggle, #langToggleMobile').forEach(btn => {
+    btn.addEventListener('click', toggleLanguage);
+  });
+});
+  // Initialize Bootstrap tooltip
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+
+  
+  // Scroll-reveal animation
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting)),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

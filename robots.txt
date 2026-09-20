@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /index.html
+Allow: /mep-home.html
+
+Sitemap: https://www.mashreq.sa/sitemap.xml

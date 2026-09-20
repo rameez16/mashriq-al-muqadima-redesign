@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://www.mashreq.sa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mashreq.sa/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.mashreq.sa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mashreq.sa/"/>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mashreq.sa/mep-home.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.mashreq.sa/mep-home.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.mashreq.sa/mep-home.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.mashreq.sa/mep-home.html"/>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mashreq.sa/aboutus.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mashreq.sa/products.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mashreq.sa/brands.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mashreq.sa/sectors.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mashreq.sa/contact.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.mashreq.sa/get-quote.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us · Mashreq MEP & Safety</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css?v=10">
+  <style>
+    :root {
+      --ab-navy: #0d2a45;
+      --ab-blue: #0e8ce4;
+      --ab-blue-light: #2fb1f0;
+      --ab-ice: #f4f8fb;
+      --ab-line: #e3ebf2;
+      --ab-muted: #5c7080;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #fff;
+      color: var(--ab-navy);
+      overflow-x: hidden;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ── HERO ── */
+    .ab-hero {
+      position: relative;
+      min-height: 780px;
+      display: flex;
+      align-items: center;
+      background: url('./images/about-engineer.png') center 8% / cover no-repeat;
+      overflow: hidden;
+    }
+    .ab-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(95deg,
+        rgba(244, 248, 251, 0.98) 0%,
+        rgba(244, 248, 251, 0.95) 34%,
+        rgba(244, 248, 251, 0.78) 52%,
+        rgba(244, 248, 251, 0.08) 78%);
+    }
+    .ab-hero-inner {
+      position: relative; z-index: 2;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 215px 28px 80px;
+    }
+    .ab-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 3px;
+      color: var(--ab-blue); text-transform: uppercase; margin-bottom: 16px;
+    }
+    .ab-eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--ab-blue); }
+    .ab-hero h1 {
+      font-size: clamp(2.4rem, 4.6vw, 3.6rem);
+      font-weight: 800; color: var(--ab-navy);
+      line-height: 1.08; max-width: 620px; margin-bottom: 22px;
+    }
+    .ab-hero h1 span { color: var(--ab-blue); }
+    .ab-hero-sub {
+      color: var(--ab-muted); font-size: 1.05rem; line-height: 1.75;
+      max-width: 540px; margin-bottom: 34px;
+    }
+    .ab-feats { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+    .ab-feat { display: flex; align-items: center; gap: 12px; }
+    .ab-feat + .ab-feat { border-left: 1px solid var(--ab-line); padding-left: 26px; }
+    .ab-feat-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: #fff; border: 1px solid var(--ab-line);
+      color: var(--ab-blue); display: grid; place-items: center;
+      font-size: 1.05rem; flex: none;
+      box-shadow: 0 6px 14px rgba(14, 140, 228, 0.10);
+    }
+    .ab-feat b { display: block; font-size: 0.92rem; color: var(--ab-navy); line-height: 1.25; }
+
+    .ab-vertical {
+      position: absolute; right: 34px; top: 50%; transform: translateY(-50%);
+      z-index: 2; writing-mode: vertical-rl;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 5px;
+      text-transform: uppercase; color: rgba(13, 42, 69, 0.75);
+      display: flex; align-items: center; gap: 18px;
+    }
+    .ab-vertical::after {
+      content: ''; width: 2px; height: 56px;
+      background: linear-gradient(180deg, var(--ab-blue), transparent);
+      margin-top: 14px;
+    }
+
+    /* ── STORY ── */
+    .ab-story { background: var(--ab-ice); padding: 90px 28px; border-top: 1px solid var(--ab-line); }
+    .ab-story-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.05fr 1fr; gap: 40px; align-items: stretch; }
+    .ab-story h2 {
+      font-size: clamp(1.9rem, 3vw, 2.5rem); font-weight: 800;
+      color: var(--ab-navy); line-height: 1.15; margin-bottom: 20px;
+    }
+    .ab-story h2 span { color: var(--ab-blue); display: block; }
+    .ab-story-copy p { color: var(--ab-muted); font-size: 0.98rem; line-height: 1.8; margin-bottom: 14px; }
+    .ab-checklist { list-style: none; padding: 0; margin: 8px 0 26px; }
+    .ab-checklist li {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 7px 0; font-size: 0.9rem; color: #43596b; line-height: 1.5;
+    }
+    .ab-checklist i { color: var(--ab-blue); font-size: 0.8rem; margin-top: 4px; }
+    .ab-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(90deg, var(--ab-blue), var(--ab-blue-light));
+      color: #fff; font-weight: 600; font-size: 0.95rem;
+      padding: 13px 26px; border-radius: 8px;
+      box-shadow: 0 10px 24px rgba(14, 140, 228, 0.32);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .ab-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(14, 140, 228, 0.42); color: #fff; }
+
+    .ab-story-img { position: relative; border-radius: 16px; overflow: hidden; min-height: 420px; box-shadow: 0 24px 50px rgba(13, 42, 69, 0.16); }
+    .ab-story-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ab-img-badge {
+      position: absolute; left: 0; bottom: 34px;
+      background: rgba(10, 34, 56, 0.88); backdrop-filter: blur(6px);
+      color: #fff; padding: 22px 26px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
+      max-width: 220px;
+    }
+    .ab-img-badge::before { content: ''; display: block; width: 30px; height: 2px; background: var(--ab-blue-light); margin-bottom: 12px; }
+    .ab-img-badge span {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 3px;
+      text-transform: uppercase; line-height: 1.9;
+    }
+
+    .ab-vm-cards { display: flex; flex-direction: column; gap: 18px; justify-content: center; }
+    .ab-vm-card {
+      background: #fff; border: 1px solid var(--ab-line); border-radius: 14px;
+      padding: 20px 22px; display: flex; gap: 16px; align-items: flex-start;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .ab-vm-card:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(13, 42, 69, 0.10); }
+    .ab-vm-icon {
+      width: 50px; height: 50px; border-radius: 50%; flex: none;
+      background: #e3f2fc; color: var(--ab-blue);
+      display: grid; place-items: center; font-size: 1.15rem;
+    }
+    .ab-vm-card h4 { font-size: 1.08rem; font-weight: 700; color: var(--ab-navy); margin-bottom: 6px; }
+    .ab-vm-card p { font-size: 0.88rem; color: var(--ab-muted); line-height: 1.65; margin: 0; }
+
+    /* ── VALUES ── */
+    .ab-values { background: #fff; padding: 90px 28px; }
+    .ab-values-inner { max-width: 1280px; margin: 0 auto; }
+    .ab-values-head { max-width: 620px; margin-bottom: 44px; }
+    .ab-values-head h2 { font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 800; color: var(--ab-navy); margin-bottom: 12px; }
+    .ab-values-head h2 span { color: var(--ab-blue); }
+    .ab-values-head p { color: var(--ab-muted); font-size: 0.98rem; }
+    .ab-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .ab-value-card {
+      background: var(--ab-ice); border: 1px solid var(--ab-line); border-radius: 14px;
+      padding: 28px 26px; transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .ab-value-card:hover { transform: translateY(-5px); background: #fff; box-shadow: 0 18px 38px rgba(13, 42, 69, 0.10); }
+    .ab-value-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .ab-value-top i { color: var(--ab-blue); font-size: 1.3rem; }
+    .ab-value-top span { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; color: #9fb3c2; }
+    .ab-value-card h4 { font-size: 1.05rem; font-weight: 700; color: var(--ab-navy); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 8px; }
+    .ab-value-card p { font-size: 0.9rem; color: var(--ab-muted); line-height: 1.7; margin: 0; }
+
+    /* ── IMPACT ── */
+    .ab-impact { position: relative; background: #0a2238; overflow: hidden; }
+    .ab-impact::before {
+      content: ''; position: absolute; inset: 0;
+      background: url('./images/hq-skyline.png') center / cover no-repeat;
+      opacity: 0.28;
+    }
+    .ab-impact::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(8, 26, 44, 0.92) 0%, rgba(8, 26, 44, 0.55) 55%, rgba(8, 26, 44, 0.85) 100%);
+    }
+    .ab-impact-inner {
+      position: relative; z-index: 2;
+      max-width: 1280px; margin: 0 auto; padding: 70px 28px;
+      display: flex; align-items: center; gap: 50px; flex-wrap: wrap;
+    }
+    .ab-impact-copy { flex: 1 1 380px; color: #fff; }
+    .ab-impact-copy .ab-eyebrow { color: var(--ab-blue-light); }
+    .ab-impact-copy .ab-eyebrow::before { background: var(--ab-blue-light); }
+    .ab-impact-copy h2 { font-size: clamp(1.7rem, 2.6vw, 2.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 14px; }
+    .ab-impact-copy p { color: rgba(255, 255, 255, 0.72); font-size: 0.95rem; line-height: 1.7; max-width: 420px; }
+    .ab-stats { flex: 2 1 560px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .ab-stat { padding: 10px 26px; text-align: left; }
+    .ab-stat + .ab-stat { border-left: 1px solid rgba(255, 255, 255, 0.14); }
+    .ab-stat i { color: var(--ab-blue-light); font-size: 1.5rem; margin-bottom: 12px; }
+    .ab-stat b { display: block; font-size: 1.55rem; font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 6px; }
+    .ab-stat small { display: block; color: rgba(255, 255, 255, 0.65); font-size: 0.82rem; line-height: 1.4; }
+
+    /* ── FOOTER ── */
+    .mini-footer {
+      background: var(--ab-ice); border-top: 1px solid var(--ab-line);
+      padding: 26px 28px; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 14px;
+    }
+    .mini-footer p { font-size: 0.78rem; color: var(--ab-muted); }
+    .mini-footer .links a {
+      font-size: 0.78rem; font-weight: 600; color: var(--ab-muted);
+      margin-left: 22px; text-transform: uppercase; letter-spacing: 0.6px;
+      transition: color 0.2s;
+    }
+    .mini-footer .links a:hover { color: var(--ab-blue); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: 0.08s; }
+    .fade-up:nth-child(3) { transition-delay: 0.16s; }
+    .fade-up:nth-child(4) { transition-delay: 0.24s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1120px) {
+      .ab-story-inner { grid-template-columns: 1fr 1fr; }
+      .ab-vm-cards { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .ab-hero-inner { padding-top: 195px; }
+      .ab-vertical { display: none; }
+      .ab-story-inner { grid-template-columns: 1fr; }
+      .ab-story-img { min-height: 320px; }
+      .ab-vm-cards { grid-template-columns: 1fr; }
+      .ab-values-grid { grid-template-columns: 1fr 1fr; }
+      .ab-stats { grid-template-columns: 1fr 1fr; gap: 26px 0; }
+      .ab-stat:nth-child(3) { border-left: 0; }
+    }
+    @media (max-width: 560px) {
+      .ab-feat + .ab-feat { border-left: 0; padding-left: 0; }
+      .ab-values-grid { grid-template-columns: 1fr; }
+      .ab-stats { grid-template-columns: 1fr; }
+      .ab-stat + .ab-stat { border-left: 0; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 22px; }
+      .ab-impact-inner { padding: 54px 24px; }
+      .ab-story, .ab-values { padding: 60px 24px; }
+    }
+  </style>
+  <!-- ============== NAV2 (same as index) ============== -->
+<style>
+    /* ── Navbar redesign (mockup style) ── */
+    .nav2-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+    }
+    .nav2-utility {
+      background: rgba(6, 20, 34, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #cfe6f5;
+      font-size: 0.82rem;
+    }
+    .nav2-utility-inner {
+      max-width: 1780px;
+      margin: 0 auto;
+      padding: 8px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .nav2-u-left,
+    .nav2-u-right {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav2-u-left li,
+    .nav2-u-right li {
+      display: flex;
+      align-items: center;
+    }
+    .nav2-u-left li:not(:first-child)::before,
+    .nav2-u-right li:not(:first-child)::before {
+      content: '';
+      width: 1px;
+      height: 12px;
+      background: rgba(207, 230, 245, 0.3);
+      margin: 0 16px;
+    }
+    .nav2-u-left a,
+    .nav2-u-right a,
+    .nav2-u-right span {
+      color: #cfe6f5;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .nav2-u-left a:hover,
+    .nav2-u-right a:hover { color: #38bdf8; }
+    .nav2-u-right i { color: #38bdf8; margin-right: 7px; }
+    .nav2-u-soc {
+      display: flex;
+      gap: 14px;
+      margin-left: 18px;
+    }
+    .nav2-u-soc a {
+      color: #9fc3da;
+      font-size: 0.95rem;
+    }
+    .nav2-u-soc a:hover { color: #38bdf8; }
+
+    /* Floating glass navbar */
+    .nav2-main {
+      margin: 10px auto 0;
+      max-width: 1780px;
+      background: linear-gradient(120deg, rgba(240, 246, 251, 0.97) 0%, rgba(219, 233, 244, 0.93) 55%, rgba(205, 224, 239, 0.9) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 12px;
+      box-shadow: 0 10px 34px rgba(2, 12, 24, 0.35);
+    }
+    .nav2-main-inner {
+      max-width: 1780px;
+      margin: 0 auto;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .nav2-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav2-brand img {
+      height: 110px;
+      width: auto;
+    }
+    .nav2-brand-name {
+      display: block;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: #0d1b2a;
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+    }
+    .nav2-brand-sub {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #4a5c6d;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+    .nav2-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav2-link {
+      position: relative;
+      display: block;
+      padding: 12px 13px;
+      color: #14293c;
+      font-size: 1.08rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav2-link:hover { color: #0ea5e9; }
+    .nav2-link.active { color: #0ea5e9; }
+    .nav2-link.active::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 4px;
+      height: 2px;
+      border-radius: 2px;
+      background: #0ea5e9;
+    }
+    .nav2-dd {
+      position: relative;
+    }
+    .nav2-dd > .nav2-link::after {
+      content: '▾';
+      font-size: 0.65rem;
+      margin-left: 5px;
+    }
+    .nav2-dd-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 230px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 16px 44px rgba(2, 12, 24, 0.25);
+      padding: 8px 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.18s, transform 0.18s;
+      z-index: 1100;
+    }
+    .nav2-dd:hover .nav2-dd-menu,
+    .nav2-dd:focus-within .nav2-dd-menu {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+    .nav2-dd-menu a {
+      display: block;
+      padding: 10px 18px;
+      color: #14293c;
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .nav2-dd-menu a:hover { background: #eaf4fb; color: #0ea5e9; }
+
+    .nav2-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .nav2-icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(20, 41, 60, 0.18);
+      background: rgba(255, 255, 255, 0.55);
+      color: #14293c;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .nav2-icon-btn:hover {
+      background: #0ea5e9;
+      border-color: #0ea5e9;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .nav2-icon-btn.dl { position: relative; }
+    .nav2-icon-btn.dl::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #0e8ce4;
+      border: 2px solid #eef4f9;
+    }
+    .nav2-sep {
+      width: 1px;
+      height: 26px;
+      background: rgba(20, 41, 60, 0.18);
+    }
+    .nav2-lang {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: none;
+      border: none;
+      color: #14293c;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .nav2-lang:hover { color: #0ea5e9; }
+    .nav2-quote {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: #0e8ce4;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px 26px;
+      border-radius: 9px;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(14, 140, 228, 0.4);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav2-quote:hover {
+      background: #0b74c2;
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    /* Push page content below fixed nav */
+    body { padding-top: 0 !important; }
+    #navbar.navbar-custom { display: none !important; }
+
+    @media (max-width: 1140px) {
+      .nav2-links { display: none; }
+    }
+    @media (max-width: 768px) {
+      .nav2-utility-inner { padding: 6px 16px; font-size: 0.72rem; }
+      .nav2-u-left { display: none; }
+      .nav2-main { margin: 8px 12px 0; }
+      .nav2-right .nav2-quote { padding: 11px 16px; font-size: 0.85rem; }
+      .nav2-icon-btn { width: 38px; height: 38px; font-size: 0.85rem; }
+      .nav2-sep { display: none; }
+    }
+    /* ---- Back to Home pill (top of hero) ---- */
+  .back-home {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px; margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.4px;
+    text-decoration: none;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    transition: background .18s ease, transform .18s ease, color .18s ease;
+  }
+  .back-home i { font-size: 11px; transition: transform .18s ease; }
+  .back-home:hover { background: #fff; color: #14294c; transform: translateX(-2px); }
+  .back-home:hover i { transform: translateX(-2px); }
+  /* ---- Back to Home pill on light heroes: dark bluish tint ---- */
+  .back-home.on-light {
+    background: rgba(20, 41, 76, 0.82);
+    border: 1px solid rgba(125, 211, 248, 0.45);
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(13, 42, 69, 0.25);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  }
+  .back-home.on-light i { color: #7dd3f8; }
+  .back-home.on-light:hover { background: #0e8ce4; border-color: #0e8ce4; color: #fff; }
+  .back-home.on-light:hover i { color: #fff; }
+</style>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    html[lang="ar"] body, html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] h5, html[lang="ar"] h6,
+    html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] b, html[lang="ar"] small, html[lang="ar"] li, html[lang="ar"] a, html[lang="ar"] button { font-family: 'Tajawal', 'DM Sans', sans-serif !important; }
+    html[lang="ar"] h1 { font-size: calc(1em * 0.94); line-height: 1.35; }
+    html[lang="ar"] h2 { line-height: 1.4; }
+    html[lang="ar"] * { letter-spacing: 0 !important; }
+    html[lang="ar"] a[href^="tel"], html[lang="ar"] a[href^="mailto"], html[lang="ar"] .ab-vertical { direction: ltr; unicode-bidi: embed; }
+    html[lang="ar"] .ab-checklist li i { margin-left: 10px; margin-right: 0; }
+    html[dir="rtl"] .fa-arrow-right { transform: scaleX(-1); }
+  </style>
+</head>
+<body>
+
+<div class="nav2-wrap">
+    <div class="nav2-utility">
+      <div class="nav2-utility-inner">
+        <ul class="nav2-u-left">
+          <li><a href="./mep-home.html#products">MEP Supply</a></li>
+          <li><a href="./mep-home.html#about" data-i18n="sect_link1">Trading &amp; Contracting</a></li>
+          <li><a href="./mep-home.html">Mashriq Group</a></li>
+        </ul>
+        <ul class="nav2-u-right">
+          <li><span><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</span></li>
+          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i> +966 5030 46469</a></li>
+          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i> sales@mashreq.sa</a></li>
+          <li>
+            <span class="nav2-u-soc">
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="nav2-main">
+      <div class="nav2-main-inner">
+        <a href="./mep-home.html" class="nav2-brand">
+          <img src="./images/logo.png" alt="Mashreq Logo">
+          <span>
+            <span class="nav2-brand-name" data-i18n="brand_name">MASHRIQ</span>
+            <span class="nav2-brand-sub" data-i18n="brand_tagline">Almuqaddimah Company<br>For Contracting</span>
+          </span>
+        </a>
+
+        <ul class="nav2-links">
+          <li><a class="nav2-link" href="./mep-home.html" data-i18n="nav_home">Home</a></li>
+          <li><a class="nav2-link active" href="./aboutus.html" data-i18n="nav_about">About</a></li>
+          <li class="nav2-dd">
+            <a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a>
+          </li>
+          <li class="nav2-dd">
+            <a class="nav2-link" href="#">Our Sectors</a>
+            <div class="nav2-dd-menu">
+              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
+              <a href="./sectors.html" data-i18n="sect_link2">Mashreq Rentals</a>
+              <a href="./sectors.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+              <a href="./sectors.html" data-i18n="sect_link4">Mashreq Facility Management</a>
+            </div>
+          </li>
+          <li><a class="nav2-link" href="./brands.html" data-i18n="nav_brands">Brands</a></li>
+          <li><a class="nav2-link" href="./contact.html" data-i18n="nav_contact">Contact</a></li>
+          <li><a class="nav2-link" href="./mep-home.html">Mashriq Group</a></li>
+        </ul>
+
+        <div class="nav2-right">
+          <button class="nav2-icon-btn" title="Search" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <a class="nav2-icon-btn dl" href="files/a4%20brochure%20final.pdf" download title="Downloads / Catalogue" aria-label="Download Brochure"><i class="fa-solid fa-download"></i></a>
+          <button class="nav2-icon-btn" title="Account" aria-label="Profile"><i class="fa-regular fa-user"></i></button>
+          <span class="nav2-sep"></span>
+          <button class="nav2-lang" id="langToggle" title="Toggle Language">
+            <i class="fa-solid fa-globe"></i> عربي
+          </button>
+          <a class="nav2-quote" href="./get-quote.html" data-i18n="nav_quote">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<!-- ============== NAVBAR ============== -->
+
+
+  
+<nav class="mob-nav" id="mobNav">
+  <div class="mob-nav-bar">
+
+    <!-- Brand -->
+    <a href="./mep-home.html" class="mob-brand">
+      <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
+      <div class="mob-brand-info">
+        <span class="mob-brand-name">MASHRIQ</span>
+        <span class="mob-brand-tagline" data-i18n="brand_tagline">Almuqaddimah Company For Contracting</span>
+        <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
+      </div>
+    </a>
+
+    <!-- Hamburger -->
+    <button class="mob-burger" id="mobBurger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Full overlay menu -->
+  <div class="mob-overlay" id="mobOverlay">
+    <div class="mob-overlay-inner">
+
+      <!-- Top row in overlay -->
+      <div class="mob-overlay-top">
+        <a href="./mep-home.html" class="mob-brand">
+          <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
+          <div class="mob-brand-info">
+            <span class="mob-brand-name">MASHRIQ</span>
+            <span class="mob-brand-tagline" data-i18n="brand_tagline">Almuqaddimah Company For Contracting</span>
+            <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
+          </div>
+        </a>
+        <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Links -->
+      <ul class="mob-menu-links">
+        <li><a href="./mep-home.html" class="mob-menu-link active"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a></li>
+        <li><a href="./aboutus.html" class="mob-menu-link"><i class="fa-solid fa-building"></i><span data-i18n="nav_about">About Us</span></a></li>
+        <li>
+          <button class="mob-menu-link mob-acc-btn" id="mobAccBtn" aria-expanded="false" aria-controls="mobAccBody">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span data-i18n="nav_sectors">Our Sectors</span>
+            <i class="fa-solid fa-chevron-down mob-chev"></i>
+          </button>
+          <div class="mob-acc-body" id="mobAccBody">
+            <a href="./mep-home.html" class="mob-sub-link" data-i18n="sect_link1">Trading &amp; Contracting</a>
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
+          </div>
+        </li>
+        <li><a href="./products.html" class="mob-menu-link"><i class="fa-solid fa-box-open"></i><span data-i18n="nav_products">Our Products</span></a></li>
+        <li><a href="./brands.html" class="mob-menu-link"><i class="fa-solid fa-file-lines"></i><span data-i18n="nav_brands">Brands</span></a></li>
+        <li><a href="./contact.html" class="mob-menu-link"><i class="fa-solid fa-envelope"></i><span data-i18n="nav_contact">Contact Us</span></a></li>
+      </ul>
+
+      <!-- Contact block -->
+      <div class="mob-contact">
+        <a href="tel:+966503046469"><i class="fa-solid fa-phone"></i>+966 50 304 6469</a>
+        <a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a>
+        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i>Riyadh, Saudi Arabia</span>
+      </div>
+
+      <!-- Socials -->
+      <div class="mob-socials">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <!-- Bottom actions -->
+      <div class="mob-overlay-footer">
+        <a href="./get-quote.html" class="mob-cta-btn"><span data-i18n="nav_quote">Get a Quote</span> <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="mob-lang-btn" id="langToggleMob" data-i18n="nav_lang">عربي</button>
+      </div>
+
+      <div class="mob-tagline-bottom" data-i18n="tagline_people">People · Projects · Progress</div>
+
+    </div>
+  </div>
+</nav>
+ 
+  
+  <!-- ============== NAVBAR ============== -->
+  
+
+  
+  <!-- ============== HERO ============== -->
+  <section class="ab-hero">
+    <div class="ab-hero-inner">
+    <a href="./mep-home.html" class="back-home on-light"><i class="fa-solid fa-arrow-left"></i><span data-i18n="back_home">Back to Home</span></a>
+    <div class="ab-eyebrow" data-i18n="ab_eyebrow">Company Profile</div>
+      <h1 data-i18n="ab_h1">A Reliable Partner for<br><span>MEP &amp; Safety</span> Solutions</h1>
+      <p class="ab-hero-sub" data-i18n="ab_hero_sub">
+        We are a trusted and professional trading company specializing in the supply of MEP (Mechanical, Electrical, and Plumbing) and safety materials for residential, commercial, and industrial projects across the Kingdom of Saudi Arabia.
+      </p>
+      <div class="ab-feats">
+        <div class="ab-feat">
+          <span class="ab-feat-icon"><i class="fa-solid fa-handshake"></i></span>
+          <b data-i18n="ab_feat1">Trusted<br>Partnerships</b>
+        </div>
+        <div class="ab-feat">
+          <span class="ab-feat-icon"><i class="fa-solid fa-shield-halved"></i></span>
+          <b data-i18n="ab_feat2">Quality<br>Products</b>
+        </div>
+        <div class="ab-feat">
+          <span class="ab-feat-icon"><i class="fa-solid fa-truck-fast"></i></span>
+          <b data-i18n="ab_feat3">On-Time<br>Delivery</b>
+        </div>
+        <div class="ab-feat">
+          <span class="ab-feat-icon"><i class="fa-solid fa-users"></i></span>
+          <b data-i18n="ab_feat4">Dedicated<br>Support</b>
+        </div>
+      </div>
+    </div>
+    <div class="ab-vertical" data-i18n="ab_vertical">People&nbsp;&nbsp;·&nbsp;&nbsp;Products&nbsp;&nbsp;·&nbsp;&nbsp;Projects&nbsp;&nbsp;·&nbsp;&nbsp;A Safer Tomorrow</div>
+  </section>
+
+  <!-- ============== WHO WE ARE / STORY ============== -->
+  <section class="ab-story">
+    <div class="ab-story-inner">
+
+      <div class="ab-story-copy fade-up">
+        <div class="ab-eyebrow" data-i18n="ab_who">Who We Are</div>
+        <h2 data-i18n="ab_story_h2">Built on Trust.<span>Driven by Responsibility.</span></h2>
+        <p data-i18n="ab_story_p1">
+          Our mission is clear: deliver high-quality products that meet international standards while ensuring reliability, efficiency, and safety in every project we serve.
+        </p>
+        <p data-i18n="ab_story_p2">
+          By partnering with reputable global manufacturers and suppliers, we guarantee consistent quality, competitive pricing, and timely delivery.
+        </p>
+        <ul class="ab-checklist">
+          <li><i class="fa-solid fa-check"></i><span data-i18n="ab_check1">Specialized in MEP, Fire-Fighting &amp; Safety Materials</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-i18n="ab_check2">Serving residential, commercial &amp; industrial projects</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-i18n="ab_check3">Partnerships with internationally recognized manufacturers</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-i18n="ab_check4">Competitive pricing with timely, reliable delivery</span></li>
+          <li><i class="fa-solid fa-check"></i><span data-i18n="ab_check5">Products conforming to international quality standards</span></li>
+        </ul>
+        <a href="./products.html" class="ab-btn"><span data-i18n="ab_learn_more">Learn More About Us</span> <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="ab-story-img fade-up">
+        <img src="./images/mep.jpeg" alt="MEP materials" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'">
+        <div class="ab-img-badge">
+          <span data-i18n="ab_img_badge">Supporting<br>a Stronger<br>Saudi Arabia</span>
+        </div>
+      </div>
+
+      <div class="ab-vm-cards fade-up">
+        <div class="ab-vm-card">
+          <span class="ab-vm-icon"><i class="fa-solid fa-binoculars"></i></span>
+          <div>
+            <h4 data-i18n="ab_vision_t">Our Vision</h4>
+            <p data-i18n="ab_vision_p">To be the leading and most trusted supplier of MEP and safety materials in Saudi Arabia — recognized for quality, innovation, and customer satisfaction.</p>
+          </div>
+        </div>
+        <div class="ab-vm-card">
+          <span class="ab-vm-icon"><i class="fa-solid fa-bullseye"></i></span>
+          <div>
+            <h4 data-i18n="ab_mission_t">Our Mission</h4>
+            <p data-i18n="ab_mission_p">To supply high-quality MEP and safety products that meet international standards and enable safer, more efficient construction.</p>
+          </div>
+        </div>
+        <div class="ab-vm-card">
+          <span class="ab-vm-icon"><i class="fa-solid fa-gem"></i></span>
+          <div>
+            <h4 data-i18n="ab_values_t">Our Values</h4>
+            <p data-i18n="ab_values_p">Quality assurance, reliability, efficiency, sustainability, safety first, and global standards — the principles that define how we operate.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============== CORE VALUES ============== -->
+  <section class="ab-values">
+    <div class="ab-values-inner">
+      <div class="ab-values-head fade-up">
+        <div class="ab-eyebrow" data-i18n="ab_cv_eyebrow">Core Values</div>
+        <h2 data-i18n="ab_cv_h2">What <span>Drives</span> Us</h2>
+        <p data-i18n="ab_cv_sub">The principles that define how we operate and deliver value to every client and project we serve.</p>
+      </div>
+
+      <div class="ab-values-grid">
+        <div class="ab-value-card fade-up">
+          <div class="ab-value-top"><i class="fa-solid fa-award"></i><span>01 / 06</span></div>
+          <h4 data-i18n="ab_val1_t">Quality Assurance</h4>
+          <p data-i18n="ab_val1_p">Every product we supply meets rigorous international quality standards. We never compromise on the safety and integrity of materials delivered to our clients.</p>
+        </div>
+        <div class="ab-value-card fade-up">
+          <div class="ab-value-top"><i class="fa-solid fa-handshake-angle"></i><span>02 / 06</span></div>
+          <h4 data-i18n="ab_val2_t">Reliability</h4>
+          <p data-i18n="ab_val2_p">Our clients depend on us for consistent, timely delivery. We build lasting relationships grounded in trust, transparency, and commitment to deadlines.</p>
+        </div>
+        <div class="ab-value-card fade-up">
+          <div class="ab-value-top"><i class="fa-solid fa-bolt"></i><span>03 / 06</span></div>
+          <h4 data-i18n="ab_val3_t">Efficiency</h4>
+          <p data-i18n="ab_val3_p">Streamlined supply chains and responsive logistics ensure project materials arrive on time, minimizing downtime and cost overruns.</p>
+        </div>
+        <div class="ab-value-card fade-up">
+          <div class="ab-value-top"><i class="fa-solid fa-leaf"></i><span>04 / 06</span></div>
+          <h4 data-i18n="ab_val4_t">Sustainability</h4>
+          <p data-i18n="ab_val4_p">We champion responsible procurement by sourcing products that support energy efficiency and sustainable construction practices.</p>
+        </div>
+        <div class="ab-value-card fade-up">
+          <div class="ab-value-top"><i class="fa-solid fa-helmet-safety"></i><span>05 / 06</span></div>
+          <h4 data-i18n="ab_val5_t">Safety First</h4>
+          <p data-i18n="ab_val5_p">From fire-fighting systems to PPE, every safety product we offer is selected to provide maximum protection for workers and building occupants.</p>
+        </div>
+        <div class="ab-value-card fade-up">
+          <div class="ab-value-top"><i class="fa-solid fa-earth-globe"></i><span>06 / 06</span></div>
+          <h4 data-i18n="ab_val6_t">Global Standards</h4>
+          <p data-i18n="ab_val6_p">We partner with internationally certified manufacturers to deliver products compliant with Saudi and global regulatory standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== OUR IMPACT ============== -->
+  <section class="ab-impact">
+    <div class="ab-impact-inner">
+      <div class="ab-impact-copy fade-up">
+        <div class="ab-eyebrow" data-i18n="ab_imp_eyebrow">Our Impact</div>
+        <h2 data-i18n="ab_imp_h2">Contributing to<br>a Safer, Stronger Tomorrow</h2>
+        <p data-i18n="ab_imp_p">Through reliable products and trusted partnerships, we support the people and projects that shape Saudi Arabia's future.</p>
+      </div>
+      <div class="ab-stats fade-up">
+        <div class="ab-stat">
+          <i class="fa-solid fa-building"></i>
+          <b>100+</b>
+          <small data-i18n="ab_stat1">Projects Supported</small>
+        </div>
+        <div class="ab-stat">
+          <i class="fa-solid fa-users"></i>
+          <b>50+</b>
+          <small data-i18n="ab_stat2">Global Brands</small>
+        </div>
+        <div class="ab-stat">
+          <i class="fa-solid fa-truck-fast"></i>
+          <b dir="ltr">On-Time</b>
+          <small data-i18n="ab_stat3">Delivery</small>
+        </div>
+        <div class="ab-stat">
+          <i class="fa-solid fa-shield-halved"></i>
+          <b>موثوقون</b>
+          <small data-i18n="ab_stat4">Across Sectors</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mini-footer">
+    <p dir="ltr">© 2024 Mashreq AlMuqaddimah Company For Contracting · Riyadh, Saudi Arabia</p>
+    <div class="links">
+      <a href="mep-home.html" data-i18n="ab_ft_home">Home</a>
+      <a href="products.html" data-i18n="ab_ft_products">Products</a>
+      <a href="contact.html" data-i18n="ab_ft_contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="translations.js?v=6"></script>
+  <script>
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting)),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+    window.addEventListener('scroll', () => {
+      const nb = document.getElementById('navbar');
+        if (nb) nb.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
+<script>
+    // Mobile nav (redesigned)
+    const mobBurger  = document.getElementById('mobBurger');
+    const mobClose   = document.getElementById('mobClose');
+    const mobOverlay = document.getElementById('mobOverlay');
+    const mobAccBtn  = document.getElementById('mobAccBtn');
+    const mobAccBody = document.getElementById('mobAccBody');
+    const langToggleMob = document.getElementById('langToggleMob');
+
+    function openMobMenu() {
+      mobOverlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobMenu() {
+      mobOverlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    if (mobBurger) mobBurger.addEventListener('click', openMobMenu);
+    if (mobClose)  mobClose.addEventListener('click', closeMobMenu);
+
+    if (mobOverlay) {
+      mobOverlay.querySelectorAll('.mob-menu-links a').forEach(link => {
+        link.addEventListener('click', closeMobMenu);
+      });
+    }
+
+    // Accordion
+    if (mobAccBtn && mobAccBody) {
+      mobAccBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = mobAccBody.classList.toggle('open');
+        mobAccBtn.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // Lang toggle
+    if (langToggleMob) {
+      langToggleMob.addEventListener('click', () => {
+        if (typeof toggleLanguage === 'function') toggleLanguage();
+      });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!-- ============================================================
+     MASHRIQ — Vision / Commitment section
+     Paste this block directly beneath your hero section.
+     Self-contained: styles are scoped under .msq- classes so they
+     won't leak into the rest of your page.
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  .msq-scope {
+    --msq-navy: #0c2440;
+    --msq-navy-soft: #14335a;
+    --msq-blue: #1d70e0;
+    --msq-ice: #eef5fc;
+    --msq-ice-2: #dcebf9;
+    --msq-slate: #55647a;
+    --msq-line: #c9dcef;
+    --msq-white: #ffffff;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    color: var(--msq-navy);
+    background: var(--msq-ice);
+  }
+
+  .msq-scope * { box-sizing: border-box; }
+
+  .msq-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .msq-panel {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    min-height: 560px;
+    overflow: hidden;
+    background: var(--msq-ice);
+  }
+
+  .msq-panel + .msq-panel { background: var(--msq-white); }
+
+  .msq-panel__copy {
+    position: relative;
+    z-index: 2;
+    padding: 4.5rem 3rem 3.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .msq-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: .78rem;
+    letter-spacing: .14em;
+    color: var(--msq-navy-soft);
+    margin-bottom: 1.4rem;
+  }
+
+  .msq-eyebrow::after {
+    content: "";
+    width: 2.1rem;
+    height: 2px;
+    background: var(--msq-blue);
+  }
+
+  .msq-headline {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 2.6vw, 2.7rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.4rem;
+  }
+
+  .msq-headline em {
+    display: block;
+    font-style: normal;
+    color: var(--msq-blue);
+  }
+
+  .msq-body {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--msq-slate);
+    max-width: 34ch;
+    margin: 0 0 2.4rem;
+  }
+
+  .msq-tag {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .msq-tag__icon {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    background: var(--msq-ice-2);
+    display: grid;
+    place-items: center;
+    color: var(--msq-blue);
+  }
+
+  .msq-tag__icon svg { width: 22px; height: 22px; }
+
+  .msq-tag__text {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: .82rem;
+    line-height: 1.4;
+    color: var(--msq-navy-soft);
+  }
+
+  /* photo side with diagonal reveal */
+  .msq-panel__photo {
+    position: relative;
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .msq-panel__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .msq-panel__photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgba(12,36,64,.28) 0%, rgba(12,36,64,0) 32%);
+  }
+
+  /* value strip */
+  .msq-strip {
+    background: var(--msq-white);
+    border-top: 1px solid var(--msq-line);
+    padding: 3rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .msq-value {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    position: relative;
+  }
+
+  .msq-value + .msq-value::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .2rem;
+    bottom: .2rem;
+    width: 1px;
+    background: var(--msq-line);
+  }
+
+  .msq-value__icon {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: var(--msq-ice-2);
+    display: grid;
+    place-items: center;
+    color: var(--msq-navy);
+  }
+
+  .msq-value__icon svg { width: 20px; height: 20px; }
+
+  .msq-value h3 {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: .98rem;
+    margin: 0 0 .3rem;
+  }
+
+  .msq-value p {
+    font-size: .88rem;
+    line-height: 1.5;
+    color: var(--msq-slate);
+    margin: 0;
+  }
+
+  /* responsive */
+  @media (max-width: 980px) {
+    .msq-panels { grid-template-columns: 1fr; }
+    .msq-strip { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; }
+    .msq-value + .msq-value::before { display: none; }
+  }
+
+  @media (max-width: 620px) {
+    .msq-panel { grid-template-columns: 1fr; min-height: auto; }
+    .msq-panel__copy { padding: 3rem 1.5rem 2rem; order: 1; }
+    .msq-panel__photo {
+      order: 0;
+      height: 260px;
+      clip-path: none;
+    }
+    .msq-strip { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; row-gap: 1.75rem; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .msq-panel__photo img { transition: transform .6s ease; }
+    .msq-panel:hover .msq-panel__photo img { transform: scale(1.04); }
+  }
+</style>
+
+<section class="msq-scope">
+
+  <div class="msq-panels">
+
+    <!-- OUR VISION -->
+    <article class="msq-panel">
+      <div class="msq-panel__copy">
+        <span class="msq-eyebrow">OUR VISION</span>
+        <h2 class="msq-headline">Build for<em>the future.</em></h2>
+        <p class="msq-body">
+          To support Saudi Arabia's construction sector with reliable MEP systems
+          and better safety practices. We want the work we supply today to
+          contribute to buildings and infrastructure that are safer, more
+          efficient, and built to last.
+        </p>
+        <div class="msq-tag">
+          <span class="msq-tag__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22c4-2 6-6 6-10a6 6 0 0 0-12 0c0 4 2 8 6 10Z"/>
+              <path d="M12 12v6"/>
+              <path d="M9 15c1 1.5 4 1.5 6-1"/>
+            </svg>
+          </span>
+          <span class="msq-tag__text">SAFER BUILDINGS.<br>A CLEANER TOMORROW.</span>
+        </div>
+      </div>
+      <div class="msq-panel__photo">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80" alt="Riyadh skyline at sunset">
+      </div>
+    </article>
+
+    <!-- OUR COMMITMENT -->
+    <article class="msq-panel">
+      <div class="msq-panel__copy">
+        <span class="msq-eyebrow">OUR COMMITMENT</span>
+        <h2 class="msq-headline">People first.<em>Responsibility always.</em></h2>
+        <p class="msq-body">
+          We are committed to supplying dependable safety equipment and
+          efficient MEP solutions that help protect people, reduce
+          unnecessary energy use, and support more responsible development
+          across the Kingdom.
+        </p>
+        <div class="msq-tag">
+          <span class="msq-tag__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12.5 8 9l3 2 5-5 4 3"/>
+              <path d="M3 20h18"/>
+              <path d="M12 2a3 3 0 0 1 3 3v1H9V5a3 3 0 0 1 3-3Z"/>
+            </svg>
+          </span>
+          <span class="msq-tag__text">SAFE PEOPLE.<br>STRONGER TOMORROW.</span>
+        </div>
+      </div>
+      <div class="msq-panel__photo">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80" alt="Engineers on a construction site in Saudi Arabia">
+      </div>
+    </article>
+
+  </div>
+
+  <!-- VALUE STRIP -->
+  <div class="msq-strip">
+
+    <div class="msq-value">
+      <span class="msq-value__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3Z"/>
+        </svg>
+      </span>
+      <div>
+        <h3>Integrity in Business</h3>
+        <p>We do what is right.</p>
+      </div>
+    </div>
+
+    <div class="msq-value">
+      <span class="msq-value__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="8" r="2.6"/>
+          <path d="M4 19c0-2.8 2.2-5 5-5s5 2.2 5 5"/>
+          <circle cx="17" cy="9" r="2.1"/>
+          <path d="M15 14.2c2.3.3 4 2.2 4 4.8"/>
+        </svg>
+      </span>
+      <div>
+        <h3>Long-term Relationships</h3>
+        <p>We value trust and continuity.</p>
+      </div>
+    </div>
+
+    <div class="msq-value">
+      <span class="msq-value__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="3" width="14" height="18" rx="1.5"/>
+          <path d="M8.5 12.5 11 15l4.5-5"/>
+        </svg>
+      </span>
+      <div>
+        <h3>Reliable Products</h3>
+        <p>We supply quality products from trusted manufacturers.</p>
+      </div>
+    </div>
+
+    <div class="msq-value">
+      <span class="msq-value__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1Z"/>
+        </svg>
+      </span>
+      <div>
+        <h3>Responsible Operations</h3>
+        <p>We take our responsibilities seriously.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
