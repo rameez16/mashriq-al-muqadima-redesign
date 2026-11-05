@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mashreq Operation & Maintenance · MEP & HVAC Maintenance in Riyadh | Mashriq</title>
+  <meta name="description" content="Mashreq Operation & Maintenance — planned and responsive maintenance for MEP, HVAC and fire-safety systems across Saudi Arabia. Launching soon from Mashriq Almuqaddimah.">
+  <link rel="canonical" href="https://www.mashreq.sa/sector-om.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=19">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  /* page rules (navbar styles now live in styles.css) */
+
+
+    /* Push page content below fixed nav */
+    body { padding-top: 0 !important; }
+
+    #navbar.navbar-custom { display: none !important; }
+  </style>
+<style>
+    :root {
+      --sx-navy: #0d2a45;
+      --sx-blue: #0e8ce4;
+      --sx-blue-light: #2fb1f0;
+      --sx-ice: #f4f8fb;
+      --sx-line: #e3ebf2;
+      --sx-muted: #5c7080;
+      --sx-deep: #123a5c;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #fff;
+      color: var(--sx-navy);
+    }
+
+    /* ── HERO ── */
+    .sx-hero {
+      position: relative;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      background: url('./images/sector-engineer-sunset.png') center right / cover no-repeat;
+      overflow: hidden;
+    }
+    .sx-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(95deg,
+        rgba(244, 248, 251, 0.99) 0%,
+        rgba(244, 248, 251, 0.97) 28%,
+        rgba(244, 248, 251, 0.72) 46%,
+        rgba(244, 248, 251, 0.18) 66%,
+        rgba(244, 248, 251, 0.05) 100%);
+    }
+    .sx-hero-inner {
+      position: relative; z-index: 2;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 225px 28px 90px;
+    }
+    .sx-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 3px;
+      color: var(--sx-blue); text-transform: uppercase; margin-bottom: 16px;
+    }
+    .sx-eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--sx-blue); }
+    .sx-hero h1 {
+      font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+      font-weight: 800;
+      color: var(--sx-navy);
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+      margin: 0 0 18px;
+      max-width: 640px;
+    }
+    .sx-hero h1 em { font-style: normal; color: var(--sx-blue); }
+    .sx-hero-sub {
+      font-size: 1.05rem;
+      color: var(--sx-muted);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 0 34px;
+    }
+    .sx-feats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .sx-feat {
+      display: flex; align-items: center; gap: 12px;
+      padding: 0 26px;
+      border-left: 1px solid rgba(13, 42, 69, 0.14);
+    }
+    .sx-feat:first-child { padding-left: 0; border-left: 0; }
+    .sx-feat-icon {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: #e7f3fc; color: var(--sx-blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .sx-feat span {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.6px;
+      text-transform: uppercase; color: var(--sx-navy); line-height: 1.35;
+    }
+    .sx-vertical {
+      position: absolute; right: 34px; top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 18px;
+    }
+    .sx-vertical::before {
+      content: ''; width: 2px; height: 52px;
+      background: linear-gradient(180deg, var(--sx-blue), transparent);
+      margin-bottom: 4px;
+    }
+    .sx-vertical span {
+      writing-mode: vertical-rl;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: rgba(13, 42, 69, 0.55);
+    }
+
+    /* ── PANELS (overlap hero) ── */
+    .sx-panels {
+      position: relative; z-index: 5;
+      max-width: 1420px;
+      margin: -64px auto 0;
+      padding: 0 28px;
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .sx-panel-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 22px;
+      border-radius: 14px 14px 0 0;
+    }
+    .sx-panel-head h3 {
+      display: flex; align-items: center; gap: 10px;
+      margin: 0;
+      font-size: 0.95rem; font-weight: 800; letter-spacing: 1.6px;
+      text-transform: uppercase; color: #fff;
+    }
+    .sx-panel-head small {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 1.6px;
+      text-transform: uppercase; color: rgba(255,255,255,0.75);
+    }
+
+    /* Core business card */
+    .sx-core { background: #fff; border-radius: 14px; box-shadow: 0 24px 60px rgba(13, 42, 69, 0.16); overflow: hidden; }
+    .sx-core .sx-panel-head { background: linear-gradient(90deg, #0d5bb5, var(--sx-blue)); }
+    .sx-core-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #35d07f;
+      box-shadow: 0 0 0 3px rgba(53, 208, 127, 0.25);
+    }
+    .sx-core-body { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 22px; padding: 26px; }
+    .sx-core-copy { display: flex; flex-direction: column; }
+    .sx-core-top { display: flex; gap: 14px; margin-bottom: 14px; }
+    .sx-core-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: #e7f3fc; color: var(--sx-blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .sx-core-copy h4 {
+      font-size: 1.45rem; font-weight: 800; color: var(--sx-navy);
+      line-height: 1.25; margin: 0 0 10px;
+    }
+    .sx-core-copy p { font-size: 0.95rem; color: var(--sx-muted); line-height: 1.65; margin: 0 0 20px; }
+    .sx-core-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      align-self: flex-start;
+      background: var(--sx-navy); color: #fff;
+      font-size: 0.9rem; font-weight: 700;
+      padding: 13px 24px; border-radius: 10px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .sx-core-btn:hover { background: var(--sx-blue); transform: translateY(-2px); color: #fff; }
+    .sx-core-img {
+      border-radius: 12px;
+      background: url('./images/hero-mep-supply.png') center / cover no-repeat;
+      min-height: 240px;
+    }
+    .sx-core-feats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--sx-line);
+    }
+    .sx-core-feat {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 18px;
+      border-left: 1px solid var(--sx-line);
+      font-size: 0.74rem; font-weight: 700; letter-spacing: 0.5px;
+      text-transform: uppercase; color: var(--sx-navy); line-height: 1.4;
+    }
+    .sx-core-feat:first-child { border-left: 0; }
+    .sx-core-feat i { color: var(--sx-blue); font-size: 1.05rem; }
+
+    /* Launching soon */
+    .sx-soon { background: #eef4fa; border-radius: 14px; box-shadow: 0 24px 60px rgba(13, 42, 69, 0.10); overflow: hidden; }
+    .sx-soon .sx-panel-head { background: #dde9f5; }
+    .sx-soon .sx-panel-head h3 { color: var(--sx-navy); }
+    .sx-soon .sx-panel-head small { color: var(--sx-muted); }
+    .sx-soon-clock {
+      width: 30px; height: 30px; border-radius: 50%;
+      border: 2px solid var(--sx-navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+    }
+    .sx-soon-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; padding: 20px;
+    }
+    .sx-soon-card {
+      background: #fff; border-radius: 12px; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .sx-soon-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(13, 42, 69, 0.16); }
+    .sx-soon-img { position: relative; height: 130px; background: center / cover no-repeat; }
+    .sx-soon-img.sx-img-om { background-image: url('./images/sector-hvac-tech.png'); }
+    .sx-soon-img.sx-img-rentals { background-image: url('./images/sector-rentals.png'); }
+    .sx-soon-img.sx-img-fm { background-image: url('./images/sector-facility-mgmt.png'); }
+    .sx-soon-badge {
+      position: absolute; left: 10px; bottom: 10px;
+      background: rgba(10, 30, 50, 0.85);
+      color: #fff; font-size: 0.6rem; font-weight: 700; letter-spacing: 1.6px;
+      text-transform: uppercase;
+      padding: 5px 10px; border-radius: 6px;
+    }
+    .sx-soon-body { padding: 14px 16px 18px; display: flex; gap: 10px; }
+    .sx-soon-icon {
+      width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+      background: #e7f3fc; color: var(--sx-blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .sx-soon-body h5 { font-size: 0.98rem; font-weight: 800; color: var(--sx-navy); margin: 0 0 6px; line-height: 1.3; }
+    .sx-soon-body p { font-size: 0.8rem; color: var(--sx-muted); line-height: 1.55; margin: 0; }
+
+    /* ── BOTTOM STRIP ── */
+    .sx-strip {
+      max-width: 1420px;
+      margin: 26px auto 0;
+      padding: 0 28px 60px;
+    }
+    .sx-strip-inner {
+      background: #eef4fa;
+      border-radius: 14px;
+      padding: 30px 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 30px; flex-wrap: wrap;
+    }
+    .sx-strip-copy { flex: 1 1 460px; }
+    .sx-strip-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 2.4px;
+      text-transform: uppercase; color: var(--sx-blue); margin-bottom: 8px;
+    }
+    .sx-strip-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--sx-blue); }
+    .sx-strip h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 800; color: var(--sx-navy); margin: 0; }
+    .sx-strip h3 em { font-style: normal; color: var(--sx-blue); }
+    .sx-strip-note { flex: 1 1 300px; font-size: 0.9rem; color: var(--sx-muted); line-height: 1.65; margin: 0; }
+    .sx-strip-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--sx-navy); color: #fff;
+      font-size: 0.92rem; font-weight: 700;
+      padding: 15px 28px; border-radius: 12px;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .sx-strip-cta:hover { background: var(--sx-blue); transform: translateY(-2px); color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1120px) {
+      .sx-panels { grid-template-columns: 1fr; margin-top: -40px; }
+      .sx-vertical { display: none; }
+    }
+    @media (max-width: 900px) {
+      .sx-hero-inner { padding-top: 195px; }
+      .sx-core-body { grid-template-columns: 1fr; }
+      .sx-core-img { min-height: 180px; order: -1; }
+      .sx-core-feats { grid-template-columns: repeat(2, 1fr); }
+      .sx-core-feat:nth-child(3) { border-left: 0; }
+      .sx-core-feat:nth-child(-n+2) { border-bottom: 1px solid var(--sx-line); }
+      .sx-soon-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+<style>
+  /* ── Footer redesign ── */
+  .ft2 {
+    position: relative;
+    background:
+      radial-gradient(ellipse at 0% 100%, rgba(14, 100, 160, 0.25), transparent 55%),
+      radial-gradient(ellipse at 100% 0%, rgba(14, 100, 160, 0.12), transparent 50%),
+      linear-gradient(180deg, #051726 0%, #041220 100%);
+    color: #cfe3f0;
+    overflow: hidden;
+  }
+  .ft2-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 70px 48px 50px;
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr 0.95fr 1.1fr 1.05fr;
+    gap: 44px;
+  }
+
+  /* Brand column */
+  .ft2-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .ft2-brand-row img {
+    height: 92px;
+    width: auto;
+  }
+  .ft2-brand-name {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.15;
+  }
+  .ft2-brand-sub {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #9fc3da;
+    line-height: 1.5;
+  }
+  .ft2-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #b7d0e0;
+    margin: 0 0 26px;
+    max-width: 330px;
+  }
+  .ft2-badges {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+  .ft2-badge {
+    text-align: center;
+    max-width: 74px;
+  }
+  .ft2-badge span {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 248, 0.35);
+    background: rgba(14, 100, 160, 0.12);
+    color: #7dd3f8;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .ft2-badge:hover span {
+    background: #0ea5e9;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+  .ft2-badge small {
+    display: block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #b7d0e0;
+    line-height: 1.5;
+  }
+  .ft2-script {
+    font-family: 'Segoe Script', 'Brush Script MT', cursive;
+    font-size: 1.5rem;
+    color: #9fc3da;
+    display: inline-block;
+    padding-bottom: 14px;
+    position: relative;
+  }
+  .ft2-script::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    bottom: 0;
+    width: 56px;
+    height: 2px;
+    background: #38bdf8;
+  }
+
+  /* Link columns */
+  .ft2 h5 {
+    color: #fff;
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    position: relative;
+  }
+  .ft2 h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 38px;
+    height: 3px;
+    border-radius: 2px;
+    background: #38bdf8;
+  }
+  .ft2 ul.ft2-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .ft2 ul.ft2-links li { margin-bottom: 13px; }
+  .ft2 ul.ft2-links a {
+    color: #b7d0e0;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.15s, padding-left 0.15s;
+  }
+  .ft2 ul.ft2-links a:hover { color: #38bdf8; padding-left: 4px; }
+
+  /* Contact column */
+  .ft2-citem {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #b7d0e0;
+  }
+  .ft2-citem i {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 248, 0.35);
+    background: rgba(14, 100, 160, 0.12);
+    color: #7dd3f8;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ft2-citem a { color: #b7d0e0; }
+  .ft2-citem a:hover { color: #38bdf8; }
+
+  /* Newsletter + social */
+  .ft2-news-desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #b7d0e0;
+    margin: 0 0 20px;
+  }
+  .ft2-news-row {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(125, 211, 248, 0.3);
+    background: rgba(6, 24, 40, 0.6);
+    margin-bottom: 10px;
+  }
+  .ft2-news-row input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: inherit;
+    padding: 14px 16px;
+    outline: none;
+  }
+  .ft2-news-row input::placeholder { color: #6f95ad; }
+  .ft2-news-row button {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #0ea5e9;
+    color: #fff;
+    border: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+    padding: 0 22px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .ft2-news-row button:hover { background: #0284c7; }
+  .ft2-news-note {
+    font-size: 0.78rem;
+    color: #7d9db5;
+    margin: 0 0 34px;
+  }
+  .ft2-follow {
+    display: flex;
+    gap: 12px;
+  }
+  .ft2-follow a {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 248, 0.35);
+    background: rgba(14, 100, 160, 0.12);
+    color: #cfe6f5;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .ft2-follow a:hover {
+    background: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+  .ft2-map {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 34px;
+  }
+  .ft2-map svg { flex-shrink: 0; }
+  .ft2-map small {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #9fc3da;
+    line-height: 1.9;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .ft2-map small::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 34px;
+    height: 2px;
+    background: #38bdf8;
+  }
+
+  /* Trust row */
+  .ft2-trust {
+    position: relative;
+    z-index: 1;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 26px 48px;
+    border-top: 1px solid rgba(125, 211, 248, 0.15);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .ft2-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 28px;
+    border-left: 1px solid rgba(125, 211, 248, 0.15);
+  }
+  .ft2-trust-item:first-child { border-left: none; padding-left: 0; }
+  .ft2-trust-item i { font-size: 1.8rem; color: #38bdf8; flex-shrink: 0; }
+  .ft2-trust-item h6 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 4px; }
+  .ft2-trust-item p { color: #8fb3c9; font-size: 0.85rem; margin: 0; }
+
+  /* Bottom bar */
+  .ft2-bottom {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(125, 211, 248, 0.15);
+    background: rgba(3, 14, 26, 0.6);
+  }
+  .ft2-bottom-inner {
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .ft2-bottom p { margin: 0; font-size: 0.85rem; color: #8fb3c9; }
+  .ft2-legal {
+    display: flex;
+    align-items: center;
+  }
+  .ft2-legal a {
+    color: #b7d0e0;
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 0 18px;
+    border-left: 1px solid rgba(125, 211, 248, 0.2);
+  }
+  .ft2-legal a:first-child { border-left: none; }
+  .ft2-legal a:hover { color: #38bdf8; }
+  .ft2-loc {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+  .ft2-loc span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #b7d0e0;
+  }
+  .ft2-loc span i { color: #38bdf8; }
+  .ft2-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: none;
+    border: none;
+    color: #b7d0e0;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .ft2-top span.circ {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 248, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7dd3f8;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .ft2-top:hover span.circ {
+    background: #0ea5e9;
+    color: #fff;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 1200px) {
+    .ft2-inner { grid-template-columns: 1fr 1fr; gap: 40px; padding: 56px 32px 44px; }
+    .ft2-trust { grid-template-columns: repeat(2, 1fr); gap: 20px 0; padding: 22px 32px; }
+    .ft2-trust-item:nth-child(3) { border-left: none; padding-left: 0; }
+  }
+  @media (max-width: 640px) {
+    .ft2-inner { grid-template-columns: 1fr; padding: 46px 22px 38px; }
+    .ft2-trust { grid-template-columns: 1fr; padding: 18px 22px; }
+    .ft2-trust-item { border-left: none; padding-left: 0; padding-top: 12px; padding-bottom: 12px; }
+    .ft2-bottom-inner { flex-direction: column; text-align: center; padding: 16px 22px; }
+  }
+  /* ---- Back to Home pill (top of hero) ---- */
+  .back-home {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px; margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.4px;
+    text-decoration: none;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    transition: background .18s ease, transform .18s ease, color .18s ease;
+  }
+  .back-home i { font-size: 11px; transition: transform .18s ease; }
+  .back-home:hover { background: #fff; color: #14294c; transform: translateX(-2px); }
+  .back-home:hover i { transform: translateX(-2px); }
+</style>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    html[lang="ar"] body, html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] h5, html[lang="ar"] h6,
+    html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] b, html[lang="ar"] small, html[lang="ar"] li, html[lang="ar"] a, html[lang="ar"] button, html[lang="ar"] select, html[lang="ar"] input, html[lang="ar"] textarea { font-family: 'Tajawal', sans-serif !important; }
+    html[lang="ar"] h1 { line-height: 1.35; }
+    html[lang="ar"] h2 { line-height: 1.4; }
+    html[lang="ar"] * { letter-spacing: 0 !important; }
+    html[lang="ar"] a[href^="tel"], html[lang="ar"] a[href^="mailto"], html[lang="ar"] .sx-vertical, html[lang="ar"] input[type="tel"] { direction: ltr; unicode-bidi: embed; }
+    html[dir="rtl"] .fa-arrow-right, html[dir="rtl"] .back-home .fa-arrow-left { transform: scaleX(-1); }
+  </style>
+<style id="sector-page">
+  /* ── Single-sector page: big "launching soon" card + one "now in operation" card ── */
+  .sx-panels--sector { grid-template-columns: 1.4fr 1fr; }
+  .sx-core--soon .sx-panel-head h3 { color: #fff; }
+  .sx-core--soon .sx-soon-clock { border-color: #fff; color: #fff; }
+  .sx-core--soon .sx-core-img { position: relative; background-position: center; background-size: cover; background-repeat: no-repeat; }
+  .sx-core--soon .sx-core-img .sx-soon-badge { left: 12px; bottom: 12px; font-size: .66rem; }
+  .sx-soon-grid--single { grid-template-columns: 1fr; }
+  .sx-soon-img.sx-img-mep { background-image: url('./images/hero-mep-supply.png'); height: 200px; }
+  .sx-live-card { text-decoration: none; color: inherit; }
+  .sx-live-card .sx-soon-body { padding: 18px 20px 22px; }
+  .sx-live-card .sx-soon-body h5 { font-size: 1.08rem; }
+  .sx-live-card .sx-soon-body p { font-size: .88rem; }
+  .sx-live-badge { display: inline-flex; align-items: center; gap: 7px; }
+  .sx-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #35d07f; }
+  .sx-live-link {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+    font-size: .78rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+    color: var(--sx-blue);
+  }
+  .sx-live-link i { transition: transform .2s; }
+  .sx-live-card:hover .sx-live-link i { transform: translateX(3px); }
+  [dir="rtl"] .sx-live-link i,
+  [dir="rtl"] .sx-core-btn .fa-arrow-right { transform: scaleX(-1); }
+  [dir="rtl"] .sx-live-card:hover .sx-live-link i { transform: scaleX(-1) translateX(3px); }
+  @media (max-width: 1120px) { .sx-panels--sector { grid-template-columns: 1fr; } }
+</style>
+<style id="sx-back-home-fix">
+  /* "Back to Home" sits on a light hero here — give it a visible style */
+  .sx-hero .back-home {
+    background: #fff;
+    border: 1px solid var(--sx-line);
+    color: var(--sx-navy);
+    box-shadow: 0 4px 14px rgba(13, 42, 69, 0.08);
+  }
+  .sx-hero .back-home i { color: var(--sx-blue); }
+  .sx-hero .back-home:hover { background: var(--sx-navy); border-color: var(--sx-navy); color: #fff; }
+  .sx-hero .back-home:hover i { color: #fff; }
+</style>
+</head>
+<body>
+
+
+  
+<div class="nav2-wrap" id="nav2">
+    <div class="nav2-utility">
+      <div class="nav2-utility-inner">
+        <ul class="nav2-u-list">
+          <li><span><i class="fa-solid fa-location-dot"></i><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span></li>
+          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i><bdi>+966 5030 46469</bdi></a></li>
+          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a></li>
+        </ul>
+        <ul class="nav2-u-list">
+          <li><a class="nav2-u-group" href="./index.html"><i class="fa-solid fa-sitemap"></i><span data-i18n="tb_group">Group Home</span></a></li>
+          <li class="nav2-u-divider" aria-hidden="true"></li>
+          <li class="nav2-u-soc">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <nav class="nav2-main" aria-label="Main navigation">
+      <div class="nav2-main-inner">
+        <a href="./index.html" class="nav2-brand" title="Mashriq Group home">
+          <img src="./images/logo.png" alt="Mashriq Almuqaddimah logo">
+          <span class="nav2-brand-text">
+            <span class="nav2-brand-name" data-i18n="brand_name">MASHRIQ</span>
+            <span class="nav2-brand-sub" data-i18n="brand_sub">Almuqaddimah Company For Contracting</span>
+          </span>
+        </a>
+
+        <ul class="nav2-links">
+          <li><a class="nav2-link" href="./mep-home.html" data-i18n="nav_home">Home</a></li>
+          <li><a class="nav2-link" href="./aboutus.html" data-i18n="nav_about">About</a></li>
+          <li><a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a></li>
+          <li><a class="nav2-link" href="./brands.html" data-i18n="nav_brands">Brands</a></li>
+          <li><a class="nav2-link" href="./contact.html" data-i18n="nav_contact">Contact</a></li>
+          <li class="nav2-dd">
+            <a class="nav2-link active" href="#" aria-haspopup="true"><span data-i18n="nav_sectors">Our Sectors</span><i class="fa-solid fa-chevron-down nav2-caret" aria-hidden="true"></i></a>
+            <div class="nav2-dd-menu">
+              <a href="./sectors.html" data-i18n="x_all_sectors">All Sectors</a>
+              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
+              <a href="./sector-rentals.html" data-i18n="sect_link2">Mashreq Rentals</a>
+              <a href="./sector-om.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+              <a href="./sector-fm.html" data-i18n="sect_link4">Mashreq Facility Management</a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="nav2-right">
+          <a class="nav2-text-btn" href="files/a4%20brochure%20final.pdf" download title="Download company brochure"><i class="fa-solid fa-file-arrow-down"></i><span class="lbl" data-i18n="x_brochure">Brochure</span></a>
+          <span class="nav2-sep" aria-hidden="true"></span>
+          <button class="nav2-text-btn nav2-lang" id="langToggle" type="button" title="Switch language"><i class="fa-solid fa-globe"></i> عربي</button>
+          <a class="nav2-quote" href="./get-quote.html"><span data-i18n="nav_quote">Get a Quote</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+  
+<nav class="mob-nav" id="mobNav">
+  <div class="mob-nav-bar">
+
+    <!-- Brand -->
+    <a href="./index.html" class="mob-brand" title="Mashriq Group home">
+      <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
+      <div data-i18n="x_mob_brand" class="mob-brand-info">
+        <span class="mob-brand-name">MASHRIQ</span>
+        <span class="mob-brand-tagline">Almuqaddimah Company For Contracting</span>
+        <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
+      </div>
+    </a>
+
+    <!-- Hamburger -->
+    <button class="mob-burger" id="mobBurger" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Full overlay menu -->
+  <div class="mob-overlay" id="mobOverlay">
+    <div class="mob-overlay-inner">
+
+      <!-- Top row in overlay -->
+      <div class="mob-overlay-top">
+        <a href="./index.html" class="mob-brand" title="Mashriq Group home">
+          <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
+          <div data-i18n="x_mob_brand" class="mob-brand-info">
+            <span class="mob-brand-name">MASHRIQ</span>
+            <span class="mob-brand-tagline">Almuqaddimah Company For Contracting</span>
+            <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
+          </div>
+        </a>
+        <button class="mob-close" id="mobClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Links -->
+      <ul class="mob-menu-links">
+        <li><a href="./mep-home.html" class="mob-menu-link active"><i class="fa-solid fa-house"></i><span data-i18n="nav_home">Home</span></a></li>
+        <li><a href="./aboutus.html" class="mob-menu-link"><i class="fa-solid fa-building"></i><span data-i18n="nav_about">About Us</span></a></li>
+        <li>
+          <button class="mob-menu-link mob-acc-btn" id="mobAccBtn" aria-expanded="false" aria-controls="mobAccBody">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span data-i18n="nav_sectors">Our Sectors</span>
+            <i class="fa-solid fa-chevron-down mob-chev"></i>
+          </button>
+          <div class="mob-acc-body" id="mobAccBody">
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="x_all_sectors">All Sectors</a>
+            <a href="./mep-home.html" class="mob-sub-link" data-i18n="sect_link1">Trading &amp; Contracting</a>
+            <a href="./sector-rentals.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
+            <a href="./sector-om.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+            <a href="./sector-fm.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
+          </div>
+        </li>
+        <li><a href="./products.html" class="mob-menu-link"><i class="fa-solid fa-box-open"></i><span data-i18n="nav_products">Our Products</span></a></li>
+        <li><a href="./brands.html" class="mob-menu-link"><i class="fa-solid fa-file-lines"></i><span data-i18n="nav_brands">Brands</span></a></li>
+        <li><a href="./contact.html" class="mob-menu-link"><i class="fa-solid fa-envelope"></i><span data-i18n="nav_contact">Contact Us</span></a></li>
+      </ul>
+
+      <!-- Contact block -->
+      <div class="mob-contact">
+        <a href="tel:+966503046469"><i class="fa-solid fa-phone"></i>+966 50 304 6469</a>
+        <a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a>
+        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span>
+      </div>
+
+      <!-- Socials -->
+      <div class="mob-socials">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <!-- Bottom actions -->
+      <div class="mob-overlay-footer">
+        <a href="./get-quote.html" class="mob-cta-btn"><span data-i18n="nav_quote">Get a Quote</span> <i class="fa-solid fa-arrow-right"></i></a>
+        <button class="mob-lang-btn" id="langToggleMob" data-i18n="nav_lang">عربي</button>
+      </div>
+
+      <div class="mob-tagline-bottom" data-i18n="tagline_people">People · Projects · Progress</div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+  <section class="sx-hero">
+    <div class="sx-hero-inner">
+  <a href="./mep-home.html" class="back-home"><i class="fa-solid fa-arrow-left"></i><span data-i18n="back_home">Back to Home</span></a>
+      <span class="sx-eyebrow" data-i18n="so_eyebrow">Mashreq Operation &amp; Maintenance</span>
+      <h1 data-i18n="so_h1">Keeping Your Systems <em>Running at Their Best</em></h1>
+      <p class="sx-hero-sub" data-i18n="so_sub">Mashreq Operation &amp; Maintenance is our upcoming sector, delivering planned and responsive maintenance for MEP, HVAC and fire-safety systems — so your buildings perform reliably, every day.</p>
+      <div class="sx-feats">
+        <div class="sx-feat">
+          <span class="sx-feat-icon"><i class="fa-solid fa-calendar-check"></i></span>
+          <span data-i18n="so_f1">Preventive<br>Maintenance</span>
+        </div>
+        <div class="sx-feat">
+          <span class="sx-feat-icon"><i class="fa-solid fa-bolt"></i></span>
+          <span data-i18n="so_f2">Rapid<br>Response</span>
+        </div>
+        <div class="sx-feat">
+          <span class="sx-feat-icon"><i class="fa-solid fa-user-gear"></i></span>
+          <span data-i18n="so_f3">Skilled<br>Technicians</span>
+        </div>
+      </div>
+    </div>
+    <div class="sx-vertical">
+      <span data-i18n="sx_v1">People</span>
+      <span data-i18n="sx_v2">Projects</span>
+      <span data-i18n="sx_v3">Partnerships</span>
+      <span data-i18n="sx_v4">Progress</span>
+    </div>
+  </section>
+
+  <!-- ============== PANELS ============== -->
+  <section class="sx-panels sx-panels--sector">
+    <div class="sx-core sx-core--soon">
+      <div class="sx-panel-head">
+        <h3><span class="sx-soon-clock"><i class="fa-regular fa-clock"></i></span> <span data-i18n="sx_soon_h">Launching Soon</span></h3>
+        <small data-i18n="sxs_next">Our Next Sector</small>
+      </div>
+      <div class="sx-core-body">
+        <div class="sx-core-copy">
+          <div class="sx-core-top">
+            <span class="sx-core-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+            <h4 data-i18n="so_card_t">Mashreq Operation &amp; Maintenance</h4>
+          </div>
+          <p data-i18n="so_card_p">Scheduled preventive maintenance, emergency call-outs and day-to-day operation of HVAC, electrical, plumbing and fire-fighting installations, carried out by skilled technicians.</p>
+          <a class="sx-core-btn" href="./contact.html"><span data-i18n="sxs_register">Register Your Interest</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="sx-core-img" style="background-image:url('./images/sector-hvac-tech.png')"><span class="sx-soon-badge" data-i18n="sx_soon_badge">Launching Soon</span></div>
+      </div>
+      <div class="sx-core-feats">
+        <div class="sx-core-feat"><i class="fa-solid fa-fan"></i> <span data-i18n="so_hl1">HVAC Systems</span></div>
+        <div class="sx-core-feat"><i class="fa-solid fa-plug"></i> <span data-i18n="so_hl2">Electrical Systems</span></div>
+        <div class="sx-core-feat"><i class="fa-solid fa-faucet-drip"></i> <span data-i18n="so_hl3">Plumbing &amp; Pumps</span></div>
+        <div class="sx-core-feat"><i class="fa-solid fa-fire-extinguisher"></i> <span data-i18n="so_hl4">Fire &amp; Life Safety</span></div>
+      </div>
+    </div>
+
+    <div class="sx-soon sx-soon--live">
+      <div class="sx-panel-head">
+        <h3><span class="sx-core-dot"></span> <span data-i18n="sx_core_h">Now in Operation</span></h3>
+        <small data-i18n="sx_core_small">Our Core Business</small>
+      </div>
+      <div class="sx-soon-grid sx-soon-grid--single">
+        <a class="sx-soon-card sx-live-card" href="./mep-home.html">
+          <div class="sx-soon-img sx-img-mep"><span class="sx-soon-badge sx-live-badge"><span class="sx-live-dot"></span><span data-i18n="sx_core_h">Now in Operation</span></span></div>
+          <div class="sx-soon-body">
+            <span class="sx-soon-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+            <div>
+              <h5 data-i18n="sx_core_t">Mashreq MEP Supply Trading and Contracting</h5>
+              <p data-i18n="sx_core_p">Reliable supply and contracting of high-quality MEP products and solutions for modern construction.</p>
+              <span class="sx-live-link"><span data-i18n="sx_core_btn">Explore Our Services</span> <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== BOTTOM STRIP ============== -->
+  <section class="sx-strip">
+    <div class="sx-strip-inner">
+      <div class="sx-strip-copy">
+        <span class="sx-strip-eyebrow" data-i18n="sx_strip_eyebrow">A Broader Tomorrow</span>
+        <h3 data-i18n="sx_strip_h3">More Capabilities. <em>A Stronger Saudi Arabia.</em></h3>
+      </div>
+      <p class="sx-strip-note" data-i18n="sx_strip_note">Each new sector reflects our commitment to support the Kingdom's construction and infrastructure growth with reliable solutions and long-term partnerships.</p>
+      <a class="sx-strip-cta" href="./contact.html"><span data-i18n="sx_strip_cta">Be Part of What's Next</span> <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+<footer class="ft2">
+  <div class="ft2-inner">
+
+    <!-- Brand column -->
+    <div>
+      <div class="ft2-brand-row">
+        <img src="./images/logo.png" alt="Mashriq Logo">
+        <div>
+          <span class="ft2-brand-name" data-i18n="brand_name">MASHRIQ</span>
+          <span class="ft2-brand-sub" data-i18n="brand_sub">Almuqaddimah Company<br>For Contracting</span>
+        </div>
+      </div>
+      <p class="ft2-desc" data-i18n="footer_company_desc">Your trusted partner for MEP and safety materials across Saudi Arabia. Quality products, reliable service, timely delivery.</p>
+      <div class="ft2-badges">
+        <div class="ft2-badge">
+          <span><i class="fa-solid fa-shield-halved"></i></span>
+          <small data-i18n="x_tr_quality">Quality<br>Products</small>
+        </div>
+        <div class="ft2-badge">
+          <span><i class="fa-solid fa-users"></i></span>
+          <small data-i18n="x_tr_partners">Trusted<br>Partners</small>
+        </div>
+        <div class="ft2-badge">
+          <span><i class="fa-solid fa-truck"></i></span>
+          <small data-i18n="ab_feat3">On-Time<br>Delivery</small>
+        </div>
+        <div class="ft2-badge">
+          <span><i class="fa-solid fa-leaf"></i></span>
+          <small data-i18n="x_tr_safer">A Safer<br>Tomorrow</small>
+        </div>
+      </div>
+      <span data-i18n="x_ft_tagline" class="ft2-script">Building Better Together</span>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h5 data-i18n="footer_quick_links">Quick Links</h5>
+      <ul class="ft2-links">
+        <li><a href="#hero" data-i18n="footer_link_home">Home</a></li>
+        <li><a href="#about" data-i18n="footer_link_about">About Us</a></li>
+        <li><a href="#products" data-i18n="footer_link_products">Products</a></li>
+        <li><a data-i18n="nav_sectors" href="#">Our Sectors</a></li>
+        <li><a href="./brands.html" data-i18n="footer_link_brands">Brands</a></li>
+        <li><a href="#contact" data-i18n="footer_link_contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Our Products -->
+    <div>
+      <h5 data-i18n="footer_our_products">Our Products</h5>
+      <ul class="ft2-links">
+        <li><a href="#products" data-i18n="footer_prod_pipes">Pipes &amp; Fittings</a></li>
+        <li><a href="#products" data-i18n="footer_prod_valves">Valves &amp; Gauges</a></li>
+        <li><a href="#products" data-i18n="footer_prod_fire">Fire Safety</a></li>
+        <li><a href="#products" data-i18n="footer_prod_cpvc">CPVC &amp; UPVC</a></li>
+        <li><a href="#products" data-i18n="footer_prod_elec">Electrical</a></li>
+        <li><a href="#products" data-i18n="footer_prod_safe">Safety Equipment</a></li>
+        <li><a href="#products" data-i18n="footer_prod_sanitary">Sanitaryware</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div>
+      <h5 data-i18n="footer_contact_us">Contact Us</h5>
+      <div class="ft2-citem">
+        <i class="fa-solid fa-location-dot"></i>
+        <span data-i18n="x_ft_addr">Building No 6599, Street: Abi Bakr Al Siddiq, Al Narjis Dist, RIYADH, Kingdom of Saudi Arabia, Postal Code: 13346</span>
+      </div>
+      <div class="ft2-citem">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+966503046469">+966 5030 46469</a>
+      </div>
+      <div class="ft2-citem">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:sales@mashreq.sa">sales@mashreq.sa</a>
+      </div>
+      <div class="ft2-citem">
+        <i class="fa-regular fa-clock"></i>
+        <span data-i18n="x_ft_hours">Sun – Thu: 8:00 AM – 6:00 PM<br>(Closed on Friday)</span>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h5 data-i18n="footer_newsletter_title">Subscribe to Our Newsletter</h5>
+      <p data-i18n="x_ft_news" class="ft2-news-desc">Stay updated with our latest products, brands and industry insights.</p>
+      <div class="ft2-news-row">
+        <input type="email" data-i18n="footer_newsletter_placeholder" placeholder="Your email address">
+        <button type="button"><span data-i18n="footer_newsletter_btn">Subscribe</span> <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <p class="ft2-news-note" data-i18n="footer_newsletter_note">No spam. Unsubscribe anytime.</p>
+
+      <h5 data-i18n="ft_follow_us">Follow Us</h5>
+      <div class="ft2-follow">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="ft2-map">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <defs>
+            <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1" fill="#2c6e9e"/>
+            </pattern>
+          </defs>
+          <path d="M10.0 41.1 L11.4 35.9 L16.7 34.6 L23.8 32.8 L31.0 24.1 L35.7 26.3 L40.5 28.5 L45.2 28.0 L50.0 30.6 L54.8 33.7 L58.1 36.3 L66.7 36.7 L71.0 39.3 L75.7 41.5 L78.6 42.8 L81.4 45.9 L84.3 47.6 L86.2 50.2 L87.1 54.6 L88.1 55.9 L89.5 56.7 L91.0 57.6 L91.9 58.5 L92.9 63.3 L95.7 65.0 L100.0 65.0 L104.3 65.4 L107.6 64.6 L110.0 67.6 L108.1 72.0 L108.1 76.3 L107.1 78.5 L106.7 80.7 L97.6 80.7 L92.9 80.7 L83.3 81.1 L78.6 82.4 L73.8 85.0 L71.4 87.2 L69.0 87.6 L67.6 88.5 L64.3 88.1 L60.5 87.6 L57.1 87.6 L51.9 87.6 L51.0 89.4 L49.0 92.0 L47.6 94.1 L47.6 95.9 L45.2 93.7 L44.3 91.5 L41.4 87.2 L39.5 82.8 L37.6 79.8 L35.7 77.6 L33.3 74.1 L31.9 70.7 L31.0 68.5 L30.0 66.7 L28.1 63.3 L26.2 61.1 L24.3 58.5 L22.9 56.3 L21.4 54.1 L20.5 52.0 L18.6 49.8 L16.7 48.0 L14.8 45.9 L12.9 43.7 Z" fill="url(#dots)" stroke="#3a97d4" stroke-width="0.8" stroke-linejoin="round"/>
+          <circle cx="67.6" cy="55.9" r="9" fill="rgba(56,189,248,0.18)"/>
+          <path d="M67.6 45.9c-4.7 0-8.5 3.8-8.5 8.5 0 6.4 8.5 14 8.5 14s8.5-7.6 8.5-14c0-4.7-3.8-8.5-8.5-8.5z" fill="#38bdf8"/>
+          <circle cx="67.6" cy="54.699999999999996" r="3" fill="#041220"/>
+        </svg>
+        <small data-i18n="ft_map_caption">Supporting<br>Projects Across<br>Saudi Arabia</small>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Trust row -->
+  <div class="ft2-trust">
+    <div class="ft2-trust-item">
+      <i class="fa-solid fa-globe"></i>
+      <div>
+        <h6 data-i18n="ft_trust1_t">Trusted Global Brands</h6>
+        <p data-i18n="ft_trust1_p">Quality products from leading manufacturers</p>
+      </div>
+    </div>
+    <div class="ft2-trust-item">
+      <i class="fa-solid fa-gear"></i>
+      <div>
+        <h6 data-i18n="ft_trust2_t">Reliable Supply Chain</h6>
+        <p data-i18n="ft_trust2_p">On-time delivery, every time</p>
+      </div>
+    </div>
+    <div class="ft2-trust-item">
+      <i class="fa-solid fa-users"></i>
+      <div>
+        <h6 data-i18n="ft_trust3_t">People Focused</h6>
+        <p data-i18n="ft_trust3_p">Building safer communities</p>
+      </div>
+    </div>
+    <div class="ft2-trust-item">
+      <i class="fa-solid fa-leaf"></i>
+      <div>
+        <h6 data-i18n="ft_trust4_t">Sustainable Solutions</h6>
+        <p data-i18n="ft_trust4_p">For a stronger tomorrow</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="ft2-bottom">
+    <div class="ft2-bottom-inner">
+      <p data-i18n="footer_copy">© 2026 MASHRIQ Almuqaddimah Company For Contracting. All rights reserved.</p>
+      <div class="ft2-legal">
+        <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer_terms">Terms of Use</a>
+        <a href="#" data-i18n="footer_sitemap">Sitemap</a>
+      </div>
+      <div class="ft2-loc">
+        <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span>
+        <button class="ft2-top" id="ftBackTop">
+          <span class="circ"><i class="fa-solid fa-arrow-up"></i></span>
+          <span data-i18n="x_back_top">Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./nav.js?v=1"></script>
+<script src="translations.js?v=11"></script>
+<script>
+    // Mobile nav (redesigned)
+    const mobBurger  = document.getElementById('mobBurger');
+    const mobClose   = document.getElementById('mobClose');
+    const mobOverlay = document.getElementById('mobOverlay');
+    const mobAccBtn  = document.getElementById('mobAccBtn');
+    const mobAccBody = document.getElementById('mobAccBody');
+    const langToggleMob = document.getElementById('langToggleMob');
+
+    function openMobMenu() {
+      mobOverlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobMenu() {
+      mobOverlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    if (mobBurger) mobBurger.addEventListener('click', openMobMenu);
+    if (mobClose)  mobClose.addEventListener('click', closeMobMenu);
+
+    if (mobOverlay) {
+      mobOverlay.querySelectorAll('.mob-menu-links a').forEach(link => {
+        link.addEventListener('click', closeMobMenu);
+      });
+    }
+
+    // Accordion
+    if (mobAccBtn && mobAccBody) {
+      mobAccBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = mobAccBody.classList.toggle('open');
+        mobAccBtn.setAttribute('aria-expanded', open);
+      });
+    }
+
+    // Lang toggle
+    if (langToggleMob) {
+      langToggleMob.addEventListener('click', () => {
+        if (typeof toggleLanguage === 'function') toggleLanguage();
+      });
+    }
+</script>
+</body>
+</html>

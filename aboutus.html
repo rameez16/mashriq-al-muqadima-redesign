@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=19">
   <style>
     :root {
       --ab-navy: #0d2a45;
@@ -251,281 +251,14 @@
   </style>
   <!-- ============== NAV2 (same as index) ============== -->
 <style>
-    /* ── Navbar redesign (mockup style) ── */
-    .nav2-wrap {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1030;
-    }
-    .nav2-utility {
-      background: rgba(6, 20, 34, 0.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: #cfe6f5;
-      font-size: 0.82rem;
-    }
-    .nav2-utility-inner {
-      max-width: 1780px;
-      margin: 0 auto;
-      padding: 8px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-    .nav2-u-left,
-    .nav2-u-right {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav2-u-left li,
-    .nav2-u-right li {
-      display: flex;
-      align-items: center;
-    }
-    .nav2-u-left li:not(:first-child)::before,
-    .nav2-u-right li:not(:first-child)::before {
-      content: '';
-      width: 1px;
-      height: 12px;
-      background: rgba(207, 230, 245, 0.3);
-      margin: 0 16px;
-    }
-    .nav2-u-left a,
-    .nav2-u-right a,
-    .nav2-u-right span {
-      color: #cfe6f5;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: color 0.15s;
-    }
-    .nav2-u-left a:hover,
-    .nav2-u-right a:hover { color: #38bdf8; }
-    .nav2-u-right i { color: #38bdf8; margin-right: 7px; }
-    .nav2-u-soc {
-      display: flex;
-      gap: 14px;
-      margin-left: 18px;
-    }
-    .nav2-u-soc a {
-      color: #9fc3da;
-      font-size: 0.95rem;
-    }
-    .nav2-u-soc a:hover { color: #38bdf8; }
+  /* page rules (navbar styles now live in styles.css) */
 
-    /* Floating glass navbar */
-    .nav2-main {
-      margin: 10px auto 0;
-      max-width: 1780px;
-      background: linear-gradient(120deg, rgba(240, 246, 251, 0.97) 0%, rgba(219, 233, 244, 0.93) 55%, rgba(205, 224, 239, 0.9) 100%);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 12px;
-      box-shadow: 0 10px 34px rgba(2, 12, 24, 0.35);
-    }
-    .nav2-main-inner {
-      max-width: 1780px;
-      margin: 0 auto;
-      padding: 14px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .nav2-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .nav2-brand img {
-      height: 110px;
-      width: auto;
-    }
-    .nav2-brand-name {
-      display: block;
-      font-size: 2.3rem;
-      font-weight: 800;
-      color: #0d1b2a;
-      letter-spacing: 0.5px;
-      line-height: 1.15;
-    }
-    .nav2-brand-sub {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #4a5c6d;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      line-height: 1.5;
-    }
-    .nav2-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav2-link {
-      position: relative;
-      display: block;
-      padding: 12px 13px;
-      color: #14293c;
-      font-size: 1.08rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: color 0.15s, background 0.15s;
-    }
-    .nav2-link:hover { color: #0ea5e9; }
-    .nav2-link.active { color: #0ea5e9; }
-    .nav2-link.active::after {
-      content: '';
-      position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 4px;
-      height: 2px;
-      border-radius: 2px;
-      background: #0ea5e9;
-    }
-    .nav2-dd {
-      position: relative;
-    }
-    .nav2-dd > .nav2-link::after {
-      content: '▾';
-      font-size: 0.65rem;
-      margin-left: 5px;
-    }
-    .nav2-dd-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      min-width: 230px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 16px 44px rgba(2, 12, 24, 0.25);
-      padding: 8px 0;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-6px);
-      transition: opacity 0.18s, transform 0.18s;
-      z-index: 1100;
-    }
-    .nav2-dd:hover .nav2-dd-menu,
-    .nav2-dd:focus-within .nav2-dd-menu {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateY(0);
-    }
-    .nav2-dd-menu a {
-      display: block;
-      padding: 10px 18px;
-      color: #14293c;
-      font-size: 0.92rem;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .nav2-dd-menu a:hover { background: #eaf4fb; color: #0ea5e9; }
-
-    .nav2-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-    .nav2-icon-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(20, 41, 60, 0.18);
-      background: rgba(255, 255, 255, 0.55);
-      color: #14293c;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .nav2-icon-btn:hover {
-      background: #0ea5e9;
-      border-color: #0ea5e9;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    .nav2-icon-btn.dl { position: relative; }
-    .nav2-icon-btn.dl::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      right: 2px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #0e8ce4;
-      border: 2px solid #eef4f9;
-    }
-    .nav2-sep {
-      width: 1px;
-      height: 26px;
-      background: rgba(20, 41, 60, 0.18);
-    }
-    .nav2-lang {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: none;
-      border: none;
-      color: #14293c;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .nav2-lang:hover { color: #0ea5e9; }
-    .nav2-quote {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #0e8ce4;
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 700;
-      padding: 14px 26px;
-      border-radius: 9px;
-      text-decoration: none;
-      box-shadow: 0 8px 22px rgba(14, 140, 228, 0.4);
-      transition: background 0.2s, transform 0.2s;
-    }
-    .nav2-quote:hover {
-      background: #0b74c2;
-      transform: translateY(-1px);
-      color: #fff;
-    }
 
     /* Push page content below fixed nav */
     body { padding-top: 0 !important; }
+
     #navbar.navbar-custom { display: none !important; }
 
-    @media (max-width: 1140px) {
-      .nav2-links { display: none; }
-    }
-    @media (max-width: 768px) {
-      .nav2-utility-inner { padding: 6px 16px; font-size: 0.72rem; }
-      .nav2-u-left { display: none; }
-      .nav2-main { margin: 8px 12px 0; }
-      .nav2-right .nav2-quote { padding: 11px 16px; font-size: 0.85rem; }
-      .nav2-icon-btn { width: 38px; height: 38px; font-size: 0.85rem; }
-      .nav2-sep { display: none; }
-    }
     /* ---- Back to Home pill (top of hero) ---- */
   .back-home {
     display: inline-flex; align-items: center; gap: 8px;
@@ -538,9 +271,13 @@
     backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
     transition: background .18s ease, transform .18s ease, color .18s ease;
   }
+
   .back-home i { font-size: 11px; transition: transform .18s ease; }
+
   .back-home:hover { background: #fff; color: #14294c; transform: translateX(-2px); }
+
   .back-home:hover i { transform: translateX(-2px); }
+
   /* ---- Back to Home pill on light heroes: dark bluish tint ---- */
   .back-home.on-light {
     background: rgba(20, 41, 76, 0.82);
@@ -549,16 +286,19 @@
     box-shadow: 0 4px 16px rgba(13, 42, 69, 0.25);
     backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
   }
+
   .back-home.on-light i { color: #7dd3f8; }
+
   .back-home.on-light:hover { background: #0e8ce4; border-color: #0e8ce4; color: #fff; }
+
   .back-home.on-light:hover i { color: #fff; }
-</style>
+  </style>
   
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     html[lang="ar"] body, html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] h5, html[lang="ar"] h6,
     html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] b, html[lang="ar"] small, html[lang="ar"] li, html[lang="ar"] a, html[lang="ar"] button { font-family: 'Tajawal', 'DM Sans', sans-serif !important; }
-    html[lang="ar"] h1 { font-size: calc(1em * 0.94); line-height: 1.35; }
+    html[lang="ar"] h1 { line-height: 1.35; }
     html[lang="ar"] h2 { line-height: 1.4; }
     html[lang="ar"] * { letter-spacing: 0 !important; }
     html[lang="ar"] a[href^="tel"], html[lang="ar"] a[href^="mailto"], html[lang="ar"] .ab-vertical { direction: ltr; unicode-bidi: embed; }
@@ -568,67 +308,59 @@
 </head>
 <body>
 
-<div class="nav2-wrap">
+  
+<div class="nav2-wrap" id="nav2">
     <div class="nav2-utility">
       <div class="nav2-utility-inner">
-        <ul class="nav2-u-left">
-          <li><a href="./mep-home.html#products">MEP Supply</a></li>
-          <li><a href="./mep-home.html#about" data-i18n="sect_link1">Trading &amp; Contracting</a></li>
-          <li><a href="./mep-home.html">Mashriq Group</a></li>
+        <ul class="nav2-u-list">
+          <li><span><i class="fa-solid fa-location-dot"></i><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span></li>
+          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i><bdi>+966 5030 46469</bdi></a></li>
+          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a></li>
         </ul>
-        <ul class="nav2-u-right">
-          <li><span><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</span></li>
-          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i> +966 5030 46469</a></li>
-          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i> sales@mashreq.sa</a></li>
-          <li>
-            <span class="nav2-u-soc">
-              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </span>
+        <ul class="nav2-u-list">
+          <li><a class="nav2-u-group" href="./index.html"><i class="fa-solid fa-sitemap"></i><span data-i18n="tb_group">Group Home</span></a></li>
+          <li class="nav2-u-divider" aria-hidden="true"></li>
+          <li class="nav2-u-soc">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </li>
         </ul>
       </div>
     </div>
 
-    <nav class="nav2-main">
+    <nav class="nav2-main" aria-label="Main navigation">
       <div class="nav2-main-inner">
-        <a href="./mep-home.html" class="nav2-brand">
-          <img src="./images/logo.png" alt="Mashreq Logo">
-          <span>
+        <a href="./index.html" class="nav2-brand" title="Mashriq Group home">
+          <img src="./images/logo.png" alt="Mashriq Almuqaddimah logo">
+          <span class="nav2-brand-text">
             <span class="nav2-brand-name" data-i18n="brand_name">MASHRIQ</span>
-            <span class="nav2-brand-sub" data-i18n="brand_tagline">Almuqaddimah Company<br>For Contracting</span>
+            <span class="nav2-brand-sub" data-i18n="brand_sub">Almuqaddimah Company For Contracting</span>
           </span>
         </a>
 
         <ul class="nav2-links">
           <li><a class="nav2-link" href="./mep-home.html" data-i18n="nav_home">Home</a></li>
           <li><a class="nav2-link active" href="./aboutus.html" data-i18n="nav_about">About</a></li>
-          <li class="nav2-dd">
-            <a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a>
-          </li>
-          <li class="nav2-dd">
-            <a class="nav2-link" href="#">Our Sectors</a>
-            <div class="nav2-dd-menu">
-              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
-              <a href="./sectors.html" data-i18n="sect_link2">Mashreq Rentals</a>
-              <a href="./sectors.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
-              <a href="./sectors.html" data-i18n="sect_link4">Mashreq Facility Management</a>
-            </div>
-          </li>
+          <li><a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a></li>
           <li><a class="nav2-link" href="./brands.html" data-i18n="nav_brands">Brands</a></li>
           <li><a class="nav2-link" href="./contact.html" data-i18n="nav_contact">Contact</a></li>
-          <li><a class="nav2-link" href="./mep-home.html">Mashriq Group</a></li>
+          <li class="nav2-dd">
+            <a class="nav2-link" href="#" aria-haspopup="true"><span data-i18n="nav_sectors">Our Sectors</span><i class="fa-solid fa-chevron-down nav2-caret" aria-hidden="true"></i></a>
+            <div class="nav2-dd-menu">
+              <a href="./sectors.html" data-i18n="x_all_sectors">All Sectors</a>
+              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
+              <a href="./sector-rentals.html" data-i18n="sect_link2">Mashreq Rentals</a>
+              <a href="./sector-om.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+              <a href="./sector-fm.html" data-i18n="sect_link4">Mashreq Facility Management</a>
+            </div>
+          </li>
         </ul>
 
         <div class="nav2-right">
-          <button class="nav2-icon-btn" title="Search" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-          <a class="nav2-icon-btn dl" href="files/a4%20brochure%20final.pdf" download title="Downloads / Catalogue" aria-label="Download Brochure"><i class="fa-solid fa-download"></i></a>
-          <button class="nav2-icon-btn" title="Account" aria-label="Profile"><i class="fa-regular fa-user"></i></button>
-          <span class="nav2-sep"></span>
-          <button class="nav2-lang" id="langToggle" title="Toggle Language">
-            <i class="fa-solid fa-globe"></i> عربي
-          </button>
-          <a class="nav2-quote" href="./get-quote.html" data-i18n="nav_quote">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="nav2-text-btn" href="files/a4%20brochure%20final.pdf" download title="Download company brochure"><i class="fa-solid fa-file-arrow-down"></i><span class="lbl" data-i18n="x_brochure">Brochure</span></a>
+          <span class="nav2-sep" aria-hidden="true"></span>
+          <button class="nav2-text-btn nav2-lang" id="langToggle" type="button" title="Switch language"><i class="fa-solid fa-globe"></i> عربي</button>
+          <a class="nav2-quote" href="./get-quote.html"><span data-i18n="nav_quote">Get a Quote</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </nav>
@@ -642,10 +374,10 @@
   <div class="mob-nav-bar">
 
     <!-- Brand -->
-    <a href="./mep-home.html" class="mob-brand">
+    <a href="./index.html" class="mob-brand" title="Mashriq Group home">
       <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
       <div class="mob-brand-info">
-        <span class="mob-brand-name">MASHRIQ</span>
+        <span data-i18n="brand_name" class="mob-brand-name">MASHRIQ</span>
         <span class="mob-brand-tagline" data-i18n="brand_tagline">Almuqaddimah Company For Contracting</span>
         <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
       </div>
@@ -666,10 +398,10 @@
 
       <!-- Top row in overlay -->
       <div class="mob-overlay-top">
-        <a href="./mep-home.html" class="mob-brand">
+        <a href="./index.html" class="mob-brand" title="Mashriq Group home">
           <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
           <div class="mob-brand-info">
-            <span class="mob-brand-name">MASHRIQ</span>
+            <span data-i18n="brand_name" class="mob-brand-name">MASHRIQ</span>
             <span class="mob-brand-tagline" data-i18n="brand_tagline">Almuqaddimah Company For Contracting</span>
             <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
           </div>
@@ -688,10 +420,11 @@
             <i class="fa-solid fa-chevron-down mob-chev"></i>
           </button>
           <div class="mob-acc-body" id="mobAccBody">
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="x_all_sectors">All Sectors</a>
             <a href="./mep-home.html" class="mob-sub-link" data-i18n="sect_link1">Trading &amp; Contracting</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
+            <a href="./sector-rentals.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
+            <a href="./sector-om.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+            <a href="./sector-fm.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
           </div>
         </li>
         <li><a href="./products.html" class="mob-menu-link"><i class="fa-solid fa-box-open"></i><span data-i18n="nav_products">Our Products</span></a></li>
@@ -703,7 +436,7 @@
       <div class="mob-contact">
         <a href="tel:+966503046469"><i class="fa-solid fa-phone"></i>+966 50 304 6469</a>
         <a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a>
-        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i>Riyadh, Saudi Arabia</span>
+        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span>
       </div>
 
       <!-- Socials -->
@@ -883,7 +616,7 @@
         </div>
         <div class="ab-stat">
           <i class="fa-solid fa-truck-fast"></i>
-          <b dir="ltr">On-Time</b>
+          <b data-i18n="x_ab_ontime" dir="ltr">On-Time</b>
           <small data-i18n="ab_stat3">Delivery</small>
         </div>
         <div class="ab-stat">
@@ -897,7 +630,7 @@
 
   <!-- FOOTER -->
   <footer class="mini-footer">
-    <p dir="ltr">© 2024 Mashreq AlMuqaddimah Company For Contracting · Riyadh, Saudi Arabia</p>
+    <p data-i18n="x_ft_copy_short" dir="ltr">© 2024 Mashreq AlMuqaddimah Company For Contracting · Riyadh, Saudi Arabia</p>
     <div class="links">
       <a href="mep-home.html" data-i18n="ab_ft_home">Home</a>
       <a href="products.html" data-i18n="ab_ft_products">Products</a>
@@ -906,7 +639,8 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="translations.js?v=6"></script>
+  <script src="./nav.js?v=1"></script>
+<script src="translations.js?v=11"></script>
   <script>
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting)),

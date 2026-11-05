@@ -14,15 +14,15 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Site Styles -->
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=19">
   <title>Mashriq · Get a Quote</title>
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=19">
 
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     html[lang="ar"] body, html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] h5, html[lang="ar"] h6,
     html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] b, html[lang="ar"] small, html[lang="ar"] li, html[lang="ar"] a, html[lang="ar"] button, html[lang="ar"] select, html[lang="ar"] input, html[lang="ar"] textarea { font-family: 'Tajawal', sans-serif !important; }
-    html[lang="ar"] h1 { font-size: calc(1em * 0.94); line-height: 1.35; }
+    html[lang="ar"] h1 { line-height: 1.35; }
     html[lang="ar"] h2 { line-height: 1.4; }
     html[lang="ar"] * { letter-spacing: 0 !important; }
     html[lang="ar"] a[href^="tel"], html[lang="ar"] a[href^="mailto"], html[lang="ar"] .sx-vertical, html[lang="ar"] input[type="tel"] { direction: ltr; unicode-bidi: embed; }
@@ -33,343 +33,67 @@
 
   <!-- ============== TOP UTILITY BAR ============== -->
   <style>
-    /* ── Navbar redesign (mockup style) ── */
-    .nav2-wrap {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1030;
-    }
-    .nav2-utility {
-      background: rgba(6, 20, 34, 0.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: #cfe6f5;
-      font-size: 0.82rem;
-    }
-    .nav2-utility-inner {
-      max-width: 1780px;
-      margin: 0 auto;
-      padding: 8px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-    .nav2-u-left,
-    .nav2-u-right {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav2-u-left li,
-    .nav2-u-right li {
-      display: flex;
-      align-items: center;
-    }
-    .nav2-u-left li:not(:first-child)::before,
-    .nav2-u-right li:not(:first-child)::before {
-      content: '';
-      width: 1px;
-      height: 12px;
-      background: rgba(207, 230, 245, 0.3);
-      margin: 0 16px;
-    }
-    .nav2-u-left a,
-    .nav2-u-right a,
-    .nav2-u-right span {
-      color: #cfe6f5;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: color 0.15s;
-    }
-    .nav2-u-left a:hover,
-    .nav2-u-right a:hover { color: #38bdf8; }
-    .nav2-u-right i { color: #38bdf8; margin-right: 7px; }
-    .nav2-u-soc {
-      display: flex;
-      gap: 14px;
-      margin-left: 18px;
-    }
-    .nav2-u-soc a {
-      color: #9fc3da;
-      font-size: 0.95rem;
-    }
-    .nav2-u-soc a:hover { color: #38bdf8; }
+  /* page rules (navbar styles now live in styles.css) */
 
-    /* Floating glass navbar */
-    .nav2-main {
-      margin: 10px auto 0;
-      max-width: 1780px;
-      background: linear-gradient(120deg, rgba(240, 246, 251, 0.97) 0%, rgba(219, 233, 244, 0.93) 55%, rgba(205, 224, 239, 0.9) 100%);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 12px;
-      box-shadow: 0 10px 34px rgba(2, 12, 24, 0.35);
-    }
-    .nav2-main-inner {
-      max-width: 1780px;
-      margin: 0 auto;
-      padding: 14px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .nav2-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .nav2-brand img {
-      height: 110px;
-      width: auto;
-    }
-    .nav2-brand-name {
-      display: block;
-      font-size: 2.3rem;
-      font-weight: 800;
-      color: #0d1b2a;
-      letter-spacing: 0.5px;
-      line-height: 1.15;
-    }
-    .nav2-brand-sub {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #4a5c6d;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      line-height: 1.5;
-    }
-    .nav2-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav2-link {
-      position: relative;
-      display: block;
-      padding: 12px 13px;
-      color: #14293c;
-      font-size: 1.08rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: color 0.15s, background 0.15s;
-    }
-    .nav2-link:hover { color: #0ea5e9; }
-    .nav2-link.active { color: #0ea5e9; }
-    .nav2-link.active::after {
-      content: '';
-      position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 4px;
-      height: 2px;
-      border-radius: 2px;
-      background: #0ea5e9;
-    }
-    .nav2-dd {
-      position: relative;
-    }
-    .nav2-dd > .nav2-link::after {
-      content: '▾';
-      font-size: 0.65rem;
-      margin-left: 5px;
-    }
-    .nav2-dd-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      min-width: 230px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 16px 44px rgba(2, 12, 24, 0.25);
-      padding: 8px 0;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-6px);
-      transition: opacity 0.18s, transform 0.18s;
-      z-index: 1100;
-    }
-    .nav2-dd:hover .nav2-dd-menu,
-    .nav2-dd:focus-within .nav2-dd-menu {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateY(0);
-    }
-    .nav2-dd-menu a {
-      display: block;
-      padding: 10px 18px;
-      color: #14293c;
-      font-size: 0.92rem;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .nav2-dd-menu a:hover { background: #eaf4fb; color: #0ea5e9; }
-
-    .nav2-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-    .nav2-icon-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(20, 41, 60, 0.18);
-      background: rgba(255, 255, 255, 0.55);
-      color: #14293c;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .nav2-icon-btn:hover {
-      background: #0ea5e9;
-      border-color: #0ea5e9;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    .nav2-icon-btn.dl { position: relative; }
-    .nav2-icon-btn.dl::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      right: 2px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #0e8ce4;
-      border: 2px solid #eef4f9;
-    }
-    .nav2-sep {
-      width: 1px;
-      height: 26px;
-      background: rgba(20, 41, 60, 0.18);
-    }
-    .nav2-lang {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: none;
-      border: none;
-      color: #14293c;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .nav2-lang:hover { color: #0ea5e9; }
-    .nav2-quote {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #0e8ce4;
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 700;
-      padding: 14px 26px;
-      border-radius: 9px;
-      text-decoration: none;
-      box-shadow: 0 8px 22px rgba(14, 140, 228, 0.4);
-      transition: background 0.2s, transform 0.2s;
-    }
-    .nav2-quote:hover {
-      background: #0b74c2;
-      transform: translateY(-1px);
-      color: #fff;
-    }
 
     /* Push page content below fixed nav */
     body { padding-top: 0 !important; }
-    #navbar.navbar-custom { display: none !important; }
 
-    @media (max-width: 1140px) {
-      .nav2-links { display: none; }
-    }
-    @media (max-width: 768px) {
-      .nav2-utility-inner { padding: 6px 16px; font-size: 0.72rem; }
-      .nav2-u-left { display: none; }
-      .nav2-main { margin: 8px 12px 0; }
-      .nav2-right .nav2-quote { padding: 11px 16px; font-size: 0.85rem; }
-      .nav2-icon-btn { width: 38px; height: 38px; font-size: 0.85rem; }
-      .nav2-sep { display: none; }
-    }
+    #navbar.navbar-custom { display: none !important; }
   </style>
-  <div class="nav2-wrap">
+  
+  <div class="nav2-wrap" id="nav2">
     <div class="nav2-utility">
       <div class="nav2-utility-inner">
-        <ul class="nav2-u-left">
-          <li><a href="#products">MEP Supply</a></li>
-          <li><a href="#about" data-i18n="sect_link1">Trading &amp; Contracting</a></li>
-          <li><a href="./mep-home.html">Mashriq Group</a></li>
+        <ul class="nav2-u-list">
+          <li><span><i class="fa-solid fa-location-dot"></i><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span></li>
+          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i><bdi>+966 5030 46469</bdi></a></li>
+          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a></li>
         </ul>
-        <ul class="nav2-u-right">
-          <li><span><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</span></li>
-          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i> +966 5030 46469</a></li>
-          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i> sales@mashreq.sa</a></li>
-          <li>
-            <span class="nav2-u-soc">
-              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </span>
+        <ul class="nav2-u-list">
+          <li><a class="nav2-u-group" href="./index.html"><i class="fa-solid fa-sitemap"></i><span data-i18n="tb_group">Group Home</span></a></li>
+          <li class="nav2-u-divider" aria-hidden="true"></li>
+          <li class="nav2-u-soc">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </li>
         </ul>
       </div>
     </div>
 
-    <nav class="nav2-main">
+    <nav class="nav2-main" aria-label="Main navigation">
       <div class="nav2-main-inner">
-        <a href="./mep-home.html" class="nav2-brand">
-          <img src="./images/logo.png" alt="Mashreq Logo">
-          <span>
+        <a href="./index.html" class="nav2-brand" title="Mashriq Group home">
+          <img src="./images/logo.png" alt="Mashriq Almuqaddimah logo">
+          <span class="nav2-brand-text">
             <span class="nav2-brand-name" data-i18n="brand_name">MASHRIQ</span>
-            <span class="nav2-brand-sub">Almuqaddimah Company<br>For Contracting</span>
+            <span class="nav2-brand-sub" data-i18n="brand_sub">Almuqaddimah Company For Contracting</span>
           </span>
         </a>
 
         <ul class="nav2-links">
-          <li><a class="nav2-link active" href="./mep-home.html" data-i18n="nav_home">Home</a></li>
+          <li><a class="nav2-link" href="./mep-home.html" data-i18n="nav_home">Home</a></li>
           <li><a class="nav2-link" href="./aboutus.html" data-i18n="nav_about">About</a></li>
-          <li class="nav2-dd">
-            <a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a>
-          </li>
-          <li class="nav2-dd">
-            <a class="nav2-link" href="#">Our Sectors</a>
-            <div class="nav2-dd-menu">
-              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
-              <a href="./sectors.html" data-i18n="sect_link2">Mashreq Rentals</a>
-              <a href="./sectors.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
-              <a href="./sectors.html" data-i18n="sect_link4">Mashreq Facility Management</a>
-            </div>
-          </li>
+          <li><a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a></li>
           <li><a class="nav2-link" href="./brands.html" data-i18n="nav_brands">Brands</a></li>
           <li><a class="nav2-link" href="./contact.html" data-i18n="nav_contact">Contact</a></li>
-          <li><a class="nav2-link" href="./mep-home.html">Mashriq Group</a></li>
+          <li class="nav2-dd">
+            <a class="nav2-link" href="#" aria-haspopup="true"><span data-i18n="nav_sectors">Our Sectors</span><i class="fa-solid fa-chevron-down nav2-caret" aria-hidden="true"></i></a>
+            <div class="nav2-dd-menu">
+              <a href="./sectors.html" data-i18n="x_all_sectors">All Sectors</a>
+              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
+              <a href="./sector-rentals.html" data-i18n="sect_link2">Mashreq Rentals</a>
+              <a href="./sector-om.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+              <a href="./sector-fm.html" data-i18n="sect_link4">Mashreq Facility Management</a>
+            </div>
+          </li>
         </ul>
 
         <div class="nav2-right">
-          <button class="nav2-icon-btn" title="Search" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-          <a class="nav2-icon-btn dl" href="files/a4%20brochure%20final.pdf" download title="Downloads / Catalogue" aria-label="Download Brochure"><i class="fa-solid fa-download"></i></a>
-          <button class="nav2-icon-btn" title="Account" aria-label="Profile"><i class="fa-regular fa-user"></i></button>
-          <span class="nav2-sep"></span>
-          <button class="nav2-lang" id="langToggle" title="Toggle Language">
-            <i class="fa-solid fa-globe"></i> عربي
-          </button>
-          <a class="nav2-quote" href="./get-quote.html" data-i18n="nav_quote">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="nav2-text-btn" href="files/a4%20brochure%20final.pdf" download title="Download company brochure"><i class="fa-solid fa-file-arrow-down"></i><span class="lbl" data-i18n="x_brochure">Brochure</span></a>
+          <span class="nav2-sep" aria-hidden="true"></span>
+          <button class="nav2-text-btn nav2-lang" id="langToggle" type="button" title="Switch language"><i class="fa-solid fa-globe"></i> عربي</button>
+          <a class="nav2-quote active" href="./get-quote.html"><span data-i18n="nav_quote">Get a Quote</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </nav>
@@ -381,9 +105,9 @@
   <div class="mob-nav-bar">
 
     <!-- Brand -->
-    <a href="./mep-home.html" class="mob-brand">
+    <a href="./index.html" class="mob-brand" title="Mashriq Group home">
       <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
-      <div class="mob-brand-info">
+      <div data-i18n="x_mob_brand" class="mob-brand-info">
         <span class="mob-brand-name">MASHRIQ</span>
         <span class="mob-brand-tagline">Almuqaddimah Company For Contracting</span>
         <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
@@ -405,9 +129,9 @@
 
       <!-- Top row in overlay -->
       <div class="mob-overlay-top">
-        <a href="./mep-home.html" class="mob-brand">
+        <a href="./index.html" class="mob-brand" title="Mashriq Group home">
           <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
-          <div class="mob-brand-info">
+          <div data-i18n="x_mob_brand" class="mob-brand-info">
             <span class="mob-brand-name">MASHRIQ</span>
             <span class="mob-brand-tagline">Almuqaddimah Company For Contracting</span>
             <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
@@ -427,10 +151,11 @@
             <i class="fa-solid fa-chevron-down mob-chev"></i>
           </button>
           <div class="mob-acc-body" id="mobAccBody">
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="x_all_sectors">All Sectors</a>
             <a href="./mep-home.html" class="mob-sub-link" data-i18n="sect_link1">Trading &amp; Contracting</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
+            <a href="./sector-rentals.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
+            <a href="./sector-om.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+            <a href="./sector-fm.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
           </div>
         </li>
         <li><a href="./products.html" class="mob-menu-link"><i class="fa-solid fa-box-open"></i><span data-i18n="nav_products">Our Products</span></a></li>
@@ -442,7 +167,7 @@
       <div class="mob-contact">
         <a href="tel:+966503046469"><i class="fa-solid fa-phone"></i>+966 50 304 6469</a>
         <a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a>
-        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i>Riyadh, Saudi Arabia</span>
+        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span>
       </div>
 
       <!-- Socials -->
@@ -660,7 +385,7 @@
           <input type="tel" name="Phone" data-i18n-ph="gq_ph_phone" placeholder="Phone Number (Optional)">
         </div>
         <button type="submit" class="gq-send"><span data-i18n="gq_send">Request Quote</span> <i class="fa-solid fa-arrow-right"></i></button>
-        <div class="gq-secure"><i class="fa-solid fa-lock"></i><span data-i18n="gq_secure">Your information is secure and will only be used to respond to your inquiry.</span> and will only be used to respond to your inquiry.</div>
+        <div class="gq-secure"><i class="fa-solid fa-lock"></i><span data-i18n="gq_secure">Your information is secure and will only be used to respond to your inquiry.</span></div>
       </form>
     </div>
   </div>
@@ -1146,22 +871,22 @@
       <div class="ft2-badges">
         <div class="ft2-badge">
           <span><i class="fa-solid fa-shield-halved"></i></span>
-          <small>Quality<br>Products</small>
+          <small data-i18n="x_tr_quality">Quality<br>Products</small>
         </div>
         <div class="ft2-badge">
           <span><i class="fa-solid fa-users"></i></span>
-          <small>Trusted<br>Partners</small>
+          <small data-i18n="x_tr_partners">Trusted<br>Partners</small>
         </div>
         <div class="ft2-badge">
           <span><i class="fa-solid fa-truck"></i></span>
-          <small>On-Time<br>Delivery</small>
+          <small data-i18n="ab_feat3">On-Time<br>Delivery</small>
         </div>
         <div class="ft2-badge">
           <span><i class="fa-solid fa-leaf"></i></span>
-          <small>A Safer<br>Tomorrow</small>
+          <small data-i18n="x_tr_safer">A Safer<br>Tomorrow</small>
         </div>
       </div>
-      <span class="ft2-script">Building Better Together</span>
+      <span data-i18n="x_ft_tagline" class="ft2-script">Building Better Together</span>
     </div>
 
     <!-- Quick Links -->
@@ -1171,7 +896,7 @@
         <li><a href="./mep-home.html" data-i18n="footer_link_home">Home</a></li>
         <li><a href="./mep-home.html#about" data-i18n="footer_link_about">About Us</a></li>
         <li><a href="./mep-home.html#products" data-i18n="footer_link_products">Products</a></li>
-        <li><a href="#">Our Sectors</a></li>
+        <li><a data-i18n="nav_sectors" href="#">Our Sectors</a></li>
         <li><a href="./brands.html" data-i18n="footer_link_brands">Brands</a></li>
         <li><a href="./contact.html" data-i18n="footer_link_contact">Contact</a></li>
       </ul>
@@ -1196,7 +921,7 @@
       <h5 data-i18n="footer_contact_us">Contact Us</h5>
       <div class="ft2-citem">
         <i class="fa-solid fa-location-dot"></i>
-        <span>Building No 6599, Street: Abi Bakr Al Siddiq, Al Narjis Dist, RIYADH, Kingdom of Saudi Arabia, Postal Code: 13346</span>
+        <span data-i18n="x_ft_addr">Building No 6599, Street: Abi Bakr Al Siddiq, Al Narjis Dist, RIYADH, Kingdom of Saudi Arabia, Postal Code: 13346</span>
       </div>
       <div class="ft2-citem">
         <i class="fa-solid fa-phone"></i>
@@ -1208,21 +933,21 @@
       </div>
       <div class="ft2-citem">
         <i class="fa-regular fa-clock"></i>
-        <span>Sun – Thu: 8:00 AM – 6:00 PM<br>(Closed on Friday)</span>
+        <span data-i18n="x_ft_hours">Sun – Thu: 8:00 AM – 6:00 PM<br>(Closed on Friday)</span>
       </div>
     </div>
 
     <!-- Newsletter -->
     <div>
       <h5 data-i18n="footer_newsletter_title">Subscribe to Our Newsletter</h5>
-      <p class="ft2-news-desc">Stay updated with our latest products, brands and industry insights.</p>
+      <p data-i18n="x_ft_news" class="ft2-news-desc">Stay updated with our latest products, brands and industry insights.</p>
       <div class="ft2-news-row">
         <input type="email" data-i18n="footer_newsletter_placeholder" placeholder="Your email address">
-        <button type="button" data-i18n="footer_newsletter_btn">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+        <button type="button"><span data-i18n="footer_newsletter_btn">Subscribe</span> <i class="fa-solid fa-arrow-right"></i></button>
       </div>
       <p class="ft2-news-note" data-i18n="footer_newsletter_note">No spam. Unsubscribe anytime.</p>
 
-      <h5>Follow Us</h5>
+      <h5 data-i18n="ft_follow_us">Follow Us</h5>
       <div class="ft2-follow">
         <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
@@ -1242,7 +967,7 @@
           <path d="M67.6 45.9c-4.7 0-8.5 3.8-8.5 8.5 0 6.4 8.5 14 8.5 14s8.5-7.6 8.5-14c0-4.7-3.8-8.5-8.5-8.5z" fill="#38bdf8"/>
           <circle cx="67.6" cy="54.699999999999996" r="3" fill="#041220"/>
         </svg>
-        <small>Supporting<br>Projects Across<br>Saudi Arabia</small>
+        <small data-i18n="ft_map_caption">Supporting<br>Projects Across<br>Saudi Arabia</small>
       </div>
     </div>
 
@@ -1253,29 +978,29 @@
     <div class="ft2-trust-item">
       <i class="fa-solid fa-globe"></i>
       <div>
-        <h6>Trusted Global Brands</h6>
-        <p>Quality products from leading manufacturers</p>
+        <h6 data-i18n="ft_trust1_t">Trusted Global Brands</h6>
+        <p data-i18n="ft_trust1_p">Quality products from leading manufacturers</p>
       </div>
     </div>
     <div class="ft2-trust-item">
       <i class="fa-solid fa-gear"></i>
       <div>
-        <h6>Reliable Supply Chain</h6>
-        <p>On-time delivery, every time</p>
+        <h6 data-i18n="ft_trust2_t">Reliable Supply Chain</h6>
+        <p data-i18n="ft_trust2_p">On-time delivery, every time</p>
       </div>
     </div>
     <div class="ft2-trust-item">
       <i class="fa-solid fa-users"></i>
       <div>
-        <h6>People Focused</h6>
-        <p>Building safer communities</p>
+        <h6 data-i18n="ft_trust3_t">People Focused</h6>
+        <p data-i18n="ft_trust3_p">Building safer communities</p>
       </div>
     </div>
     <div class="ft2-trust-item">
       <i class="fa-solid fa-leaf"></i>
       <div>
-        <h6>Sustainable Solutions</h6>
-        <p>For a stronger tomorrow</p>
+        <h6 data-i18n="ft_trust4_t">Sustainable Solutions</h6>
+        <p data-i18n="ft_trust4_p">For a stronger tomorrow</p>
       </div>
     </div>
   </div>
@@ -1290,10 +1015,10 @@
         <a href="#" data-i18n="footer_sitemap">Sitemap</a>
       </div>
       <div class="ft2-loc">
-        <span><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</span>
+        <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span>
         <button class="ft2-top" id="ftBackTop">
           <span class="circ"><i class="fa-solid fa-arrow-up"></i></span>
-          Back to Top
+          <span data-i18n="x_back_top">Back to Top</span>
         </button>
       </div>
     </div>
@@ -1310,26 +1035,27 @@
 <!-- ============== Bootstrap JS ============== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- ============== Translation Logic ============== -->
-<script src="translations.js?v=6"></script>
+<script src="./nav.js?v=1"></script>
+<script src="translations.js?v=11"></script>
 <!-- ============== Site Scripts ============== -->
 <!-- Send-via choice dialog (Email / WhatsApp) -->
 <div class="snd-overlay" id="sndOverlay" aria-hidden="true">
   <div class="snd-card" role="dialog" aria-modal="true" aria-labelledby="sndTitle">
     <button class="snd-close" id="sndClose" aria-label="Close">&times;</button>
     <div class="snd-ico"><i class="fa-solid fa-paper-plane"></i></div>
-    <h3 id="sndTitle">How would you like to send it?</h3>
-    <p class="snd-sub">Your message is ready &mdash; choose where to send it.</p>
+    <h3 data-i18n="x_sd_title" id="sndTitle">How would you like to send it?</h3>
+    <p data-i18n="x_sd_sub" class="snd-sub">Your message is ready &mdash; choose where to send it.</p>
     <div class="snd-btns">
       <a class="snd-btn mail" id="sndEmail" href="#">
         <span class="snd-bico"><i class="fa-solid fa-envelope"></i></span>
-        <span>Send via Email<small>Opens your email app to sales@mashreq.sa</small></span>
+        <span data-i18n="x_sd_email">Send via Email<small>Opens your email app to sales@mashreq.sa</small></span>
       </a>
       <a class="snd-btn wa" id="sndWa" href="#" target="_blank" rel="noopener">
         <span class="snd-bico"><i class="fa-brands fa-whatsapp"></i></span>
-        <span>Send via WhatsApp<small>Opens WhatsApp chat to +966 50 304 6469</small></span>
+        <span data-i18n="x_sd_wa">Send via WhatsApp<small>Opens WhatsApp chat to +966 50 304 6469</small></span>
       </a>
     </div>
-    <p class="snd-note">A notification is prepared on both &mdash; nothing is sent until you press send.</p>
+    <p data-i18n="x_sd_note" class="snd-note">A notification is prepared on both &mdash; nothing is sent until you press send.</p>
   </div>
 <script>
 

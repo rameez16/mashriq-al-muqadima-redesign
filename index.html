@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -120,14 +120,21 @@
     --border-soft: #d7e0e8;
   }
   * { box-sizing: border-box; margin:0; padding:0; }
+  html {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
   body {
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     color: var(--navy);
     background: var(--bg-page);
     line-height: 1.5;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
   }
   a { text-decoration:none; color:inherit; }
-  img { display:block; max-width:100%; }
+  img { display:block; max-width:100%; height: auto; }
 
   /* Header */
   header {
@@ -193,11 +200,6 @@
     display: flex;
     align-items: center;
     gap: 4px;
-  }
-  .dropdown-toggle::after {
-    content: '▼';
-    font-size: 10px;
-    margin-left: 4px;
   }
   .dropdown-menu {
     position: absolute;
@@ -292,18 +294,35 @@
     flex-shrink: 0;
   }
   @media (max-width: 1080px) {
-    .msq-topbar-inner { padding: 6px 20px; font-size: 12px; }
+    .msq-topbar-inner { padding: 6px 16px; font-size: 12px; }
     .msq-tb-right li:nth-child(1) { display: none; }
   }
   @media (max-width: 640px) {
+    .msq-topbar { overflow: hidden; }
     .msq-topbar-inner {
       flex-wrap: wrap;
       justify-content: center;
       row-gap: 2px;
-      padding: 6px 14px;
+      padding: 6px 12px;
+      max-width: 100%;
+    }
+    .msq-tb-left,
+    .msq-tb-right {
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 100%;
     }
     .msq-tb-left li:not(:first-child)::before,
-    .msq-tb-right li:not(:first-child)::before { margin: 0 10px; }
+    .msq-tb-right li:not(:first-child)::before { margin: 0 8px; }
+    .msq-tb-left a,
+    .msq-tb-right a,
+    .msq-tb-right span {
+      white-space: nowrap;
+      font-size: 11px;
+    }
+  }
+  @media (max-width: 400px) {
+    .msq-tb-right li:nth-child(3) { display: none; } /* hide email; phone stays */
   }
   .lang-btn {
     border: 1.5px solid var(--navy);
@@ -479,17 +498,6 @@
     background: var(--blue);
     color: #fff;
     border-color: var(--blue);
-  }
-  .sectors-btn::after {
-    content: '›';
-    font-size: 16px;
-    margin-left: 8px;
-    display: inline-block;
-    line-height: 1;
-    transition: transform 0.2s ease;
-  }
-  .hero-dropdown:hover .sectors-btn::after {
-    transform: rotate(90deg);
   }
   .sectors-btn {
     background: var(--navy);
@@ -968,28 +976,71 @@
     /* Mobile header: MEP Supply & Contracting button replaces Download Profile; show phone + email */
     .dl-btn { display:none; }
     .mep-btn { display:inline-flex; }
-    header { padding: 14px 20px; gap: 10px 16px; }
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "brand actions"
+        "contact contact";
+      align-items: center;
+      padding: 12px 16px;
+      gap: 10px 12px;
+      max-width: 100%;
+    }
+    .brand {
+      grid-area: brand;
+      min-width: 0;
+      overflow: hidden;
+    }
+    .brand-text { min-width: 0; }
+    .brand-text h1,
+    .brand-text p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .header-actions {
+      grid-area: actions;
+      flex-shrink: 0;
+      gap: 8px;
+    }
     .hc-mob {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 4px 18px;
-      order: 3;
+      grid-area: contact;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
       width: 100%;
-      font-size: 13.5px;
+      order: unset;
+      font-size: 13px;
       font-weight: 600;
+      padding-top: 2px;
+      border-top: 1px solid var(--border-soft);
     }
     .hc-mob a {
       color: var(--navy);
-      display:inline-flex;
-      align-items:center;
-      gap:7px;
-      text-decoration:none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
       transition: color .15s ease;
     }
     .hc-mob a:hover { color: var(--blue); }
     .hc-mob svg { width: 14px; height: 14px; color: var(--blue); flex-shrink: 0; }
-    .hero { grid-template-columns: 1fr; }
-    .stats-bar { grid-template-columns: repeat(2,1fr); gap: 24px 0; padding: 32px 24px; }
+    .mep-btn {
+      padding: 10px 12px;
+      font-size: 12px;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+    .lang-btn { padding: 8px 12px; font-size: 13px; }
+    .hero { grid-template-columns: 1fr; max-width: 100%; }
+    .hero-about { padding: 36px 20px 28px; }
+    .hero-heading { font-size: clamp(1.75rem, 7vw, 2.4rem); }
+    .hero-center { padding: 16px; max-width: 100%; }
+    .hero-sectors {
+      border-radius: 0;
+      max-width: 100%;
+    }
+    .stats-bar { grid-template-columns: repeat(2,1fr); gap: 24px 0; padding: 32px 20px; }
     .stat { border-left:none; padding: 0; min-width: 0; }
     .stat > div { min-width: 0; }
     .stat h4 { font-size: 14px; }
@@ -998,24 +1049,31 @@
     .hero-dropdown-menu {
       top: calc(100% + 10px);
       left: 0;
+      right: auto;
       transform: translateY(-6px);
-      min-width: 240px;
-      max-width: calc(100vw - 48px);
+      min-width: 0;
+      width: min(280px, calc(100vw - 40px));
+      max-width: calc(100vw - 40px);
     }
     .hero-dropdown-menu::before { display: none; }
+    .hero-actions { gap: 14px; }
+    .tagline { padding-left: 14px; }
   }
   @media (max-width: 560px) {
-    header { padding: 12px 16px; }
-    .brand-mark { height: 74px; width: auto; max-width: 63px; }
-    .brand-text h1 { font-size: 18px; }
-    .mep-btn { padding: 10px 14px; font-size: 12.5px; gap: 7px; }
-    .lang-btn { padding: 8px 14px; font-size: 13px; }
+    header { padding: 10px 14px; }
+    .brand-mark { height: 58px; width: auto; max-width: 52px; }
+    .brand-text h1 { font-size: 17px; }
+    .brand-text p { font-size: 9px; letter-spacing: 0.6px; }
+    .mep-btn { padding: 9px 10px; font-size: 11.5px; gap: 5px; }
+    .lang-btn { padding: 7px 10px; font-size: 12px; }
     /* Phone only on very small screens so the row stays tidy */
     .hc-mob a:last-child { display: none; }
-    .hc-mob { font-size: 13px; }
+    .hc-mob { font-size: 12.5px; }
+    .hero-about { padding: 28px 16px 24px; }
+    .msq-strip { padding-left: 1rem; padding-right: 1rem; }
   }
 
-/* ─── Arabic typography & RTL ─── */
+/* --- Arabic typography & RTL --- */
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@400;600;700;800&display=swap');
 html[lang="ar"] body,
 html[lang="ar"] input, html[lang="ar"] textarea, html[lang="ar"] select, html[lang="ar"] button {
@@ -1054,7 +1112,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <li><a href="./mep-home.html"><strong data-i18n="brand_name">Mashriq</strong>&nbsp;<em data-i18n="tb_trading">Trading &amp; Contracting</em></a></li>
     </ul>
     <ul class="msq-tb-right">
-      <li><span data-i18n="tb_location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Riyadh, Saudi Arabia</span></li>
+      <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span></li>
       <li><a href="tel:+966503046469"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+966 503046469</a></li>
       <li><a href="mailto:sales@mashreq.sa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>sales@mashreq.sa</a></li>
     </ul>
@@ -1075,9 +1133,9 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <a href="#" class="dropdown-toggle active" data-i18n="nav_sectors">Our Sectors</a>
       <div class="dropdown-menu">
         <a href="./mep-home.html" data-i18n="tb_trading">Trading and Contracting</a>
-        <a href="#" onclick="showComingSoon(event)">Rentals</a>
-        <a href="#" onclick="showComingSoon(event)">Operation & Maintenance</a>
-        <a href="#" onclick="showComingSoon(event)">Facility Management</a>
+        <a data-i18n="land_sec_rentals" href="#" onclick="showComingSoon(event)">Rentals</a>
+        <a data-i18n="land_sec_om" href="#" onclick="showComingSoon(event)">Operation & Maintenance</a>
+        <a data-i18n="land_sec_fm" href="#" onclick="showComingSoon(event)">Facility Management</a>
       </div>
     </div>
     <a href="#" class="contact-dialog-link" data-i18n="nav_contact">Contact</a>
@@ -1088,8 +1146,8 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
   </div>
   <div class="header-actions">
     <button class="lang-btn" id="langToggle">عربي</button>
-    <a class="mep-btn" href="./mep-home.html" title="Visit Mashriq Trading & Contracting">MEP Supply &amp; Contracting<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a class="dl-btn" href="files/a4%20brochure%20final.pdf" download title="Download Company Profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Profile</a>
+    <a class="mep-btn" href="./mep-home.html" title="Visit Mashriq Trading & Contracting"><span data-i18n="x_mep_btn">MEP Supply &amp; Contracting</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a class="dl-btn" href="files/a4%20brochure%20final.pdf" download title="Download Company Profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span data-i18n="x_dl_profile">Download Profile</span></a>
   </div>
 </header>
 
@@ -1106,9 +1164,9 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
         <a href="#" class="sectors-btn" data-i18n="nav_sectors">Our Sectors</a>
         <div class="hero-dropdown-menu">
           <a href="./mep-home.html" data-i18n="land_mep_trading">MEP Supply &amp; Trading</a>
-          <a href="#" class="soon-link" onclick="showComingSoon(event)">Rentals <span class="soon-pill" data-i18n="land_launching">Launching Soon</span></a>
-          <a href="#" class="soon-link" onclick="showComingSoon(event)">Operation &amp; Maintenance <span class="soon-pill" data-i18n="land_launching">Launching Soon</span></a>
-          <a href="#" class="soon-link" onclick="showComingSoon(event)">Facility Management <span class="soon-pill" data-i18n="land_launching">Launching Soon</span></a>
+          <a href="#" class="soon-link" onclick="showComingSoon(event)"><span data-i18n="land_sec_rentals">Rentals</span> <span class="soon-pill" data-i18n="land_launching">Launching Soon</span></a>
+          <a href="#" class="soon-link" onclick="showComingSoon(event)"><span data-i18n="land_sec_om">Operation &amp; Maintenance</span> <span class="soon-pill" data-i18n="land_launching">Launching Soon</span></a>
+          <a href="#" class="soon-link" onclick="showComingSoon(event)"><span data-i18n="land_sec_fm">Facility Management</span> <span class="soon-pill" data-i18n="land_launching">Launching Soon</span></a>
         </div>
       </div>
       <div class="tagline" data-i18n="land_tagline">SAME VALUES.<br>DIFFERENT AREAS OF WORK.</div>
@@ -1120,7 +1178,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
     <img src="./images/hero-mep-supply.png" alt="MEP supply products for contractors in Riyadh, Saudi Arabia">
       <div class="overlay-card">
         <div class="cart-badge"><i data-lucide="truck"></i></div>
-        <h2 data-i18n="brand_name">Mashriq<br><span data-i18n="land_mep_trading">MEP Supply &amp; Trading</span></h2>
+        <h2><span data-i18n="brand_name_tc">Mashriq</span><br><span data-i18n="land_mep_trading">MEP Supply &amp; Trading</span></h2>
         <p data-i18n="land_card_desc">Your trusted source for high-quality MEP, electrical, plumbing, fire-fighting and safety products.</p>
         <a href="./mep-home.html" class="core-btn" data-i18n="land_core_btn">Our Core Business &rarr;</a>
       </div>
@@ -1132,7 +1190,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <div class="thumb"><img src="./images/sector-rentals.png" alt="Equipment rental"></div>
       <div class="sector-body">
         <div class="sector-icon"><i data-lucide="hammer"></i></div>
-        <h3 data-i18n="brand_name">Mashriq<br><span data-i18n="land_sec_rentals">Rentals</span></h3>
+        <h3><span data-i18n="brand_name_tc">Mashriq</span><br><span data-i18n="land_sec_rentals">Rentals</span></h3>
         <p data-i18n="land_sec_rentals_desc">Equipment and machinery rental solutions.</p>
         <span class="sector-soon" onclick="showComingSoon(event)"><span class="dot"></span><span data-i18n="land_soon">Coming Soon</span>
       </div>
@@ -1141,7 +1199,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <div class="thumb"><img src="./images/sector-hvac-tech.png" alt="Operation and maintenance"></div>
       <div class="sector-body">
         <div class="sector-icon"><i data-lucide="settings"></i></div>
-        <h3 data-i18n="brand_name">Mashriq<br><span data-i18n="land_sec_om">Operation &amp; Maintenance</span></h3>
+        <h3><span data-i18n="brand_name_tc">Mashriq</span><br><span data-i18n="land_sec_om">Operation &amp; Maintenance</span></h3>
         <p data-i18n="land_sec_om_desc">O&amp;M services to keep assets running efficiently.</p>
         <span class="sector-soon" onclick="showComingSoon(event)"><span class="dot"></span><span data-i18n="land_soon">Coming Soon</span>
       </div>
@@ -1150,7 +1208,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <div class="thumb"><img src="./images/sector-facility-mgmt.png" alt="Facility management"></div>
       <div class="sector-body">
         <div class="sector-icon"><i data-lucide="building-2"></i></div>
-        <h3 data-i18n="brand_name">Mashriq<br><span data-i18n="land_sec_fm">Facility Management</span></h3>
+        <h3><span data-i18n="brand_name_tc">Mashriq</span><br><span data-i18n="land_sec_fm">Facility Management</span></h3>
         <p data-i18n="land_sec_fm_desc">Facility management services for clean, safe and productive spaces.</p>
         <span class="sector-soon" onclick="showComingSoon(event)"><span class="dot"></span><span data-i18n="land_soon">Coming Soon</span>
       </div>
@@ -1306,7 +1364,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
     <div class="ft-col ft-brand">
       <div class="ft-brand-row">
         <img src="./images/logo.png" alt="Mashriq Logo" class="ft-logo">
-        <div>
+        <div data-i18n="x_ft_brand">
           <span class="ft-brand-name">MASHRIQ</span>
           <span class="ft-brand-sub">Almuqaddimah Company<br>For Contracting</span>
         </div>
@@ -1606,12 +1664,20 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
   .ft-loc { color: var(--blue) !important; font-weight: 600; }
 
   @media (max-width: 1024px) {
-    .ft-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .ft-top { grid-template-columns: 1fr 1fr; gap: 36px; padding: 48px 28px 40px; }
+    .ft-bottom { padding: 18px 28px; }
   }
   @media (max-width: 600px) {
-    .ft-top { grid-template-columns: 1fr; padding: 44px 24px 36px; gap: 32px; }
-    .ft-bottom { flex-direction: column; text-align: center; padding: 18px 24px; }
-    .ft-legal { gap: 16px; }
+    .ft-top { grid-template-columns: 1fr; padding: 40px 16px 32px; gap: 28px; max-width: 100%; }
+    .ft-bottom { flex-direction: column; text-align: center; padding: 16px; max-width: 100%; }
+    .ft-legal { gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .ft-news { max-width: 100%; }
+    .ft-news-row {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .ft-news button { width: 100%; padding: 12px 16px; }
+    .ft-desc { max-width: 100%; }
   }
 </style>
 
@@ -1965,6 +2031,6 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
 </script>
 
 
-<script src="./translations.js?v=6"></script>
+<script src="./translations.js?v=11"></script>
 </body>
 </html>

@@ -132,7 +132,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Site Styles -->
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=19">
   <style>
 
 /* ─── Arabic typography & RTL ─── */
@@ -172,343 +172,69 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
   
   <!-- ============== TOP UTILITY BAR ============== -->
   <style>
-    /* ── Navbar redesign (mockup style) ── */
-    .nav2-wrap {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1030;
-    }
-    .nav2-utility {
-      background: rgba(6, 20, 34, 0.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: #cfe6f5;
-      font-size: 0.82rem;
-    }
-    .nav2-utility-inner {
-      max-width: 1780px;
-      margin: 0 auto;
-      padding: 8px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-    .nav2-u-left,
-    .nav2-u-right {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav2-u-left li,
-    .nav2-u-right li {
-      display: flex;
-      align-items: center;
-    }
-    .nav2-u-left li:not(:first-child)::before,
-    .nav2-u-right li:not(:first-child)::before {
-      content: '';
-      width: 1px;
-      height: 12px;
-      background: rgba(207, 230, 245, 0.3);
-      margin: 0 16px;
-    }
-    .nav2-u-left a,
-    .nav2-u-right a,
-    .nav2-u-right span {
-      color: #cfe6f5;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: color 0.15s;
-    }
-    .nav2-u-left a:hover,
-    .nav2-u-right a:hover { color: #38bdf8; }
-    .nav2-u-right i { color: #38bdf8; margin-right: 7px; }
-    .nav2-u-soc {
-      display: flex;
-      gap: 14px;
-      margin-left: 18px;
-    }
-    .nav2-u-soc a {
-      color: #9fc3da;
-      font-size: 0.95rem;
-    }
-    .nav2-u-soc a:hover { color: #38bdf8; }
+  /* page rules (navbar styles now live in styles.css) */
 
-    /* Floating glass navbar */
-    .nav2-main {
-      margin: 10px auto 0;
-      max-width: 1780px;
-      background: linear-gradient(120deg, rgba(240, 246, 251, 0.97) 0%, rgba(219, 233, 244, 0.93) 55%, rgba(205, 224, 239, 0.9) 100%);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 12px;
-      box-shadow: 0 10px 34px rgba(2, 12, 24, 0.35);
-    }
-    .nav2-main-inner {
-      max-width: 1780px;
-      margin: 0 auto;
-      padding: 14px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .nav2-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-    .nav2-brand img {
-      height: 110px;
-      width: auto;
-    }
-    .nav2-brand-name {
-      display: block;
-      font-size: 2.3rem;
-      font-weight: 800;
-      color: #0d1b2a;
-      letter-spacing: 0.5px;
-      line-height: 1.15;
-    }
-    .nav2-brand-sub {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #4a5c6d;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      line-height: 1.5;
-    }
-    .nav2-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav2-link {
-      position: relative;
-      display: block;
-      padding: 12px 13px;
-      color: #14293c;
-      font-size: 1.08rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: color 0.15s, background 0.15s;
-    }
-    .nav2-link:hover { color: #0ea5e9; }
-    .nav2-link.active { color: #0ea5e9; }
-    .nav2-link.active::after {
-      content: '';
-      position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 4px;
-      height: 2px;
-      border-radius: 2px;
-      background: #0ea5e9;
-    }
-    .nav2-dd {
-      position: relative;
-    }
-    .nav2-dd > .nav2-link::after {
-      content: '▾';
-      font-size: 0.65rem;
-      margin-left: 5px;
-    }
-    .nav2-dd-menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      min-width: 230px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 16px 44px rgba(2, 12, 24, 0.25);
-      padding: 8px 0;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-6px);
-      transition: opacity 0.18s, transform 0.18s;
-      z-index: 1100;
-    }
-    .nav2-dd:hover .nav2-dd-menu,
-    .nav2-dd:focus-within .nav2-dd-menu {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateY(0);
-    }
-    .nav2-dd-menu a {
-      display: block;
-      padding: 10px 18px;
-      color: #14293c;
-      font-size: 0.92rem;
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .nav2-dd-menu a:hover { background: #eaf4fb; color: #0ea5e9; }
 
-    .nav2-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-    .nav2-icon-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid rgba(20, 41, 60, 0.18);
-      background: rgba(255, 255, 255, 0.55);
-      color: #14293c;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .nav2-icon-btn:hover {
-      background: #0ea5e9;
-      border-color: #0ea5e9;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    .nav2-icon-btn.dl { position: relative; }
-    .nav2-icon-btn.dl::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      right: 2px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #0e8ce4;
-      border: 2px solid #eef4f9;
-    }
-    .nav2-sep {
-      width: 1px;
-      height: 26px;
-      background: rgba(20, 41, 60, 0.18);
-    }
-    .nav2-lang {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: none;
-      border: none;
-      color: #14293c;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .nav2-lang:hover { color: #0ea5e9; }
-    .nav2-quote {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #0e8ce4;
-      color: #fff;
-      font-size: 0.95rem;
-      font-weight: 700;
-      padding: 14px 26px;
-      border-radius: 9px;
-      text-decoration: none;
-      box-shadow: 0 8px 22px rgba(14, 140, 228, 0.4);
-      transition: background 0.2s, transform 0.2s;
-    }
-    .nav2-quote:hover {
-      background: #0b74c2;
-      transform: translateY(-1px);
-      color: #fff;
-    }
-
-    /* Push page content below fixed nav */
+    /* Desktop: hero sits under fixed glass nav (full-bleed). Mobile: mob-nav handles clearance. */
     body { padding-top: 0 !important; }
+
     #navbar.navbar-custom { display: none !important; }
 
-    @media (max-width: 1140px) {
-      .nav2-links { display: none; }
-    }
-    @media (max-width: 768px) {
-      .nav2-utility-inner { padding: 6px 16px; font-size: 0.72rem; }
-      .nav2-u-left { display: none; }
-      .nav2-main { margin: 8px 12px 0; }
-      .nav2-right .nav2-quote { padding: 11px 16px; font-size: 0.85rem; }
-      .nav2-icon-btn { width: 38px; height: 38px; font-size: 0.85rem; }
-      .nav2-sep { display: none; }
-    }
+    html, body { overflow-x: hidden; max-width: 100%; }
   </style>
-  <div class="nav2-wrap">
+  
+  <div class="nav2-wrap" id="nav2">
     <div class="nav2-utility">
       <div class="nav2-utility-inner">
-        <ul class="nav2-u-left">
-          <li><a href="#products">MEP Supply</a></li>
-          <li><a href="#about" data-i18n="sect_link1">Trading &amp; Contracting</a></li>
-          <li><a href="./index.html">Mashriq Group</a></li>
+        <ul class="nav2-u-list">
+          <li><span><i class="fa-solid fa-location-dot"></i><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span></li>
+          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i><bdi>+966 5030 46469</bdi></a></li>
+          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a></li>
         </ul>
-        <ul class="nav2-u-right">
-          <li><span><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</span></li>
-          <li><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i> +966 5030 46469</a></li>
-          <li><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i> sales@mashreq.sa</a></li>
-          <li>
-            <span class="nav2-u-soc">
-              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </span>
+        <ul class="nav2-u-list">
+          <li><a class="nav2-u-group" href="./index.html"><i class="fa-solid fa-sitemap"></i><span data-i18n="tb_group">Group Home</span></a></li>
+          <li class="nav2-u-divider" aria-hidden="true"></li>
+          <li class="nav2-u-soc">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </li>
         </ul>
       </div>
     </div>
 
-    <nav class="nav2-main">
+    <nav class="nav2-main" aria-label="Main navigation">
       <div class="nav2-main-inner">
-        <a href="./mep-home.html" class="nav2-brand">
-          <img src="./images/logo.png" alt="Mashreq Logo">
-          <span>
+        <a href="./index.html" class="nav2-brand" title="Mashriq Group home">
+          <img src="./images/logo.png" alt="Mashriq Almuqaddimah logo">
+          <span class="nav2-brand-text">
             <span class="nav2-brand-name" data-i18n="brand_name">MASHRIQ</span>
-            <span class="nav2-brand-sub">Almuqaddimah Company<br>For Contracting</span>
+            <span class="nav2-brand-sub" data-i18n="brand_sub">Almuqaddimah Company For Contracting</span>
           </span>
         </a>
 
         <ul class="nav2-links">
           <li><a class="nav2-link active" href="./mep-home.html" data-i18n="nav_home">Home</a></li>
           <li><a class="nav2-link" href="./aboutus.html" data-i18n="nav_about">About</a></li>
-          <li class="nav2-dd">
-            <a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a>
-          </li>
-          <li class="nav2-dd">
-            <a class="nav2-link" href="#">Our Sectors</a>
-            <div class="nav2-dd-menu">
-              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
-              <a href="./sectors.html" data-i18n="sect_link2">Mashreq Rentals</a>
-              <a href="./sectors.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
-              <a href="./sectors.html" data-i18n="sect_link4">Mashreq Facility Management</a>
-            </div>
-          </li>
+          <li><a class="nav2-link" href="./products.html" data-i18n="nav_products">Products</a></li>
           <li><a class="nav2-link" href="./brands.html" data-i18n="nav_brands">Brands</a></li>
           <li><a class="nav2-link" href="#" data-contact-dialog data-i18n="nav_contact">Contact</a></li>
-          <li><a class="nav2-link" href="./index.html">Mashriq Group</a></li>
+          <li class="nav2-dd">
+            <a class="nav2-link" href="#" aria-haspopup="true"><span data-i18n="nav_sectors">Our Sectors</span><i class="fa-solid fa-chevron-down nav2-caret" aria-hidden="true"></i></a>
+            <div class="nav2-dd-menu">
+              <a href="./sectors.html" data-i18n="x_all_sectors">All Sectors</a>
+              <a href="./mep-home.html" data-i18n="sect_link1">Trading &amp; Contracting</a>
+              <a href="./sector-rentals.html" data-i18n="sect_link2">Mashreq Rentals</a>
+              <a href="./sector-om.html" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+              <a href="./sector-fm.html" data-i18n="sect_link4">Mashreq Facility Management</a>
+            </div>
+          </li>
         </ul>
 
         <div class="nav2-right">
-          <button class="nav2-icon-btn" title="Search" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-          <a class="nav2-icon-btn dl" href="files/a4%20brochure%20final.pdf" download title="Downloads / Catalogue" aria-label="Download Brochure"><i class="fa-solid fa-download"></i></a>
-          <button class="nav2-icon-btn" title="Account" aria-label="Profile"><i class="fa-regular fa-user"></i></button>
-          <span class="nav2-sep"></span>
-          <button class="nav2-lang" id="langToggle" title="Toggle Language">
-            <i class="fa-solid fa-globe"></i> عربي
-          </button>
-          <a class="nav2-quote" href="./get-quote.html" data-i18n="nav_quote">Get a Quote <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="nav2-text-btn" href="files/a4%20brochure%20final.pdf" download title="Download company brochure"><i class="fa-solid fa-file-arrow-down"></i><span class="lbl" data-i18n="x_brochure">Brochure</span></a>
+          <span class="nav2-sep" aria-hidden="true"></span>
+          <button class="nav2-text-btn nav2-lang" id="langToggle" type="button" title="Switch language"><i class="fa-solid fa-globe"></i> عربي</button>
+          <a class="nav2-quote" href="./get-quote.html"><span data-i18n="nav_quote">Get a Quote</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </nav>
@@ -521,14 +247,14 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
   <div class="mob-topbar">
     <span class="mob-tb-item"><a href="tel:+966503046469"><i class="fa-solid fa-phone"></i>+966 503046469</a></span>
     <span class="mob-tb-item"><a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a></span>
-    <span class="mob-tb-item"><a class="mob-tb-group" href="./index.html"><i class="fa-solid fa-sitemap"></i>Mashriq Group</a></span>
+    <span class="mob-tb-item"><a class="mob-tb-group" href="./index.html"><i class="fa-solid fa-sitemap"></i><span data-i18n="tb_group">Group Home</span></a></span>
   </div>
   <div class="mob-nav-bar">
 
     <!-- Brand -->
-    <a href="./mep-home.html" class="mob-brand">
+    <a href="./index.html" class="mob-brand" title="Mashriq Group home">
       <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
-      <div class="mob-brand-info">
+      <div data-i18n="x_mob_brand" class="mob-brand-info">
         <span class="mob-brand-name">MASHRIQ</span>
         <span class="mob-brand-tagline">Almuqaddimah Company For Contracting</span>
         <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
@@ -539,7 +265,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
     <div class="mob-bar-actions">
       <a class="mob-bar-dl" href="files/a4%20brochure%20final.pdf" download title="Download Profile" aria-label="Download Profile">
         <i class="fa-solid fa-download"></i>
-        <span>Profile</span>
+        <span data-i18n="x_profile">Profile</span>
       </a>
       <button class="mob-bar-lang" id="langToggleBar" title="Toggle Language" aria-label="Toggle Language">
         <i class="fa-solid fa-globe"></i>
@@ -560,9 +286,9 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
 
       <!-- Top row in overlay -->
       <div class="mob-overlay-top">
-        <a href="./mep-home.html" class="mob-brand">
+        <a href="./index.html" class="mob-brand" title="Mashriq Group home">
           <img src="./images/logo.png" alt="Mashriq Logo" class="mob-logo">
-          <div class="mob-brand-info">
+          <div data-i18n="x_mob_brand" class="mob-brand-info">
             <span class="mob-brand-name">MASHRIQ</span>
             <span class="mob-brand-tagline">Almuqaddimah Company For Contracting</span>
             <span class="mob-brand-sub">+966 503046469 | sales@mashreq.sa</span>
@@ -582,23 +308,24 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
             <i class="fa-solid fa-chevron-down mob-chev"></i>
           </button>
           <div class="mob-acc-body" id="mobAccBody">
+            <a href="./sectors.html" class="mob-sub-link" data-i18n="x_all_sectors">All Sectors</a>
             <a href="./mep-home.html" class="mob-sub-link" data-i18n="sect_link1">Trading &amp; Contracting</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
-            <a href="./sectors.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
+            <a href="./sector-rentals.html" class="mob-sub-link" data-i18n="sect_link2">Mashreq Rentals</a>
+            <a href="./sector-om.html" class="mob-sub-link" data-i18n="sect_link3">Mashreq Operation &amp; Maintenance</a>
+            <a href="./sector-fm.html" class="mob-sub-link" data-i18n="sect_link4">Mashreq Facility Management</a>
           </div>
         </li>
         <li><a href="./products.html" class="mob-menu-link"><i class="fa-solid fa-box-open"></i><span data-i18n="nav_products">Our Products</span></a></li>
         <li><a href="./brands.html" class="mob-menu-link"><i class="fa-solid fa-file-lines"></i><span data-i18n="nav_brands">Brands</span></a></li>
         <li><a href="#" class="mob-menu-link" data-contact-dialog><i class="fa-solid fa-envelope"></i><span data-i18n="nav_contact">Contact Us</span></a></li>
-        <li><a href="./index.html" class="mob-menu-link"><i class="fa-solid fa-sitemap"></i><span>Mashriq Group</span></a></li>
+        <li><a href="./index.html" class="mob-menu-link"><i class="fa-solid fa-sitemap"></i><span data-i18n="tb_group">Group Home</span></a></li>
       </ul>
 
       <!-- Contact block -->
       <div class="mob-contact">
         <a href="tel:+966503046469"><i class="fa-solid fa-phone"></i>+966 50 304 6469</a>
         <a href="mailto:sales@mashreq.sa"><i class="fa-solid fa-envelope"></i>sales@mashreq.sa</a>
-        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i>Riyadh, Saudi Arabia</span>
+        <span class="mob-c-item"><i class="fa-solid fa-location-dot"></i><span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span>
       </div>
 
       <!-- Socials -->
@@ -844,17 +571,21 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
     }
     #hero .carousel-item > .d-flex { position: relative; z-index: 2; }
 
-    /* ── Slide copy: vertically centered in the hero ── */
+    /* ── Slide copy: clear fixed mob-nav, then center remaining space ── */
     #hero .carousel-item > .d-flex {
       align-items: center !important;
-      padding-top: 0;
+      padding-top: 120px !important;
+      padding-bottom: 36px !important;
+      box-sizing: border-box;
     }
     #hero .slide-content {
       max-width: 100%;
-      padding: 0 22px 0 !important;
+      width: 100%;
+      padding: 0 22px !important;
       margin-top: 0 !important;
       padding-bottom: 0 !important;
       align-self: center !important;
+      box-sizing: border-box;
     }
     #hero .slide-tag {
       display: none !important; /* slide-badge above already labels the slide; tag collided with it on mobile */
@@ -877,14 +608,25 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
     #hero .slide-content p {
       font-size: 1rem !important;
       line-height: 1.65 !important;
-      max-width: 340px !important;
-      margin-top: 84px !important;
+      max-width: 100% !important;
+      margin-top: 18px !important;
       color: #dbe9f4 !important;
       text-shadow: 0 1px 12px rgba(5, 20, 35, 0.5);
     }
 
-    /* ── Buttons: single solid navy CTA (mockup style) ── */
-    #hero .slide-content .d-flex { margin-top: 40px; }
+    /* ── Buttons: stack cleanly on narrow phones ── */
+    #hero .slide-content .d-flex {
+      margin-top: 28px;
+      flex-wrap: wrap;
+      gap: 12px !important;
+      max-width: 100%;
+    }
+    #hero .btn-primary-custom,
+    #hero .btn-outline-custom {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
     #hero .btn-primary-custom {
       background: linear-gradient(135deg, #38bdf8, #0e8ce4);
       border: none;
@@ -954,6 +696,24 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
     .slide-decor { display: none !important; }
   }
 </style>
+<style id="hero-nav-clearance">
+  /* ── Keep hero copy clear of the fixed navbar on laptop screens ── */
+  @media (min-width: 992px) {
+    #hero .carousel-item > .d-flex {
+      padding-top: 130px;          /* height of utility bar + glass navbar */
+      box-sizing: border-box;
+    }
+    #hero .slide-content { padding-bottom: 110px; }  /* room for the feature strip */
+  }
+  /* Short laptop screens (e.g. 1366×768, 1280×720, 1536×864 at 125% scaling) */
+  @media (min-width: 992px) and (max-height: 880px) {
+    #hero .slide-content h1 { font-size: clamp(2rem, 3.6vw, 3.1rem); }
+    #hero .slide-tag { margin-bottom: 14px; padding-bottom: 10px; }
+    #hero .slide-content p { margin-top: 12px; font-size: 1rem; line-height: 1.6; }
+  }
+  /* Arabic (RTL): the copy sits on the right, so move the slide counter + vertical tagline to the left */
+  [dir="rtl"] .hero2-side { right: auto; left: 64px; }
+</style>
 <section id="hero" class="hero-carousel">
   <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
     <div class="carousel-inner h-100">
@@ -963,7 +723,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
            style="background-image:linear-gradient(135deg,rgba(2, 28, 51, 0.877),rgba(8, 12, 15, 0.322),rgba(30, 38, 43, 0.733)),url('./images/hero-mep-supply.png');background-size:cover;background-position:center;">
         <div class="d-flex align-items-center h-100">
           <div class="slide-content">
-            <span class="slide-badge"><i class="fa-solid fa-industry"></i>Core Business</span>
+            <span class="slide-badge"><i class="fa-solid fa-industry"></i><span data-i18n="x_core_business">Core Business</span></span>
             <span class="slide-tag" data-i18n="h1_tag"><i class="fa-solid fa-industry"></i> MEP & Safety Materials</span>
             <h1 data-i18n="h1_title">Supplier for MEP & Safety Products</h1>
             <p data-i18n="h1_desc">Delivering Mechanical, Electrical & Plumbing materials to projects across Saudi Arabia.</p>
@@ -981,7 +741,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
            style="background-image:linear-gradient(135deg,rgba(2, 5, 8, 0.959),rgba(4, 39, 75, 0.685),rgba(16, 18, 19, 0.795)),url('./images/safty.jpeg');background-size:cover;background-position:center;">
         <div class="d-flex align-items-center h-100">
           <div class="slide-content">
-            <span class="slide-badge"><i class="fa-solid fa-shield-halved"></i>Safety First</span>
+            <span class="slide-badge"><i class="fa-solid fa-shield-halved"></i><span data-i18n="ab_val5_t">Safety First</span></span>
             <span class="slide-tag" data-i18n="h2_tag"><i class="fa-solid fa-shield-halved"></i> Fire & Safety</span>
             <h1>
               <span data-i18n="h2_title_a">Fire Fighting &</span><br/>
@@ -1002,7 +762,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
            style="background-image:linear-gradient(135deg,rgb(1, 3, 5),rgba(14, 47, 75, 0.589),rgba(94,109,117,.11)),url('./images/steel_pipes.jpeg');background-size:cover;background-position:center;">
         <div class="d-flex align-items-center h-100">
           <div class="slide-content">
-            <span class="slide-badge"><i class="fa-solid fa-droplet"></i>Flow Control</span>
+            <span class="slide-badge"><i class="fa-solid fa-droplet"></i><span data-i18n="prod_valves_tag">Flow Control</span></span>
             <span class="slide-tag" data-i18n="h3_tag"><i class="fa-solid fa-wrench"></i> Plumbing & Pipes</span>
             <h1>
               <em data-i18n="h3_title_a">CPVC & UPVC</em><br/>
@@ -1038,7 +798,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
   </div>
 
   <div class="hero2-side d-none d-xl-flex">
-    <span class="vtext">Building Solutions for a Stronger Tomorrow</span>
+    <span data-i18n="x_hero_tag" class="vtext">Building Solutions for a Stronger Tomorrow</span>
     <div class="vcount" id="heroCount">
       <span data-go="0" class="on">01</span>
       <span data-go="1">02</span>
@@ -1051,8 +811,8 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <div class="hero2-feat">
         <i class="fa-solid fa-grip-lines"></i>
         <div>
-          <h5>Quality Products</h5>
-          <p>From global brands</p>
+          <h5 data-i18n="x_q_products">Quality Products</h5>
+          <p data-i18n="x_from_global">From global brands</p>
         </div>
       </div>
       <div class="hero2-feat">
@@ -1066,14 +826,14 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
         <i class="fa-solid fa-users"></i>
         <div>
           <h5 data-i18n="hero2_f3_t">Supporting Saudi Vision</h5>
-          <p>People &bull; Projects &bull; Progress</p>
+          <p data-i18n="x_ppp">People &bull; Projects &bull; Progress</p>
         </div>
       </div>
       <div class="hero2-feat">
         <i class="fa-solid fa-leaf"></i>
         <div>
-          <h5>Sustainable Solutions</h5>
-          <p>For future generations</p>
+          <h5 data-i18n="ft_trust4_t">Sustainable Solutions</h5>
+          <p data-i18n="x_future_gen">For future generations</p>
         </div>
       </div>
     </div>
@@ -1282,24 +1042,24 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
         <p class="about-text" data-i18n="about_p2">
           With comprehensive mechanical, electrical, plumbing, fire-fighting, and safety solutions, we partner with reputable manufacturers to provide consistent quality and timely delivery.
         </p>
-        <a href="./aboutus.html" class="about-cta" data-i18n="about_btn">Know More <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="./aboutus.html" class="about-cta"><span data-i18n="about_btn">Know More</span> <i class="fa-solid fa-arrow-right"></i></a>
 
         <div class="about-feats">
           <div class="about-feat">
             <i class="fa-solid fa-shield-halved"></i>
-            <span>Quality<br>Products</span>
+            <span data-i18n="x_tr_quality">Quality<br>Products</span>
           </div>
           <div class="about-feat">
             <i class="fa-solid fa-handshake"></i>
-            <span>Trusted<br>Partners</span>
+            <span data-i18n="x_tr_partners">Trusted<br>Partners</span>
           </div>
           <div class="about-feat">
             <i class="fa-solid fa-truck-fast"></i>
-            <span>Timely<br>Delivery</span>
+            <span data-i18n="x_timely">Timely<br>Delivery</span>
           </div>
           <div class="about-feat">
             <i class="fa-solid fa-helmet-safety"></i>
-            <span>Safer<br>Workplaces</span>
+            <span data-i18n="x_safer_wp">Safer<br>Workplaces</span>
           </div>
         </div>
       </div>
@@ -1309,7 +1069,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
         <div class="about-collage">
           <img src="./images/product-sample.png" alt="MEP products: pipes, cables, fittings, valves, fire protection and ducting">
         </div>
-        <div class="about-badge">
+        <div data-i18n="x_mep_safety" class="about-badge">
           <strong>MEP &amp;<br><b>Safety</b></strong>
         </div>
       </div>
@@ -1961,17 +1721,17 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
 <section id="brands" class="py-5">
   <div class="br-wrap">
     <div class="br-head fade-up">
-      <div class="br-eyebrow">Trusted Global Partners</div>
+      <div data-i18n="x_brands_eyebrow" class="br-eyebrow">Trusted Global Partners</div>
       <h2 class="br-title"><span data-i18n="brands_work_a">Brands We</span> <b data-i18n="brands_work_b">Work With</b></h2>
-      <p class="br-sub">We source from established manufacturers across mechanical, plumbing, electrical and safety systems to deliver reliable solutions for every project.</p>
+      <p data-i18n="x_brands_desc" class="br-sub">We source from established manufacturers across mechanical, plumbing, electrical and safety systems to deliver reliable solutions for every project.</p>
     </div>
 
     <div class="br-filters fade-up" id="brFilters">
-      <button class="br-chip active" data-cat="all">All Brands</button>
-      <button class="br-chip" data-cat="mechanical">Mechanical</button>
-      <button class="br-chip" data-cat="plumbing">Plumbing</button>
-      <button class="br-chip" data-cat="electrical">Electrical</button>
-      <button class="br-chip" data-cat="safety">Safety</button>
+      <button data-i18n="x_br_all" class="br-chip active" data-cat="all">All Brands</button>
+      <button data-i18n="x_br_mech" class="br-chip" data-cat="mechanical">Mechanical</button>
+      <button data-i18n="x_br_plumb" class="br-chip" data-cat="plumbing">Plumbing</button>
+      <button data-i18n="x_br_elec" class="br-chip" data-cat="electrical">Electrical</button>
+      <button data-i18n="x_br_safety" class="br-chip" data-cat="safety">Safety</button>
     </div>
 
     <div class="br-grid fade-up" id="brGrid">
@@ -2289,16 +2049,16 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
   <div class="ct-backdrop"></div>
   <div class="ct-wrap">
     <div class="ct-head fade-up">
-      <div class="ct-eyebrow">Let's Build Together</div>
-      <h2 class="ct-title">Get in <b>Touch</b></h2>
-      <p class="ct-sub">Have a project in mind or need product support? Our team is here to help. Reach out and we'll get back to you shortly.</p>
+      <div data-i18n="gq_band_eyebrow" class="ct-eyebrow">Let's Build Together</div>
+      <h2 data-i18n="x_ct_title" class="ct-title">Get in <b>Touch</b></h2>
+      <p data-i18n="x_ct_desc" class="ct-sub">Have a project in mind or need product support? Our team is here to help. Reach out and we'll get back to you shortly.</p>
     </div>
 
     <div class="ct-grid fade-up">
       <!-- Contact Information -->
       <div class="ct-card">
         <h3 data-i18n="contact_info_title">Contact Information</h3>
-        <p class="ct-card-sub">We're always open for new opportunities</p>
+        <p data-i18n="land_ct_sub" class="ct-card-sub">We're always open for new opportunities</p>
 
         <div class="ct-item">
           <div class="ct-ico"><i class="fa-solid fa-phone"></i></div>
@@ -2328,7 +2088,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
           <div class="ct-ico"><i class="fa-solid fa-clock"></i></div>
           <div>
             <h4 data-i18n="ct_hours">Working Hours</h4>
-            <p>Sunday – Thursday<br>8:00 AM – 5:00 PM (KSA Time)</p>
+            <p data-i18n="land_ct_hours_desc">Sunday – Thursday<br>8:00 AM – 5:00 PM (KSA Time)</p>
           </div>
         </div>
       </div>
@@ -2336,7 +2096,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <!-- Form -->
       <div class="ct-card">
         <h3 data-i18n="contact_form_title">Send Us a Message</h3>
-        <p class="ct-card-sub">Fill in your details and we'll get back to you soon.</p>
+        <p data-i18n="x_ct_form_sub" class="ct-card-sub">Fill in your details and we'll get back to you soon.</p>
         <form class="ct-form" id="ctContactForm">
           <div class="form-row">
             <div class="ct-field">
@@ -2401,7 +2161,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <div class="ct-trust-item">
         <i class="fa-solid fa-headset"></i>
         <div>
-          <h5>Dedicated Team</h5>
+          <h5 data-i18n="ct_trust3_t">Dedicated Team</h5>
           <p data-i18n="ct_trust3_p">Here to assist you</p>
         </div>
       </div>
@@ -2804,22 +2564,22 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <div class="ft2-badges">
         <div class="ft2-badge">
           <span><i class="fa-solid fa-shield-halved"></i></span>
-          <small>Quality<br>Products</small>
+          <small data-i18n="x_tr_quality">Quality<br>Products</small>
         </div>
         <div class="ft2-badge">
           <span><i class="fa-solid fa-users"></i></span>
-          <small>Trusted<br>Partners</small>
+          <small data-i18n="x_tr_partners">Trusted<br>Partners</small>
         </div>
         <div class="ft2-badge">
           <span><i class="fa-solid fa-truck"></i></span>
-          <small>On-Time<br>Delivery</small>
+          <small data-i18n="ab_feat3">On-Time<br>Delivery</small>
         </div>
         <div class="ft2-badge">
           <span><i class="fa-solid fa-leaf"></i></span>
-          <small>A Safer<br>Tomorrow</small>
+          <small data-i18n="x_tr_safer">A Safer<br>Tomorrow</small>
         </div>
       </div>
-      <span class="ft2-script">Building Better Together</span>
+      <span data-i18n="x_ft_tagline" class="ft2-script">Building Better Together</span>
     </div>
 
     <!-- Quick Links -->
@@ -2829,7 +2589,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
         <li><a href="#hero" data-i18n="footer_link_home">Home</a></li>
         <li><a href="#about" data-i18n="footer_link_about">About Us</a></li>
         <li><a href="#products" data-i18n="footer_link_products">Products</a></li>
-        <li><a href="#">Our Sectors</a></li>
+        <li><a data-i18n="nav_sectors" href="#">Our Sectors</a></li>
         <li><a href="./brands.html" data-i18n="footer_link_brands">Brands</a></li>
         <li><a href="./contact.html" data-i18n="footer_link_contact">Contact</a></li>
       </ul>
@@ -2854,7 +2614,7 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <h5 data-i18n="footer_contact_us">Contact Us</h5>
       <div class="ft2-citem">
         <i class="fa-solid fa-location-dot"></i>
-        <span>Building No 6599, Street: Abi Bakr Al Siddiq, Al Narjis Dist, RIYADH, Kingdom of Saudi Arabia, Postal Code: 13346</span>
+        <span data-i18n="x_ft_addr">Building No 6599, Street: Abi Bakr Al Siddiq, Al Narjis Dist, RIYADH, Kingdom of Saudi Arabia, Postal Code: 13346</span>
       </div>
       <div class="ft2-citem">
         <i class="fa-solid fa-phone"></i>
@@ -2866,17 +2626,17 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       </div>
       <div class="ft2-citem">
         <i class="fa-regular fa-clock"></i>
-        <span>Sun – Thu: 8:00 AM – 6:00 PM<br>(Closed on Friday)</span>
+        <span data-i18n="x_ft_hours">Sun – Thu: 8:00 AM – 6:00 PM<br>(Closed on Friday)</span>
       </div>
     </div>
 
     <!-- Newsletter -->
     <div>
       <h5 data-i18n="footer_newsletter_title">Subscribe to Our Newsletter</h5>
-      <p class="ft2-news-desc">Stay updated with our latest products, brands and industry insights.</p>
+      <p data-i18n="x_ft_news" class="ft2-news-desc">Stay updated with our latest products, brands and industry insights.</p>
       <div class="ft2-news-row">
         <input type="email" data-i18n="footer_newsletter_placeholder" placeholder="Your email address">
-        <button type="button" data-i18n="footer_newsletter_btn">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+        <button type="button"><span data-i18n="footer_newsletter_btn">Subscribe</span> <i class="fa-solid fa-arrow-right"></i></button>
       </div>
       <p class="ft2-news-note" data-i18n="footer_newsletter_note">No spam. Unsubscribe anytime.</p>
 
@@ -2926,14 +2686,14 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
       <i class="fa-solid fa-users"></i>
       <div>
         <h6 data-i18n="ft_trust3_t">People Focused</h6>
-        <p>Building safer communities</p>
+        <p data-i18n="ft_trust3_p">Building safer communities</p>
       </div>
     </div>
     <div class="ft2-trust-item">
       <i class="fa-solid fa-leaf"></i>
       <div>
-        <h6>Sustainable Solutions</h6>
-        <p>For a stronger tomorrow</p>
+        <h6 data-i18n="ft_trust4_t">Sustainable Solutions</h6>
+        <p data-i18n="ft_trust4_p">For a stronger tomorrow</p>
       </div>
     </div>
   </div>
@@ -2948,10 +2708,10 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
         <a href="#" data-i18n="footer_sitemap">Sitemap</a>
       </div>
       <div class="ft2-loc">
-        <span><i class="fa-solid fa-location-dot"></i> Riyadh, Saudi Arabia</span>
+        <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="tb_location">Riyadh, Saudi Arabia</span></span>
         <button class="ft2-top" id="ftBackTop">
           <span class="circ"><i class="fa-solid fa-arrow-up"></i></span>
-          Back to Top
+          <span data-i18n="x_back_top">Back to Top</span>
         </button>
       </div>
     </div>
@@ -2968,39 +2728,40 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
 <!-- ============== Bootstrap JS ============== -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- ============== Translation Logic ============== -->
-<script src="translations.js?v=6"></script>
+<script src="./nav.js?v=1"></script>
+<script src="translations.js?v=11"></script>
 <!-- ============== Site Scripts ============== -->
 <!-- Contact dialog (navbar Contact button) -->
 <div class="ctdlg-overlay" id="ctDialogOverlay" aria-hidden="true">
   <div class="ctdlg" role="dialog" aria-modal="true" aria-labelledby="ctdlgTitle">
     <button class="ctdlg-close" id="ctDialogClose" aria-label="Close">&times;</button>
     <div class="ctdlg-icon"><i class="fa-solid fa-headset"></i></div>
-    <span class="ctdlg-eyebrow">GET IN TOUCH</span>
-    <h3 id="ctdlgTitle">Contact Information</h3>
-    <p class="ctdlg-sub">We're always open for new opportunities</p>
+    <span data-i18n="land_ct_eyebrow" class="ctdlg-eyebrow">GET IN TOUCH</span>
+    <h3 data-i18n="land_ct_title" id="ctdlgTitle">Contact Information</h3>
+    <p data-i18n="land_ct_sub" class="ctdlg-sub">We're always open for new opportunities</p>
 
     <div class="ctdlg-items">
       <div class="ctdlg-item">
         <div class="ctdlg-ico"><i class="fa-solid fa-phone"></i></div>
-        <div><h4>Phone</h4><p><a href="tel:+966503046469">+966 5030 46469</a></p></div>
+        <div><h4 data-i18n="land_ct_phone">Phone</h4><p><a href="tel:+966503046469">+966 5030 46469</a></p></div>
       </div>
       <div class="ctdlg-item">
         <div class="ctdlg-ico"><i class="fa-solid fa-envelope"></i></div>
-        <div><h4>Email</h4><p><a href="mailto:sales@mashreq.sa">sales@mashreq.sa</a></p></div>
+        <div><h4 data-i18n="land_ct_email">Email</h4><p><a href="mailto:sales@mashreq.sa">sales@mashreq.sa</a></p></div>
       </div>
       <div class="ctdlg-item">
         <div class="ctdlg-ico"><i class="fa-solid fa-location-dot"></i></div>
-        <div><h4>Office</h4><p>Building No 6599, Street: Abi Bakr Al Siddiq,<br>Al Narjis Dist, RIYADH, Kingdom of Saudi Arabia,<br>Postal Code: 13346</p></div>
+        <div><h4 data-i18n="land_ct_office">Office</h4><p data-i18n="x_addr_br">Building No 6599, Street: Abi Bakr Al Siddiq,<br>Al Narjis Dist, RIYADH, Kingdom of Saudi Arabia,<br>Postal Code: 13346</p></div>
       </div>
       <div class="ctdlg-item">
         <div class="ctdlg-ico"><i class="fa-solid fa-clock"></i></div>
-        <div><h4 data-i18n="ct_hours">Working Hours</h4><p>Sunday – Thursday<br>8:00 AM – 5:00 PM (KSA Time)</p></div>
+        <div><h4 data-i18n="ct_hours">Working Hours</h4><p data-i18n="land_ct_hours_desc">Sunday – Thursday<br>8:00 AM – 5:00 PM (KSA Time)</p></div>
       </div>
     </div>
 
     <div class="ctdlg-actions">
-      <a class="ctdlg-btn primary" href="./contact.html">Contact Page <i class="fa-solid fa-arrow-right"></i></a>
-      <a class="ctdlg-btn ghost" href="./get-quote.html">Get a Quote</a>
+      <a class="ctdlg-btn primary" href="./contact.html"><span data-i18n="x_contact_page">Contact Page</span> <i class="fa-solid fa-arrow-right"></i></a>
+      <a data-i18n="nav_quote" class="ctdlg-btn ghost" href="./get-quote.html">Get a Quote</a>
     </div>
   </div>
 </div>
@@ -3149,19 +2910,19 @@ html[lang="ar"] .eyebrow, html[lang="ar"] .slide-tag { font-size: 0.95em; }
   <div class="snd-card" role="dialog" aria-modal="true" aria-labelledby="sndTitle">
     <button class="snd-close" id="sndClose" aria-label="Close">&times;</button>
     <div class="snd-ico"><i class="fa-solid fa-paper-plane"></i></div>
-    <h3 id="sndTitle">How would you like to send it?</h3>
-    <p class="snd-sub">Your message is ready &mdash; choose where to send it.</p>
+    <h3 data-i18n="x_sd_title" id="sndTitle">How would you like to send it?</h3>
+    <p data-i18n="x_sd_sub" class="snd-sub">Your message is ready &mdash; choose where to send it.</p>
     <div class="snd-btns">
       <a class="snd-btn mail" id="sndEmail" href="#">
         <span class="snd-bico"><i class="fa-solid fa-envelope"></i></span>
-        <span>Send via Email<small>Opens your email app to sales@mashreq.sa</small></span>
+        <span data-i18n="x_sd_email">Send via Email<small>Opens your email app to sales@mashreq.sa</small></span>
       </a>
       <a class="snd-btn wa" id="sndWa" href="#" target="_blank" rel="noopener">
         <span class="snd-bico"><i class="fa-brands fa-whatsapp"></i></span>
-        <span>Send via WhatsApp<small>Opens WhatsApp chat to +966 50 304 6469</small></span>
+        <span data-i18n="x_sd_wa">Send via WhatsApp<small>Opens WhatsApp chat to +966 50 304 6469</small></span>
       </a>
     </div>
-    <p class="snd-note">A notification is prepared on both &mdash; nothing is sent until you press send.</p>
+    <p data-i18n="x_sd_note" class="snd-note">A notification is prepared on both &mdash; nothing is sent until you press send.</p>
   </div>
 </div>
 
